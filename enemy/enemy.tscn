@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba1l1pdjdxmlp"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_c41m5"]
+[ext_resource type="Texture2D" uid="uid://fw7ma6alyrt7" path="res://assets/impsprites.png" id="1_u7vst"]
+
+[sub_resource type="Animation" id="Animation_hpy6e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_column")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+
+[sub_resource type="Animation" id="Animation_rne1l"]
+resource_name = "Walk"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_column")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_hwsp3"]
+resource_name = "WalkBackwards"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_column")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46f66"]
+_data = {
+"RESET": SubResource("Animation_hpy6e"),
+"Walk": SubResource("Animation_rne1l"),
+"WalkBackwards": SubResource("Animation_hwsp3")
+}
+
+[node name="Enemy" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.324877, 0)
+script = ExtResource("1_c41m5")
+animation_column = 16
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transparency = 1.0
+billboard = 2
+texture = ExtResource("1_u7vst")
+hframes = 4
+vframes = 5
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_46f66")
+}

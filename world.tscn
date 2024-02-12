@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://t5b15guq8wxq"]
+
+[ext_resource type="PackedScene" uid="uid://b5s0up8snewpy" path="res://player/player.tscn" id="1_6utk5"]
+[ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
+[ext_resource type="PackedScene" uid="uid://ba1l1pdjdxmlp" path="res://enemy/enemy.tscn" id="3_g23nd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_om82h"]
+size = Vector3(10.5058, 0.308105, 6.77148)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eu1k0"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_p3xts")
+
+[node name="Player" parent="." instance=ExtResource("1_6utk5")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_g23nd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.04999, 0.985186, -1.67469)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32724, -0.345947, -0.779053)
+shape = SubResource("BoxShape3D_om82h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(-10.9445, 0, 0, 0, 0.0991629, 0, 0, 0, 6.65018, -1.32724, -0.345947, -0.779053)
+mesh = SubResource("BoxMesh_eu1k0")
+skeleton = NodePath("../Collision")
