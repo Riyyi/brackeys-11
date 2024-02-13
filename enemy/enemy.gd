@@ -1,6 +1,6 @@
 class_name Enemy extends Node3D
 
-@export var animation_column = 0
+@export var animation_index: int = 0
 
 @onready var animation: AnimationPlayer = $Animation
 @onready var sprite_3d: Sprite3D = $Sprite3D
@@ -23,4 +23,4 @@ func _ready() -> void:
 	change_state(0)
 
 func _process(_delta) -> void:
-	sprite_3d.frame = animation_column
+	sprite_3d.frame = animation_index

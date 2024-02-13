@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://t5b15guq8wxq"]
+[gd_scene load_steps=7 format=3 uid="uid://t5b15guq8wxq"]
 
 [ext_resource type="PackedScene" uid="uid://b5s0up8snewpy" path="res://player/player.tscn" id="1_6utk5"]
 [ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
 [ext_resource type="PackedScene" uid="uid://ba1l1pdjdxmlp" path="res://enemy/enemy.tscn" id="3_g23nd"]
+[ext_resource type="PackedScene" uid="uid://yrupjfwf30aw" path="res://enemy/enemy2.tscn" id="4_b6blf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_om82h"]
 size = Vector3(10.5058, 0.308105, 6.77148)
@@ -21,6 +22,9 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.04999, 0.985186, -1.67469)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186932, -0.00891823)
 layers = 524289
 light_color = Color(1, 0, 0, 1)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_b6blf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40162, -0.281263, -2.52197)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
