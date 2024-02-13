@@ -10,6 +10,11 @@ var direction: Vector3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _process(delta):
+	var guncam = $GunViewport/GunCam
+	var worldcam = $CameraController/WorldCam
+	guncam.global_transform = worldcam.global_transform
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

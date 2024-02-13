@@ -17,6 +17,11 @@ script = ExtResource("1_p3xts")
 [node name="Enemy" parent="." instance=ExtResource("3_g23nd")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.04999, 0.985186, -1.67469)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Enemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186932, -0.00891823)
+layers = 524289
+light_color = Color(1, 0, 0, 1)
+
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="Collision" type="CollisionShape3D" parent="Floor"]
@@ -27,3 +32,6 @@ shape = SubResource("BoxShape3D_om82h")
 transform = Transform3D(-10.9445, 0, 0, 0, 0.0991629, 0, 0, 0, 6.65018, -1.32724, -0.345947, -0.779053)
 mesh = SubResource("BoxMesh_eu1k0")
 skeleton = NodePath("../Collision")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.668625, 0.7436, 0, -0.7436, -0.668625, -2.10196, 2.47844, -0.810181)

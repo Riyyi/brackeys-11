@@ -1,9 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5s0up8snewpy"]
+[gd_scene load_steps=10 format=3 uid="uid://b5s0up8snewpy"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_j8r0k"]
 [ext_resource type="Script" path="res://player/camera-controller.gd" id="2_ujkwn"]
+[ext_resource type="PackedScene" uid="uid://cb51dykvwtnko" path="res://player/gun.tscn" id="3_jus6p"]
+[ext_resource type="Shader" path="res://shaders/postprocess.gdshader" id="4_57hto"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7iwr8"]
+
+[sub_resource type="Environment" id="Environment_da20d"]
+ambient_light_source = 2
+ambient_light_color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lf8mu"]
+viewport_path = NodePath("GunViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xl85d"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_57hto")
+shader_parameter/GunCam = SubResource("ViewportTexture_lf8mu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_7unad"]
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_j8r0k")
@@ -15,5 +34,24 @@ shape = SubResource("CapsuleShape3D_7iwr8")
 [node name="CameraController" type="Node3D" parent="."]
 script = ExtResource("2_ujkwn")
 
-[node name="Camera3D" type="Camera3D" parent="CameraController"]
+[node name="WorldCam" type="Camera3D" parent="CameraController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+cull_mask = 524287
+
+[node name="GunViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(320, 180)
+
+[node name="GunCam" type="Camera3D" parent="GunViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70764, 0)
+cull_mask = 524288
+environment = SubResource("Environment_da20d")
+
+[node name="Sketchfab_Scene" parent="GunViewport/GunCam" instance=ExtResource("3_jus6p")]
+transform = Transform3D(-10, 0, -1.50996e-06, 0, 10, 0, 1.50996e-06, 0, -10, 0.3474, -0.164938, -0.884161)
+
+[node name="PostProcessScreen" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_xl85d")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_7unad")
