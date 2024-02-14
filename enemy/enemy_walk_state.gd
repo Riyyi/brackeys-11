@@ -1,7 +1,6 @@
 class_name EnemyWalkState extends State
 
-var enemy: Enemy
+@onready var player: Player = get_node("/root/World/Player")
 
 func _ready() -> void:
-	enemy = get_parent()
 	animation.play("Walk")
