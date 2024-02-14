@@ -18,7 +18,7 @@ func _physics_process(_delta) -> void:
 	
 	var current_position = enemy.global_position
 	var next_position = enemy.nav_agent.get_next_path_position()
-	var new_velocity = (next_position - current_position).normalized()
+	var new_velocity = (next_position - current_position).normalized() * enemy.speed
 	
 	enemy.nav_agent.velocity = new_velocity
 	

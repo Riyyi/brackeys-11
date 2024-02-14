@@ -1,7 +1,6 @@
 class_name Enemy extends CharacterBody3D
 
-@export var acceleration = 7
-@export var speed = 0.5
+@export var speed = 0.75
 
 # Amount of frames in this tilesheet
 @export var animation_index: int = 0
