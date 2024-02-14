@@ -4,7 +4,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @onready var camera_controller = $CameraController
-@onready var gun_node = $GunViewport/GunCam/GunNode
+@onready var gun_node = $GunViewport/GunCam/GunNode # Node holder for the current gun
 
 var health = 100
 var shotgun_ammo = 0
@@ -13,7 +13,7 @@ var machinegun_ammo = 0
 var gun1: PackedScene
 var gun2: PackedScene
 var current_gun = 0
-var gun_instance: Node
+var gun_instance: Node # Scene instantiated
 
 var direction: Vector3
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bawtvga2do1hk"]
 
-[ext_resource type="Script" path="res://Bullet.gd" id="1_l04d2"]
+[ext_resource type="Script" path="res://projectiles/bullet.gd" id="1_l04d2"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_214oq"]
 spread = 180.0
