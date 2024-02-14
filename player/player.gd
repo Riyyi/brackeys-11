@@ -6,17 +6,14 @@ const JUMP_VELOCITY = 4.5
 @onready var camera_controller = $CameraController
 @onready var gun_node = $GunViewport/GunCam/GunNode
 
-var gun_instance: Node
+var health = 100
+var shotgun_ammo = 0
+var machinegun_ammo = 0
 
-var Gun: PackedScene:
-	get:
-		return Gun
-	set(gun):
-		Gun = gun
-		if(gun_node.get_child_count() == 0):
-			gun_instance = Gun.instantiate()
-			gun_node.add_child(gun_instance)
-		print(gun_node.get_children())
+var gun1: PackedScene
+var gun2: PackedScene
+var current_gun = 0
+var gun_instance: Node
 
 var direction: Vector3
 
@@ -52,5 +49,24 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-func pickup(item):
-	Gun = item
+func switch_gun(gunid):
+	if(gun_node.get_child_count() != 0):
+		gun_node.remove_child(gun_instance)
+	if gunid == 0:
+		gun_instance = gun1.instantiate()
+	else:
+		gun_instance = gun2.instantiate()
+	gun_node.add_child(gun_instance)
+	
+func weapon_pickup(weapon):
+	if gun1 == null:
+		gun1 = weapon
+		switch_gun(0)
+	elif gun2 == null:
+		gun2 = weapon
+	elif current_gun == 0:
+		gun1 = weapon
+		switch_gun(0)
+	else:
+		gun2 = weapon
+		switch_gun(1)
