@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wh260336btua"]
+[gd_scene load_steps=10 format=3 uid="uid://wh260336btua"]
 
 [ext_resource type="PackedScene" uid="uid://yrupjfwf30aw" path="res://enemy/enemy.tscn" id="1_eoh5f"]
 [ext_resource type="Script" path="res://enemy/basic_enemy/basic_enemy.gd" id="2_awa63"]
@@ -15,6 +15,24 @@ billboard_mode = 2
 [sub_resource type="QuadMesh" id="QuadMesh_22mm6"]
 material = SubResource("StandardMaterial3D_bcuet")
 size = Vector2(2.5, 2.5)
+
+[sub_resource type="Animation" id="Animation_w7ohx"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_f26n6"]
 length = 0.001
@@ -51,6 +69,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d8jam"]
 _data = {
+"Idle": SubResource("Animation_w7ohx"),
 "RESET": SubResource("Animation_f26n6"),
 "Walk": SubResource("Animation_3bgbe")
 }
@@ -69,5 +88,3 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_d8jam")
 }
-
-[node name="NavAgent" type="NavigationAgent3D" parent="." index="3"]
