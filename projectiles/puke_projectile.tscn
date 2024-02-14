@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://qv2gltmr1lox"]
+
+[ext_resource type="PackedScene" uid="uid://bawtvga2do1hk" path="res://projectiles/bullet.tscn" id="1_odc5r"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v22bh"]
+direction = Vector3(0, 0, 1)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_auipl"]
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_6yr6o"]
+material = SubResource("StandardMaterial3D_auipl")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e1n4r"]
+direction = Vector3(0, 0, 1)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o17co"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_ooqrg"]
+material = SubResource("StandardMaterial3D_o17co")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dmbsw"]
+direction = Vector3(0, 0, 1)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfec5"]
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_dyf5s"]
+material = SubResource("StandardMaterial3D_wfec5")
+size = Vector2(0.2, 0.2)
+
+[node name="Bullet" instance=ExtResource("1_odc5r")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="1"]
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_v22bh")
+draw_pass_1 = SubResource("QuadMesh_6yr6o")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." index="2"]
+amount = 16
+lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_e1n4r")
+draw_pass_1 = SubResource("QuadMesh_ooqrg")
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="." index="3"]
+amount = 16
+lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_dmbsw")
+draw_pass_1 = SubResource("QuadMesh_dyf5s")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="4"]
+layers = 786433
+light_color = Color(0, 1, 0, 1)
