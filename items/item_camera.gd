@@ -1,5 +1,4 @@
-@tool
-extends Camera3D
+@tool class_name ItemCamera extends Camera3D
 
 var item_mesh: Node
 var angle = 0.0

@@ -10,6 +10,7 @@ class_name Enemy extends CharacterBody3D
 @onready var animation: AnimationPlayer = %Animation # acces in the child via unique name
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var nav_agent: NavigationAgent3D = $NavAgent
+@onready var stats_component = $StatsComponent
 
 var material: StandardMaterial3D
 var state: State # current state
@@ -27,6 +28,9 @@ func change_state(new_state_name: int) -> void:
 	state = state_factory.get_state(new_state_name).new(new_state_name)
 	state.setup(animation, self)
 	add_child(state)
+	
+func took_damage(hitbox: HitboxComponent) -> void:
+	stats_component.health -= hitbox.damage
 
 # -----------------------------------------
 

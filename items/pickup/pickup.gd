@@ -1,20 +1,19 @@
-@tool
-extends Area3D
+@tool class_name Pickup extends Area3D
 
-@export var Item: PackedScene
-var hover = 0.0
+@export var item: PackedScene
 
-func _on_ready():
-	pass
+var hover: float = 0.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _ready() -> void:
+	body_entered.connect(body_collide)
+
+func _process(delta: float) -> void:
 	var item_cam = $ItemViewport/ItemCamera
 	item_cam.global_position = global_position
 	item_cam.position.z += 1.5
 	hover += delta
-	$ItemBillboard.position.y = (sin(hover*1.5)/4)
+	$ItemBillboard.position.y = sin(hover * 1.5) / 4
 
-func _on_body_entered(body):
+func body_collide(body: Node3D) -> void:
 	if "Player" in body.name:
-		body.weapon_pickup(Item) # Replace with function body.
+		body.weapon_pickup(item)

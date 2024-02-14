@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cn6cqf74752r3"]
 
-[ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/Gun.tscn" id="1_3vuo7"]
+[ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_3vuo7"]
 [ext_resource type="PackedScene" uid="uid://nj6cf1a0y54n" path="res://assets/guncam_rail_gun.tscn" id="3_okkpt"]
 [ext_resource type="PackedScene" uid="uid://bawtvga2do1hk" path="res://projectiles/bullet.tscn" id="3_pfmjx"]
 

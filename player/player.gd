@@ -4,6 +4,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @onready var camera_controller = $CameraController
+@onready var stats_component = $StatsComponent
 @onready var gun_node = $GunViewport/GunCam/GunNode # Node holder for the current gun
 
 var health = 100
@@ -48,10 +49,17 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	
+
+func took_damage(hitbox: HitboxComponent) -> void:
+	print("HIT: player " + str(hitbox.damage) + " damage")
+	stats_component.health -= hitbox.damage
+
 func switch_gun(gunid):
+	# Cleanup old gun
 	if(gun_node.get_child_count() != 0):
 		gun_node.remove_child(gun_instance)
+		
+	# Set new gun
 	if gunid == 0:
 		gun_instance = gun1.instantiate()
 	else:

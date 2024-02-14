@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://yrupjfwf30aw"]
+[gd_scene load_steps=5 format=3 uid="uid://yrupjfwf30aw"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_lw8il"]
+[ext_resource type="Script" path="res://components/stats_component.gd" id="2_nnv6f"]
+[ext_resource type="Script" path="res://components/destroyed_component.gd" id="3_j275r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wbv8k"]
-height = 2.21924
+height = 2.2
 
 [node name="Enemy" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12185, 0)
 script = ExtResource("1_lw8il")
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("2_nnv6f")
+
+[node name="DestroyedComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "stats_component")]
+script = ExtResource("3_j275r")
+actor = NodePath("..")
+stats_component = NodePath("../StatsComponent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_wbv8k")

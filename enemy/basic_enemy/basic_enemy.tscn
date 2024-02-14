@@ -4,18 +4,6 @@
 [ext_resource type="Script" path="res://enemy/basic_enemy/basic_enemy.gd" id="2_awa63"]
 [ext_resource type="Texture2D" uid="uid://fw7ma6alyrt7" path="res://assets/impsprites.png" id="3_n5ngm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcuet"]
-transparency = 4
-shading_mode = 0
-albedo_texture = ExtResource("3_n5ngm")
-uv1_scale = Vector3(0.25, 0.2, 1)
-texture_filter = 0
-billboard_mode = 2
-
-[sub_resource type="QuadMesh" id="QuadMesh_22mm6"]
-material = SubResource("StandardMaterial3D_bcuet")
-size = Vector2(2.5, 2.5)
-
 [sub_resource type="Animation" id="Animation_w7ohx"]
 resource_name = "Idle"
 length = 0.8
@@ -74,17 +62,32 @@ _data = {
 "Walk": SubResource("Animation_3bgbe")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcuet"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("3_n5ngm")
+uv1_scale = Vector3(0.25, 0.2, 1)
+texture_filter = 0
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_22mm6"]
+material = SubResource("StandardMaterial3D_bcuet")
+size = Vector2(2.5, 2.5)
+
 [node name="BasicEnemy" instance=ExtResource("1_eoh5f")]
 script = ExtResource("2_awa63")
 animation_index = 1
 h_frames = 4
 v_frames = 5
 
-[node name="MeshInstance3D" parent="." index="1"]
-mesh = SubResource("QuadMesh_22mm6")
+[node name="StatsComponent" parent="." index="0"]
+health = 25
 
 [node name="Animation" type="AnimationPlayer" parent="." index="2"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_d8jam")
 }
+
+[node name="MeshInstance3D" parent="." index="4"]
+mesh = SubResource("QuadMesh_22mm6")

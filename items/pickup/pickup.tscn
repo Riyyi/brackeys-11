@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cytcy0uo72e4e"]
+[gd_scene load_steps=10 format=3 uid="uid://cytcy0uo72e4e"]
 
 [ext_resource type="Script" path="res://items/pickup/pickup.gd" id="1_1tu4r"]
-[ext_resource type="PackedScene" uid="uid://cn6cqf74752r3" path="res://items/gun/testgun.tscn" id="2_qt0oc"]
 [ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="3_fhuol"]
 [ext_resource type="PackedScene" uid="uid://cgxx5yscvqmpj" path="res://assets/rail_gun.glb" id="3_iweol"]
 [ext_resource type="Script" path="res://items/item_camera.gd" id="4_5gkws"]
@@ -24,13 +23,12 @@ size = Vector2(2, 2)
 
 [node name="Pickup" type="Area3D"]
 script = ExtResource("1_1tu4r")
-Item = ExtResource("2_qt0oc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_r5keq")
 
 [node name="ItemBillboard" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0405533, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.248447, 0)
 material_override = SubResource("ShaderMaterial_rkmaj")
 mesh = SubResource("QuadMesh_e6hfi")
 
@@ -47,7 +45,7 @@ projection = 1
 script = ExtResource("4_5gkws")
 
 [node name="Sketchfab_Scene" parent="ItemViewport/ItemCamera" instance=ExtResource("3_iweol")]
-transform = Transform3D(7.38606, 0, 1.30236, 0, 7.5, 0, -1.30236, 0, 7.38606, 0.0325611, -0.0573122, -1.53937)
+transform = Transform3D(7.38608, 0, -1.30223, 0, 7.5, 0, 1.30223, 0, 7.38608, 0.0325611, -0.0573122, -1.53937)
 
 [node name="Sketchfab_model" parent="ItemViewport/ItemCamera/Sketchfab_Scene" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.0383846)
@@ -66,7 +64,5 @@ layers = 262144
 
 [node name="CylinderInnerLoops1_CylinderInnerLoops1_05" parent="ItemViewport/ItemCamera/Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="4"]
 layers = 262144
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 
 [editable path="ItemViewport/ItemCamera/Sketchfab_Scene"]
