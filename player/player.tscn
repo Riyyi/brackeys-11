@@ -2,41 +2,51 @@
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_j8r0k"]
 [ext_resource type="Script" path="res://player/camera-controller.gd" id="2_ujkwn"]
-[ext_resource type="PackedScene" uid="uid://cb51dykvwtnko" path="res://player/gun.tscn" id="3_jus6p"]
-[ext_resource type="Shader" path="res://shaders/postprocess.gdshader" id="4_57hto"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7iwr8"]
+[ext_resource type="Shader" path="res://shaders/postprocess.gdshader" id="3_8lvfy"]
 
 [sub_resource type="Environment" id="Environment_da20d"]
 ambient_light_source = 2
 ambient_light_color = Color(0.392157, 0.392157, 0.392157, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lf8mu"]
+[sub_resource type="GDScript" id="GDScript_c4xy5"]
+script/source = "extends Node3D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tkv2k"]
 viewport_path = NodePath("GunViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xl85d"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("4_57hto")
-shader_parameter/GunCam = SubResource("ViewportTexture_lf8mu")
+shader = ExtResource("3_8lvfy")
+shader_parameter/GunCam = SubResource("ViewportTexture_tkv2k")
 
 [sub_resource type="QuadMesh" id="QuadMesh_7unad"]
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7iwr8"]
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_j8r0k")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894037, 0)
-shape = SubResource("CapsuleShape3D_7iwr8")
 
 [node name="CameraController" type="Node3D" parent="."]
 script = ExtResource("2_ujkwn")
 
 [node name="WorldCam" type="Camera3D" parent="CameraController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
-cull_mask = 524287
+cull_mask = 262143
 
 [node name="GunViewport" type="SubViewport" parent="."]
 transparent_bg = true
@@ -48,10 +58,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70764, 0)
 cull_mask = 524288
 environment = SubResource("Environment_da20d")
 
-[node name="Sketchfab_Scene" parent="GunViewport/GunCam" instance=ExtResource("3_jus6p")]
-transform = Transform3D(-10, 0, -1.50996e-06, 0, 10, 0, 1.50996e-06, 0, -10, 0.3474, -0.164938, -0.884161)
+[node name="GunNode" type="Node3D" parent="GunViewport/GunCam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499026, -0.311891, 0)
+script = SubResource("GDScript_c4xy5")
 
 [node name="PostProcessScreen" type="MeshInstance3D" parent="."]
 material_override = SubResource("ShaderMaterial_xl85d")
+cast_shadow = 0
 extra_cull_margin = 16384.0
+gi_mode = 0
 mesh = SubResource("QuadMesh_7unad")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894037, 0)
+shape = SubResource("CapsuleShape3D_7iwr8")

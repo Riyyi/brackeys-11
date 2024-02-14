@@ -4,6 +4,19 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @onready var camera_controller = $CameraController
+@onready var gun_node = $GunViewport/GunCam/GunNode
+
+var gun_instance: Node
+
+var Gun: PackedScene:
+	get:
+		return Gun
+	set(gun):
+		Gun = gun
+		if(gun_node.get_child_count() == 0):
+			gun_instance = Gun.instantiate()
+			gun_node.add_child(gun_instance)
+		print(gun_node.get_children())
 
 var direction: Vector3
 
@@ -38,3 +51,6 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+func pickup(item):
+	Gun = item

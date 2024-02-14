@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://nj6cf1a0y54n"]
+
+[ext_resource type="PackedScene" uid="uid://cgxx5yscvqmpj" path="res://assets/rail_gun.glb" id="1_fbmo2"]
+
+[node name="GuncamRailGun" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_fbmo2")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_0" parent="Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="0"]
+layers = 524288
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_02" parent="Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="1"]
+layers = 524288
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_03" parent="Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="2"]
+layers = 524288
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_04" parent="Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="3"]
+layers = 524288
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_05" parent="Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="4"]
+layers = 524288
+
+[editable path="Sketchfab_Scene"]

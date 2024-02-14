@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cytcy0uo72e4e"]
+
+[ext_resource type="Script" path="res://pickup.gd" id="1_1tu4r"]
+[ext_resource type="PackedScene" uid="uid://cn6cqf74752r3" path="res://testgun.tscn" id="2_m6qsv"]
+[ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="3_fhuol"]
+[ext_resource type="PackedScene" uid="uid://cgxx5yscvqmpj" path="res://assets/rail_gun.glb" id="3_iweol"]
+[ext_resource type="Script" path="res://ItemCamera.gd" id="4_6gygg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r5keq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d3bjr"]
+viewport_path = NodePath("ItemViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rkmaj"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_fhuol")
+shader_parameter/ItemCam = SubResource("ViewportTexture_d3bjr")
+
+[sub_resource type="QuadMesh" id="QuadMesh_e6hfi"]
+size = Vector2(2, 2)
+
+[sub_resource type="Environment" id="Environment_jngn5"]
+
+[node name="Pickup" type="Area3D"]
+script = ExtResource("1_1tu4r")
+Item = ExtResource("2_m6qsv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_r5keq")
+
+[node name="ItemBillboard" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_rkmaj")
+mesh = SubResource("QuadMesh_e6hfi")
+
+[node name="ItemViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(100, 100)
+
+[node name="ItemCamera" type="Camera3D" parent="ItemViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+cull_mask = 262144
+environment = SubResource("Environment_jngn5")
+projection = 1
+script = ExtResource("4_6gygg")
+
+[node name="Sketchfab_Scene" parent="ItemViewport/ItemCamera" instance=ExtResource("3_iweol")]
+transform = Transform3D(-7.48731, 0, 0.436081, 0, 7.5, 0, -0.436081, 0, -7.48731, 0.0325611, -0.0573122, -1.53937)
+
+[node name="Sketchfab_model" parent="ItemViewport/ItemCamera/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.0383846)
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_0" parent="ItemViewport/ItemCamera/Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="0"]
+layers = 262144
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_02" parent="ItemViewport/ItemCamera/Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="1"]
+layers = 262144
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_03" parent="ItemViewport/ItemCamera/Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="2"]
+layers = 262144
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_04" parent="ItemViewport/ItemCamera/Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="3"]
+layers = 262144
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_05" parent="ItemViewport/ItemCamera/Sketchfab_Scene/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="4"]
+layers = 262144
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="ItemViewport/ItemCamera/Sketchfab_Scene"]
