@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5s0up8snewpy"]
+[gd_scene load_steps=11 format=3 uid="uid://b5s0up8snewpy"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_j8r0k"]
-[ext_resource type="Script" path="res://player/camera-controller.gd" id="2_ujkwn"]
 [ext_resource type="Shader" path="res://shaders/postprocess.gdshader" id="3_8lvfy"]
+[ext_resource type="Script" path="res://player/camera_controller.gd" id="3_crn3w"]
+[ext_resource type="Script" path="res://components/stats_component.gd" id="4_lokwb"]
+[ext_resource type="Shape3D" uid="uid://bsvghwp32afh" path="res://player/player_collision.tres" id="5_7djvv"]
 
 [sub_resource type="Environment" id="Environment_da20d"]
 ambient_light_source = 2
@@ -36,16 +38,18 @@ shader_parameter/GunCam = SubResource("ViewportTexture_tkv2k")
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7iwr8"]
-
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_j8r0k")
 
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("4_lokwb")
+health = 3
+
 [node name="CameraController" type="Node3D" parent="."]
-script = ExtResource("2_ujkwn")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+script = ExtResource("3_crn3w")
 
 [node name="WorldCam" type="Camera3D" parent="CameraController"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 cull_mask = 262143
 
 [node name="GunViewport" type="SubViewport" parent="."]
@@ -54,7 +58,7 @@ handle_input_locally = false
 size = Vector2i(320, 180)
 
 [node name="GunCam" type="Camera3D" parent="GunViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70764, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 cull_mask = 524288
 environment = SubResource("Environment_da20d")
 
@@ -70,5 +74,11 @@ gi_mode = 0
 mesh = SubResource("QuadMesh_7unad")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894037, 0)
-shape = SubResource("CapsuleShape3D_7iwr8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = ExtResource("5_7djvv")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = ExtResource("5_7djvv")

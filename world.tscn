@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b5s0up8snewpy" path="res://player/player.tscn" id="1_6utk5"]
 [ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
 [ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="3_1vwaw"]
-[ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://PickUp.tscn" id="4_gfcf4"]
+[ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="4_gfcf4"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
 vertices = PackedVector3Array(-6.29949, -0.0394022, -7.03273, -6.29949, -0.0394022, 5.71727, 3.70051, -0.0394022, 5.71727, 3.70051, -0.0394022, -7.03273, -1.79949, -0.0394022, 9.21727, -1.79949, -0.0394022, 10.9673, 1.70051, -0.0394022, 10.9673, 1.70051, -0.0394022, 9.21727)

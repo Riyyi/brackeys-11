@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cytcy0uo72e4e"]
 
-[ext_resource type="Script" path="res://pickup.gd" id="1_1tu4r"]
-[ext_resource type="PackedScene" uid="uid://cn6cqf74752r3" path="res://testgun.tscn" id="2_m6qsv"]
+[ext_resource type="Script" path="res://items/pickup/pickup.gd" id="1_1tu4r"]
+[ext_resource type="PackedScene" uid="uid://cn6cqf74752r3" path="res://items/gun/testgun.tscn" id="2_qt0oc"]
 [ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="3_fhuol"]
 [ext_resource type="PackedScene" uid="uid://cgxx5yscvqmpj" path="res://assets/rail_gun.glb" id="3_iweol"]
-[ext_resource type="Script" path="res://ItemCamera.gd" id="4_6gygg"]
+[ext_resource type="Script" path="res://items/item_camera.gd" id="4_5gkws"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r5keq"]
 
@@ -24,13 +24,13 @@ size = Vector2(2, 2)
 
 [node name="Pickup" type="Area3D"]
 script = ExtResource("1_1tu4r")
-Item = ExtResource("2_m6qsv")
+Item = ExtResource("2_qt0oc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_r5keq")
 
 [node name="ItemBillboard" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.233589, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0405533, 0)
 material_override = SubResource("ShaderMaterial_rkmaj")
 mesh = SubResource("QuadMesh_e6hfi")
 
@@ -44,10 +44,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 cull_mask = 262144
 environment = SubResource("Environment_jngn5")
 projection = 1
-script = ExtResource("4_6gygg")
+script = ExtResource("4_5gkws")
 
 [node name="Sketchfab_Scene" parent="ItemViewport/ItemCamera" instance=ExtResource("3_iweol")]
-transform = Transform3D(-7.44928, 0, -0.870701, 0, 7.5, 0, 0.870701, 0, -7.44928, 0.0325611, -0.0573122, -1.53937)
+transform = Transform3D(7.38606, 0, 1.30236, 0, 7.5, 0, -1.30236, 0, 7.38606, 0.0325611, -0.0573122, -1.53937)
 
 [node name="Sketchfab_model" parent="ItemViewport/ItemCamera/Sketchfab_Scene" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.0383846)
