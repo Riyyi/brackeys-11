@@ -8,6 +8,7 @@
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
 vertices = PackedVector3Array(-6.29949, -0.0394022, -7.03273, -6.29949, -0.0394022, 5.71727, 3.70051, -0.0394022, 5.71727, 3.70051, -0.0394022, -7.03273, -1.79949, -0.0394022, 9.21727, -1.79949, -0.0394022, 10.9673, 1.70051, -0.0394022, 10.9673, 1.70051, -0.0394022, 9.21727)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5)]
+agent_height = 2.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_om82h"]
 size = Vector3(10.8618, 0.308105, 13.5032)
@@ -24,7 +25,7 @@ size = Vector3(4.35809, 0.100586, 2.71631)
 [node name="Player" parent="." instance=ExtResource("1_6utk5")]
 
 [node name="BasicEnemy" parent="." instance=ExtResource("3_1vwaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64578, -0.0367146, -2.24505)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51641, 1.29753, -5.57248)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.668625, 0.7436, 0, -0.7436, -0.668625, -2.10196, 2.47844, -0.810181)

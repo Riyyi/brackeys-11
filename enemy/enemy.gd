@@ -1,5 +1,8 @@
 class_name Enemy extends CharacterBody3D
 
+@export var acceleration = 7
+@export var speed = 0.5
+
 # Amount of frames in this tilesheet
 @export var animation_index: int = 0
 @export var h_frames: int = 1
@@ -7,6 +10,7 @@ class_name Enemy extends CharacterBody3D
 
 @onready var animation: AnimationPlayer = %Animation # acces in the child via unique name
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
+@onready var nav_agent: NavigationAgent3D = $NavAgent
 
 var material: StandardMaterial3D
 var state: State # current state
@@ -25,9 +29,14 @@ func change_state(new_state_name: int) -> void:
 	state.setup(animation, self)
 	add_child(state)
 
+# -----------------------------------------
+
 func _ready() -> void:
 	var mesh = mesh_instance_3d.mesh as QuadMesh
 	material = mesh.material as StandardMaterial3D
+	
+	state_factory = StateFactory.new([EnemyIdleState, EnemyWalkState])
+	change_state(1)
 
 func _process(_delta) -> void:
 	# Apply animation

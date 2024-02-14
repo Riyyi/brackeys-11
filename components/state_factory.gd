@@ -7,8 +7,8 @@ func get_state(state: int) -> GDScript:
 	return states[state]
 
 # Constructor
-func _init(states: Array[GDScript]) -> void:
-	self.states = states
+func _init(states_: Array[GDScript]) -> void:
+	self.states = states_
 
 # Init
 func _ready() -> void:
