@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody3D
 
 const SPEED = 5.0
+var boost = 1.0
 const JUMP_VELOCITY = 4.5
 
 @onready var camera_controller = $CameraController
@@ -18,6 +19,13 @@ var gun_instance: Node # Scene instantiated
 
 var direction: Vector3
 
+var door_bash_timer = 0.0
+var forced_movement = false
+var bash_door_action = false
+var target_door: Node3D
+var movement_target: Vector3
+var rotation_target: float
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -32,23 +40,47 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if forced_movement == false:
+		if Input.is_action_just_pressed("Jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			
+		# Get the input direction and handle the movement/deceleration.
+		var input_dir = Input.get_vector("WalkLeft", "WalkRight", "WalkUp", "WalkDown")
+		var h_rotation = camera_controller.transform.basis.get_euler().y
+		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		direction = direction.rotated(Vector3.UP, h_rotation).normalized()
+
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+
+		move_and_slide()
+	else:	
+		global_position = global_position.move_toward(movement_target, SPEED * boost * delta)
+		global_rotation.y = move_toward(global_rotation.y, rotation_target, SPEED * boost * delta)
+		camera_controller.rotation = camera_controller.rotation.move_toward(Vector3(0.0, 0.0, 0.0), SPEED * boost * delta)
 		
-	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("WalkLeft", "WalkRight", "WalkUp", "WalkDown")
-	var h_rotation = camera_controller.transform.basis.get_euler().y
-	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	direction = direction.rotated(Vector3.UP, h_rotation).normalized()
-
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
+		if global_position.is_equal_approx(movement_target):
+			if door_bash_timer > 0.5:
+				boost = 2.0
+				if bash_door_action == true:
+					forced_movement = false
+					camera_controller.forced_rotation = false
+					boost = 1.0
+					door_bash_timer = 0
+				movement_target = position + Vector3(0.0, 0.0, -10.0)
+				bash_door_action = true
+			else:
+				door_bash_timer += delta
+		
+			#position = position.move_toward(Vector3(0.0, 0.0, -5.0), SPEED * 2 * delta)
+		# check if target reached
+		# Run
+		# Trigger door
+		
 
 func took_damage(hitbox: HitboxComponent) -> void:
 	print("HIT: player " + str(hitbox.damage) + " damage")
@@ -78,3 +110,11 @@ func weapon_pickup(weapon):
 	else:
 		gun2 = weapon
 		switch_gun(1)
+
+func bash_door(start_position, direction, door):
+	forced_movement = true
+	camera_controller.forced_rotation = true
+	movement_target = start_position
+	rotation_target = direction
+	target_door = door
+	print(direction)

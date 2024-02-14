@@ -1,10 +1,12 @@
 class_name CameraController extends Node3D
 
 @export var sensitivity: float = 5.0
+var forced_rotation = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		rotate_camera(event.relative.x, event.relative.y)
+		if forced_rotation == false:
+			rotate_camera(event.relative.x, event.relative.y)
 
 func rotate_camera(relative_x: float = 0.0, relative_y: float = 0.0) -> void:
 		# Relative:

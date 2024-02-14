@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhjvxu1fw7d3a"]
+
+[ext_resource type="Script" path="res://Door.gd" id="1_lrxww"]
+[ext_resource type="Script" path="res://DoorArea.gd" id="2_0vdgw"]
+[ext_resource type="AudioStream" uid="uid://coa38e5ae8gmg" path="res://assets/door_bash.wav" id="3_todba"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uopmc"]
+size = Vector3(2.5, 5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e67k5"]
+size = Vector3(2.5, 5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ywxk1"]
+size = Vector3(2.5, 5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hat3r"]
+size = Vector3(2.5, 5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o7uel"]
+size = Vector3(5, 3, 3)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_lrxww")
+
+[node name="LeftDoor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0)
+mesh = SubResource("BoxMesh_uopmc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0)
+shape = SubResource("BoxShape3D_e67k5")
+
+[node name="RightDoor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 0)
+mesh = SubResource("BoxMesh_ywxk1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 0)
+shape = SubResource("BoxShape3D_hat3r")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_0vdgw")
+
+[node name="StartPosition" type="Node3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_o7uel")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("3_todba")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
