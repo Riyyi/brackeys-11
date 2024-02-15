@@ -8,13 +8,16 @@ func _ready() -> void:
 	animation.play("Walk")
 	
 	enemy = get_parent()
-	enemy.nav_agent.target_reached.connect(nav_agent_target_reached)
 	enemy.nav_agent.velocity_computed.connect(nav_agent_velocity_computed)
+	enemy.nav_agent.target_reached.connect(nav_agent_become_idle)
+	enemy.nav_agent.navigation_finished.connect(nav_agent_become_idle)
 
 func _physics_process(_delta) -> void:
 	await get_tree().process_frame # Wait 1 frame, for NavigationServer map synchronization
 	
-	enemy.nav_agent.target_position = player.global_position
+	# Enemy is close enough to the player
+	if enemy.nav_agent.distance_to_target() < enemy.distance_to_begin_walk:
+		nav_agent_become_idle()
 	
 	var current_position = enemy.global_position
 	var next_position = enemy.nav_agent.get_next_path_position()
@@ -26,5 +29,5 @@ func nav_agent_velocity_computed(velocity) -> void:
 	enemy.velocity = enemy.velocity.move_toward(velocity, 0.25)
 	enemy.move_and_slide()
 	
-func nav_agent_target_reached() -> void:
+func nav_agent_become_idle() -> void:
 	enemy.change_state(0)

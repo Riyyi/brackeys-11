@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://58g0k3skrppq"]
+[gd_scene load_steps=5 format=3 uid="uid://58g0k3skrppq"]
 
 [ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_jstas"]
 [ext_resource type="PackedScene" path="res://projectiles/puke_projectile.tscn" id="2_dm2y1"]
 [ext_resource type="Script" path="res://items/gun/enemy_gun.gd" id="2_yc2wg"]
 [ext_resource type="AudioStream" uid="uid://bqwxgy56gj6r4" path="res://assets/spit_attack.wav" id="4_2hm45"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_45bba"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_f1jon"]
 
 [node name="EnemyGun" instance=ExtResource("1_jstas")]
 script = ExtResource("2_yc2wg")
@@ -16,11 +12,3 @@ firerate = 0.2
 
 [node name="Bangbang" parent="." index="1"]
 stream = ExtResource("4_2hm45")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_45bba")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" index="0"]
-transform = Transform3D(0.999999, 0, 0, 0, 2.05158, 0, 0, 0, 0.179632, 0, 0, -0.523972)
-mesh = SubResource("SphereMesh_f1jon")

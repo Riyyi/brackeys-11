@@ -90,5 +90,4 @@ libraries = {
 }
 
 [node name="MeshInstance3D" parent="." index="5"]
-visible = false
 mesh = SubResource("QuadMesh_22mm6")

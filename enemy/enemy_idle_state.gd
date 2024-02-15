@@ -17,5 +17,7 @@ func _physics_process(_delta) -> void:
 	var origin1 = player.global_position
 	var origin2 = enemy.global_position
 	var distance = origin1.distance_to(origin2)
-	if distance > 2:
-		enemy.change_state(2) # enemy.change_state(1)
+	if distance > enemy.distance_to_begin_walk and not enemy.nav_agent.is_navigation_finished():
+		enemy.change_state(1) # Walk towards player
+	else:
+		enemy.change_state(2) # Attack

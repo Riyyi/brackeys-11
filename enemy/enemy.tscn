@@ -21,11 +21,8 @@ stats_component = NodePath("../StatsComponent")
 
 [node name="GunPointer" type="Node3D" parent="."]
 
-[node name="SpringArm3D" type="SpringArm3D" parent="GunPointer"]
-margin = 0.25
-
-[node name="EnemyGun" parent="GunPointer/SpringArm3D" instance=ExtResource("4_bv774")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 1)
+[node name="EnemyGun" parent="GunPointer" instance=ExtResource("4_bv774")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.6)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_wbv8k")
@@ -33,5 +30,4 @@ shape = SubResource("CapsuleShape3D_wbv8k")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
 [node name="NavAgent" type="NavigationAgent3D" parent="."]
-target_desired_distance = 1.5
 avoidance_enabled = true

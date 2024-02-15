@@ -1,6 +1,7 @@
 class_name Enemy extends CharacterBody3D
 
-@export var speed = 0.75
+@export var speed: float = 0.75
+@export var distance_to_begin_walk: float = 8.0
 
 # Amount of frames in this tilesheet
 @export var animation_index: int = 0
@@ -13,6 +14,7 @@ class_name Enemy extends CharacterBody3D
 @onready var nav_agent: NavigationAgent3D = $NavAgent
 @onready var spring_arm_3d: SpringArm3D = $SpringArm3D
 @onready var stats_component: StatsComponent = $StatsComponent
+@onready var player: Player = get_node("/root/World/Player")
 
 var material: StandardMaterial3D
 var state: State # current state
@@ -48,6 +50,8 @@ func _process(_delta) -> void:
 	var x_index = animation_index % h_frames
 	var y_index: int = floor(animation_index / h_frames)
 	material.uv1_offset = Vector3(1.0 / h_frames * x_index, 1.0 / v_frames * y_index, 1.0)
+	
+	nav_agent.target_position = player.global_position
 
 func _physics_process(delta):
 	# Add the gravity.
