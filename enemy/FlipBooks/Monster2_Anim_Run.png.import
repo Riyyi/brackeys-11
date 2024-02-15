@@ -3,25 +3,26 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnecamk6ek1pv"
-path="res://.godot/imported/Monster2_Anim_Run.png-851b3db3275e8b6f6c6e8f855d3dd345.ctex"
+path.s3tc="res://.godot/imported/Monster2_Anim_Run.png-851b3db3275e8b6f6c6e8f855d3dd345.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://enemy/FlipBooks/Monster2_Anim_Run.png"
-dest_files=["res://.godot/imported/Monster2_Anim_Run.png-851b3db3275e8b6f6c6e8f855d3dd345.ctex"]
+dest_files=["res://.godot/imported/Monster2_Anim_Run.png-851b3db3275e8b6f6c6e8f855d3dd345.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
