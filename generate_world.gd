@@ -39,21 +39,21 @@ func _ready():
 	var rooms = dir.get_files()
 	for room in rooms:
 		if "StartingRoom" in room:
-			starting_room = load("res://Rooms/" + room)
+			starting_room = load(("res://Rooms/" + room).trim_suffix(".remap"))
 		elif "TeleportRoom" in room:
-			teleport_room = load("res://Rooms/" + room)
+			teleport_room = load(("res://Rooms/" + room).trim_suffix(".remap"))
 		elif "LootRoom" in room:
-			loot_room = load("res://Rooms/" + room)
+			loot_room = load(("res://Rooms/" + room).trim_suffix(".remap"))
 		elif "BigEnemyRoom" in room:
-			big_enemy_room = load("res://Rooms/" + room)
+			big_enemy_room = load(("res://Rooms/" + room).trim_suffix(".remap"))
 		elif "StartingHallway" in room:
-			starting_hallway = load("res://Rooms/" + room)
+			starting_hallway = load(("res://Rooms/" + room).trim_suffix(".remap"))
 		elif "FinalHallway" in room:
-			final_hallway = load("res://Rooms/" + room)
+			final_hallway = load(("res://Rooms/" + room).trim_suffix(".remap"))
 		elif "Hallway" in room:
-			hallway = load("res://Rooms/" + room)
+			hallway = load(("res://Rooms/" + room).trim_suffix(".remap"))
 		else:
-			room_scenes.append(load("res://Rooms/" + room))
+			room_scenes.append(load(("res://Rooms/" + room).trim_suffix(".remap")))
 			
 	starting_room_instance = starting_room.instantiate()
 	add_child(starting_room_instance)
