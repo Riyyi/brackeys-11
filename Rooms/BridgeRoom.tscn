@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3usx0exg7v2y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5t4bs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vqsou"]
+material = SubResource("StandardMaterial3D_5t4bs")
+size = Vector3(90, 1, 90)
+
+[sub_resource type="PrismMesh" id="PrismMesh_jak7i"]
+size = Vector3(10, 10, 10)
+
+[node name="Room2" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_vqsou")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.2296, 0)
+mesh = SubResource("PrismMesh_jak7i")

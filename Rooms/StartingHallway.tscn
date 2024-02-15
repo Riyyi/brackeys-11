@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://duc2dbga40l37"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsper"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8716b"]
+material = SubResource("StandardMaterial3D_bsper")
+size = Vector3(290, 1, 20)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5t35m"]
+top_radius = 2.0
+bottom_radius = 2.0
+height = 5.0
+
+[node name="StartingHallway" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_8716b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0100529, -0.999949, 0, 0.999949, 0.0100529, 0, 0, 0, 1, 0, 5.4519, 1.83863)
+mesh = SubResource("CylinderMesh_5t35m")

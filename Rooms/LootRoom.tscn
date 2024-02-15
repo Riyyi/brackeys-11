@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2qgktmyckssd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvobx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rlj0f"]
+material = SubResource("StandardMaterial3D_tvobx")
+size = Vector3(90, 1, 90)
+
+[sub_resource type="PrismMesh" id="PrismMesh_3xlgw"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ml5rl"]
+top_radius = 2.0
+bottom_radius = 2.0
+height = 5.0
+
+[node name="LootRoom" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_rlj0f")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.72696, 5.84726, 0)
+mesh = SubResource("PrismMesh_3xlgw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.60809, 6.34794, 0)
+mesh = SubResource("CylinderMesh_ml5rl")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7ccv7qdwt76n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75063"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x21d7"]
+material = SubResource("StandardMaterial3D_75063")
+size = Vector3(90, 1, 90)
+
+[sub_resource type="SphereMesh" id="SphereMesh_768ri"]
+radius = 2.0
+height = 4.0
+
+[node name="BigEnemyRoom" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_x21d7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.33389, 0)
+mesh = SubResource("SphereMesh_768ri")
