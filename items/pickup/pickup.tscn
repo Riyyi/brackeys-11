@@ -30,7 +30,7 @@ item = ExtResource("2_t0ag4")
 shape = SubResource("SphereShape3D_r5keq")
 
 [node name="ItemBillboard" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0224876, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.240077, 0)
 material_override = SubResource("ShaderMaterial_rkmaj")
 mesh = SubResource("QuadMesh_e6hfi")
 
@@ -48,7 +48,7 @@ projection = 1
 script = ExtResource("4_5gkws")
 
 [node name="Sketchfab_Scene" parent="ItemViewport/ItemCamera" instance=ExtResource("3_iweol")]
-transform = Transform3D(0.436092, 0, -7.48731, 0, 7.5, 0, 7.48731, 0, 0.436092, 0.0325611, -0.0573122, -1.53937)
+transform = Transform3D(-2.76905, 0, -6.9701, 0, 7.5, 0, 6.9701, 0, -2.76905, 0.0325611, -0.0573122, -1.53937)
 
 [node name="Sketchfab_model" parent="ItemViewport/ItemCamera/Sketchfab_Scene" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.0383846)

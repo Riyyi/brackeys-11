@@ -8,9 +8,11 @@ class_name Enemy extends CharacterBody3D
 @export var v_frames: int = 1
 
 @onready var animation: AnimationPlayer = %Animation # acces in the child via unique name
+@onready var enemy_gun: EnemyGun = $EnemyGun
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var nav_agent: NavigationAgent3D = $NavAgent
-@onready var stats_component = $StatsComponent
+@onready var spring_arm_3d: SpringArm3D = $SpringArm3D
+@onready var stats_component: StatsComponent = $StatsComponent
 
 var material: StandardMaterial3D
 var state: State # current state
@@ -38,7 +40,7 @@ func _ready() -> void:
 	var mesh = mesh_instance_3d.mesh as QuadMesh
 	material = mesh.material as StandardMaterial3D
 	
-	state_factory = StateFactory.new([EnemyIdleState, EnemyWalkState])
+	state_factory = StateFactory.new([EnemyIdleState, EnemyWalkState, EnemyAttackState])
 	change_state(1)
 
 func _process(_delta) -> void:

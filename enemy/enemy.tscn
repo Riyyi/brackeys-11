@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://yrupjfwf30aw"]
+[gd_scene load_steps=6 format=3 uid="uid://yrupjfwf30aw"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_lw8il"]
 [ext_resource type="Script" path="res://components/stats_component.gd" id="2_nnv6f"]
 [ext_resource type="Script" path="res://components/destroyed_component.gd" id="3_j275r"]
+[ext_resource type="PackedScene" uid="uid://58g0k3skrppq" path="res://items/gun/enemy_gun.tscn" id="4_bv774"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wbv8k"]
 height = 2.2
 
 [node name="Enemy" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12185, 0)
 script = ExtResource("1_lw8il")
 
 [node name="StatsComponent" type="Node" parent="."]
@@ -18,6 +18,14 @@ script = ExtResource("2_nnv6f")
 script = ExtResource("3_j275r")
 actor = NodePath("..")
 stats_component = NodePath("../StatsComponent")
+
+[node name="GunPointer" type="Node3D" parent="."]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="GunPointer"]
+margin = 0.25
+
+[node name="EnemyGun" parent="GunPointer/SpringArm3D" instance=ExtResource("4_bv774")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_wbv8k")

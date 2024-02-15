@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://t5b15guq8wxq"]
+[gd_scene load_steps=12 format=3 uid="uid://t5b15guq8wxq"]
 
 [ext_resource type="PackedScene" uid="uid://b5s0up8snewpy" path="res://player/player.tscn" id="1_6utk5"]
 [ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
 [ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="3_1vwaw"]
 [ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="4_gfcf4"]
-[ext_resource type="PackedScene" uid="uid://cn6cqf74752r3" path="res://items/gun/test_gun.tscn" id="5_dalkh"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
-vertices = PackedVector3Array(-6.29949, -0.0394022, -7.03273, -6.29949, -0.0394022, 5.71727, 3.70051, -0.0394022, 5.71727, 3.70051, -0.0394022, -7.03273, -1.79949, -0.0394022, 9.21727, -1.79949, -0.0394022, 10.9673, 1.70051, -0.0394022, 10.9673, 1.70051, -0.0394022, 9.21727)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5)]
+vertices = PackedVector3Array(-6.29949, -0.0394025, 5.7173, -0.79949, -0.0394025, 5.7173, -0.54949, -0.0394025, 4.2173, -0.54949, -0.0394025, 4.2173, 3.70051, -0.0394025, 4.4673, 3.70051, -0.0394025, -7.0327, -6.29949, -0.0394025, -7.0327, -6.29949, -0.0394025, 5.7173, -0.54949, -0.0394025, 4.2173, 3.70051, -0.0394025, -7.0327, -1.79949, -0.0394025, 9.2173, -1.79949, -0.0394025, 10.9673, 1.70051, -0.0394025, 10.9673, 1.70051, -0.0394025, 9.2173)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11)]
 agent_height = 2.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_om82h"]
@@ -20,6 +19,11 @@ size = Vector3(10.8618, 0.308105, 13.5032)
 size = Vector3(4.35809, 0.100586, 2.71631)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmnl3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jq6n1"]
+size = Vector3(3.02246, 2.32355, 0.994629)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjmed"]
 
 [node name="World" type="Node3D"]
 
@@ -56,6 +60,16 @@ shape = SubResource("BoxShape3D_4t36h")
 transform = Transform3D(4.37238, 0, 0, 0, 0.102563, 0, 0, 0, 2.72443, -0.0705714, -0.488121, 10.1021)
 mesh = SubResource("BoxMesh_cmnl3")
 
+[node name="Wall" type="StaticBody3D" parent="NavRegion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.38223)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45503, 0.661774, 0.00268555)
+shape = SubResource("BoxShape3D_jq6n1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion/Wall"]
+transform = Transform3D(3.02894, 0, 0, 0, 2.11618, 0, 0, 0, 1, 1.45802, 0.764037, 0)
+mesh = SubResource("BoxMesh_bjmed")
+
 [node name="Pickup" parent="." instance=ExtResource("4_gfcf4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57774, 1.43152, -5.11417)
-item = ExtResource("5_dalkh")

@@ -14,8 +14,8 @@ func _physics_process(_delta) -> void:
 	enemy.velocity.z = move_toward(enemy.velocity.z, 0.0, 1.0)
 
 	# If player is far away enough, start walking
-	var origin1 = player.global_transform.origin
-	var origin2 = enemy.global_transform.origin
+	var origin1 = player.global_position
+	var origin2 = enemy.global_position
 	var distance = origin1.distance_to(origin2)
-	if distance > 4:
-		enemy.change_state(1)
+	if distance > 2:
+		enemy.change_state(2) # enemy.change_state(1)
