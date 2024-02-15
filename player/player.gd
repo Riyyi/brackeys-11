@@ -1,24 +1,23 @@
 class_name Player extends CharacterBody3D
 
+signal ammo_changed(gun: int, ammo: int)
+
 const SPEED = 5.0
-var boost = 1.0
 const JUMP_VELOCITY = 4.5
 
-@onready var camera_controller = $CameraController
-@onready var stats_component = $StatsComponent
-@onready var gun_node = $GunViewport/GunCam/GunNode # Node holder for the current gun
+@onready var camera_controller: CameraController = $CameraController
+@onready var stats_component: StatsComponent = $StatsComponent
+@onready var gun_node: Node3D = $GunViewport/GunCam/GunNode # Node holder for the current gun
 
-var health = 100
-var shotgun_ammo = 0
-var machinegun_ammo = 0
+# Gun stuff
+var machinegun_ammo: int = 50
+var shotgun_ammo: int = 2
+var gun1: PackedScene # machinegun
+var gun2: PackedScene # shotgun
+var current_gun: int = 0
+var gun_instance: Gun # Scene instantiated
 
-var gun1: PackedScene
-var gun2: PackedScene
-var current_gun = 0
-var gun_instance: Node # Scene instantiated
-
-var direction: Vector3
-
+# Door stuff
 var door_bash_timer = 0.0
 var forced_movement = false
 var bash_door_action = false
@@ -26,6 +25,9 @@ var target_door: Node3D
 var movement_target: Vector3
 var rotation_target: float
 
+# Movement
+var boost: float = 1.0
+var direction: Vector3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -81,16 +83,31 @@ func took_damage(hitbox: HitboxComponent) -> void:
 	print("HIT: player " + str(hitbox.damage) + " damage")
 	stats_component.health -= hitbox.damage
 
+func did_shoot(gun: String):
+	if "MachineGun" in gun:
+		machinegun_ammo -= 1
+		ammo_changed.emit(0, machinegun_ammo)
+		if machinegun_ammo == 0:
+			gun_instance.has_ammo = false
+	if "ShotGun" in gun:
+		shotgun_ammo -= 1
+		ammo_changed.emit(0, shotgun_ammo)
+		if shotgun_ammo == 0:
+			gun_instance.has_ammo = false
+
 func switch_gun(gunid):
 	# Cleanup old gun
 	if(gun_node.get_child_count() != 0):
 		gun_node.remove_child(gun_instance)
-		
+	
 	# Set new gun
 	if gunid == 0:
-		gun_instance = gun1.instantiate()
+		gun_instance = gun1.instantiate() # machinegun
+		gun_instance.has_ammo = machinegun_ammo > 0
 	else:
-		gun_instance = gun2.instantiate()
+		gun_instance = gun2.instantiate() # shotgun
+		gun_instance.has_ammo = shotgun_ammo > 0
+	gun_instance.did_shoot.connect(did_shoot)
 	gun_node.add_child(gun_instance)
 	
 func weapon_pickup(weapon):

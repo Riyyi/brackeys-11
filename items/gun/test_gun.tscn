@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://nj6cf1a0y54n" path="res://assets/guncam_rail_gun.tscn" id="3_okkpt"]
 [ext_resource type="AudioStream" uid="uid://dll4af4uklhi0" path="res://assets/Machinegun.wav" id="4_xww7a"]
 
-[node name="Gun" instance=ExtResource("1_3vuo7")]
+[node name="MachineGun" instance=ExtResource("1_3vuo7")]
 bullet = ExtResource("2_lwbnr")
 firerate = 25.0
 

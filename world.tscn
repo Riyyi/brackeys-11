@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://t5b15guq8wxq"]
+[gd_scene load_steps=14 format=3 uid="uid://t5b15guq8wxq"]
 
 [ext_resource type="PackedScene" uid="uid://b5s0up8snewpy" path="res://player/player.tscn" id="1_6utk5"]
 [ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
 [ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="3_1vwaw"]
 [ext_resource type="PackedScene" uid="uid://bnvlwvd103xcx" path="res://enemy/melee_enemy/melee_enemy.tscn" id="3_wq2x5"]
 [ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="4_gfcf4"]
+[ext_resource type="PackedScene" uid="uid://ci345aqxtwmce" path="res://ui/hud.tscn" id="6_h0a50"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
 vertices = PackedVector3Array(2.70051, -0.0394025, 4.2173, 2.95051, -0.0394025, 5.7173, 3.70051, -0.0394025, 5.7173, 3.70051, -0.0394025, -7.0327, -6.29949, -0.0394025, 5.7173, -1.29949, -0.0394025, 5.7173, -1.04949, -0.0394025, 4.2173, -6.29949, -0.0394025, -7.0327, -6.29949, -0.0394025, 5.7173, -1.04949, -0.0394025, 4.2173, 3.70051, -0.0394025, -7.0327, -1.04949, -0.0394025, 4.2173, 2.70051, -0.0394025, 4.2173, 3.70051, -0.0394025, -7.0327, -1.79949, -0.0394025, 9.2173, -1.79949, -0.0394025, 10.9673, 1.70051, -0.0394025, 10.9673, 1.70051, -0.0394025, 9.2173)
@@ -27,6 +28,7 @@ size = Vector3(3.02246, 3.14615, 0.994629)
 [sub_resource type="BoxMesh" id="BoxMesh_bjmed"]
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_p3xts")
 
 [node name="Player" parent="." instance=ExtResource("1_6utk5")]
 
@@ -41,7 +43,6 @@ transform = Transform3D(1, 0, 0, 0, -0.668625, 0.7436, 0, -0.7436, -0.668625, -2
 
 [node name="NavRegion" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_yitvy")
-script = ExtResource("1_p3xts")
 
 [node name="Floor" type="StaticBody3D" parent="NavRegion"]
 
@@ -77,3 +78,5 @@ mesh = SubResource("BoxMesh_bjmed")
 
 [node name="Pickup" parent="." instance=ExtResource("4_gfcf4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57774, 1.43152, -5.11417)
+
+[node name="HUD" parent="." instance=ExtResource("6_h0a50")]
