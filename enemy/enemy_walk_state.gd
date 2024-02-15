@@ -16,8 +16,9 @@ func _physics_process(_delta) -> void:
 	await get_tree().process_frame # Wait 1 frame, for NavigationServer map synchronization
 	
 	# Enemy is close enough to the player
-	if enemy.nav_agent.distance_to_target() < enemy.distance_to_begin_walk:
+	if enemy.nav_agent.distance_to_target() < enemy.distance_to_begin_walk and enemy.has_line_of_sight:
 		nav_agent_become_idle()
+		return
 	
 	var current_position = enemy.global_position
 	var next_position = enemy.nav_agent.get_next_path_position()
