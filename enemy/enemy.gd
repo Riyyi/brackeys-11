@@ -9,12 +9,11 @@ class_name Enemy extends CharacterBody3D
 @export var v_frames: int = 1
 
 @onready var animation: AnimationPlayer = %Animation # acces in the child via unique name
-@onready var enemy_gun: EnemyGun = $EnemyGun
+@onready var enemy_gun: EnemyGun = $GunPointer/EnemyGun
 @onready var eye_left: RayCast3D = $EyeLeft
 @onready var eye_right: RayCast3D = $EyeRight
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var nav_agent: NavigationAgent3D = $NavAgent
-@onready var spring_arm_3d: SpringArm3D = $SpringArm3D
 @onready var stats_component: StatsComponent = $StatsComponent
 @onready var player: Player = get_node("/root/World/Player")
 

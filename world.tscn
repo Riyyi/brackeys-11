@@ -1,82 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://t5b15guq8wxq"]
+[gd_scene load_steps=4 format=3 uid="uid://t5b15guq8wxq"]
 
-[ext_resource type="PackedScene" uid="uid://b5s0up8snewpy" path="res://player/player.tscn" id="1_6utk5"]
 [ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
-[ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="3_1vwaw"]
-[ext_resource type="PackedScene" uid="uid://bnvlwvd103xcx" path="res://enemy/melee_enemy/melee_enemy.tscn" id="3_wq2x5"]
-[ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="4_gfcf4"]
 [ext_resource type="PackedScene" uid="uid://ci345aqxtwmce" path="res://ui/hud.tscn" id="6_h0a50"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
-vertices = PackedVector3Array(2.70051, -0.0394025, 4.2173, 2.95051, -0.0394025, 5.7173, 3.70051, -0.0394025, 5.7173, 3.70051, -0.0394025, -7.0327, -6.29949, -0.0394025, 5.7173, -1.29949, -0.0394025, 5.7173, -1.04949, -0.0394025, 4.2173, -6.29949, -0.0394025, -7.0327, -6.29949, -0.0394025, 5.7173, -1.04949, -0.0394025, 4.2173, 3.70051, -0.0394025, -7.0327, -1.04949, -0.0394025, 4.2173, 2.70051, -0.0394025, 4.2173, 3.70051, -0.0394025, -7.0327, -1.79949, -0.0394025, 9.2173, -1.79949, -0.0394025, 10.9673, 1.70051, -0.0394025, 10.9673, 1.70051, -0.0394025, 9.2173)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(13, 12, 11), PackedInt32Array(17, 16, 14), PackedInt32Array(14, 16, 15)]
 agent_height = 2.5
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_om82h"]
-size = Vector3(10.8618, 0.308105, 13.5032)
-
-[sub_resource type="BoxMesh" id="BoxMesh_eu1k0"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4t36h"]
-size = Vector3(4.35809, 0.100586, 2.71631)
-
-[sub_resource type="BoxMesh" id="BoxMesh_cmnl3"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jq6n1"]
-size = Vector3(3.02246, 3.14615, 0.994629)
-
-[sub_resource type="BoxMesh" id="BoxMesh_bjmed"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_p3xts")
 
-[node name="Player" parent="." instance=ExtResource("1_6utk5")]
-
-[node name="BasicEnemy" parent="." instance=ExtResource("3_1vwaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51641, 1.29753, -5.57248)
-
-[node name="MeleeEnemy" parent="." instance=ExtResource("3_wq2x5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00542, 1.21067, -6.20059)
+[node name="HUD" parent="." instance=ExtResource("6_h0a50")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.668625, 0.7436, 0, -0.7436, -0.668625, -2.10196, 2.47844, -0.810181)
 
 [node name="NavRegion" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_yitvy")
-
-[node name="Floor" type="StaticBody3D" parent="NavRegion"]
-
-[node name="Collision" type="CollisionShape3D" parent="NavRegion/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34313, -0.345947, -0.742715)
-shape = SubResource("BoxShape3D_om82h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion/Floor"]
-transform = Transform3D(-10.9445, 0, 0, 0, 0.0991629, 0, 0, 0, 13.5073, -1.32724, -0.345947, -0.779053)
-mesh = SubResource("BoxMesh_eu1k0")
-skeleton = NodePath("../Collision")
-
-[node name="Floor2" type="StaticBody3D" parent="NavRegion"]
-
-[node name="Collision" type="CollisionShape3D" parent="NavRegion/Floor2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14743, -0.476074, 10.0768)
-shape = SubResource("BoxShape3D_4t36h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion/Floor2"]
-transform = Transform3D(4.37238, 0, 0, 0, 0.102563, 0, 0, 0, 2.72443, -0.0705714, -0.488121, 10.1021)
-mesh = SubResource("BoxMesh_cmnl3")
-
-[node name="Wall" type="StaticBody3D" parent="NavRegion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.703901, 0, 5.38223)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavRegion/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45503, 1.07307, 0.00268555)
-shape = SubResource("BoxShape3D_jq6n1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavRegion/Wall"]
-transform = Transform3D(3.02894, 0, 0, 0, 2.97041, 0, 0, 0, 1, 1.45802, 1.15461, 0)
-mesh = SubResource("BoxMesh_bjmed")
-
-[node name="Pickup" parent="." instance=ExtResource("4_gfcf4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57774, 1.43152, -5.11417)
-
-[node name="HUD" parent="." instance=ExtResource("6_h0a50")]

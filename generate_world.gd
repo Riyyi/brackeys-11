@@ -29,8 +29,11 @@ var big_enemy_room_instance: Node3D
 var room_instances: Array[Node3D]
 var hallway_instances: Array[Node3D]
 
+func _init(columns_: int, rows_: int):
+	name = "Generate"
+	collumns = columns_
+	rows = rows_
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var dir = DirAccess.open("res://Rooms")
 	var rooms = dir.get_files()

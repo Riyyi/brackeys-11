@@ -31,6 +31,9 @@ var direction: Vector3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _ready():
+	tree_exiting.connect(signal_tree_exiting)
+
 func _process(delta):
 	var guncam = $GunViewport/GunCam
 	var worldcam = $CameraController/WorldCam
@@ -79,6 +82,10 @@ func _physics_process(delta):
 			else:
 				door_bash_timer += delta
 
+# When player is destructed, store its values in the Game singleton
+func signal_tree_exiting() -> void:
+	ResourceStash.game.store_player(stats_component.health, machinegun_ammo, shotgun_ammo, gun1, gun2)
+
 func took_damage(hitbox: HitboxComponent) -> void:
 	print("HIT: player " + str(hitbox.damage) + " damage")
 	stats_component.health -= hitbox.damage
@@ -110,7 +117,7 @@ func switch_gun(gunid):
 	gun_instance.did_shoot.connect(did_shoot)
 	gun_node.add_child(gun_instance)
 	
-func weapon_pickup(weapon):
+func weapon_pickup(weapon: PackedScene):
 	if gun1 == null:
 		gun1 = weapon
 		switch_gun(0)

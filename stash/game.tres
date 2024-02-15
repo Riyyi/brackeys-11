@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Game" load_steps=2 format=3 uid="uid://be2bwmk4hbsiy"]
+
+[ext_resource type="Script" path="res://stash/game.gd" id="1_nvk6a"]
+
+[resource]
+script = ExtResource("1_nvk6a")
+player_health = 10
+machinegun_ammo = 0
+shotgun_ammo = 0
+score = 0
+highscore = 5
