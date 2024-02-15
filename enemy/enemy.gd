@@ -10,7 +10,8 @@ class_name Enemy extends CharacterBody3D
 
 @onready var animation: AnimationPlayer = %Animation # acces in the child via unique name
 @onready var enemy_gun: EnemyGun = $EnemyGun
-@onready var eyes: RayCast3D = $Eyes
+@onready var eye_left: RayCast3D = $EyeLeft
+@onready var eye_right: RayCast3D = $EyeRight
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var nav_agent: NavigationAgent3D = $NavAgent
 @onready var spring_arm_3d: SpringArm3D = $SpringArm3D
@@ -69,7 +70,10 @@ func _physics_process(delta):
 # -----------------------------------------
 
 func __has_line_of_sight() -> bool:
-	var player_waist = player.global_position# + Vector3(0, offset, 0)
-	var ray_direction = (player_waist - eyes.global_position).normalized() * sight_length
-	eyes.target_position = ray_direction
-	return eyes.is_colliding() and "Player" in eyes.get_collider().name
+	var player_waist = player.global_position + Vector3(0, offset, 0)
+	var ray_direction_left = (player_waist - eye_left.global_position ).normalized() * sight_length
+	var ray_direction_right = (player_waist - eye_right.global_position ).normalized() * sight_length
+	eye_left.target_position = ray_direction_left
+	eye_right.target_position = ray_direction_right
+	return eye_left.is_colliding() and "Player" in eye_left.get_collider().name and \
+		   eye_right.is_colliding() and "Player" in eye_right.get_collider().name
