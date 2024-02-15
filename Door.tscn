@@ -47,7 +47,7 @@ shape = SubResource("BoxShape3D_hat3r")
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("2_0vdgw")
 
-[node name="StartPosition" type="Node3D" parent="Area3D"]
+[node name="StartPositionFront" type="Node3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
@@ -55,5 +55,8 @@ shape = SubResource("BoxShape3D_o7uel")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D"]
 stream = ExtResource("3_todba")
+
+[node name="StartPositionBack" type="Node3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -4)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

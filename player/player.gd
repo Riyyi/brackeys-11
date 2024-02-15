@@ -58,29 +58,24 @@ func _physics_process(delta):
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 
 		move_and_slide()
-	else:	
+	else:
 		global_position = global_position.move_toward(movement_target, SPEED * boost * delta)
-		global_rotation.y = move_toward(global_rotation.y, rotation_target, SPEED * boost * delta)
-		camera_controller.rotation = camera_controller.rotation.move_toward(Vector3(0.0, 0.0, 0.0), SPEED * boost * delta)
-		
+		camera_controller.global_rotation.y = lerp_angle(camera_controller.global_rotation.y, rotation_target, SPEED * boost * delta)
+		camera_controller.global_rotation.x = lerp_angle(camera_controller.global_rotation.x, 0.0, SPEED * boost * delta)
 		if global_position.is_equal_approx(movement_target):
 			if door_bash_timer > 0.5:
 				boost = 2.0
 				if bash_door_action == true:
 					forced_movement = false
 					camera_controller.forced_rotation = false
+					bash_door_action = false
 					boost = 1.0
 					door_bash_timer = 0
-				movement_target = position + Vector3(0.0, 0.0, -10.0)
-				bash_door_action = true
+				else:
+					movement_target = position + Vector3(movement_target.direction_to(Vector3(target_door.global_position.x, global_position.y, target_door.global_position.z))) * 7.5
+					bash_door_action = true
 			else:
 				door_bash_timer += delta
-		
-			#position = position.move_toward(Vector3(0.0, 0.0, -5.0), SPEED * 2 * delta)
-		# check if target reached
-		# Run
-		# Trigger door
-		
 
 func took_damage(hitbox: HitboxComponent) -> void:
 	print("HIT: player " + str(hitbox.damage) + " damage")
@@ -117,4 +112,3 @@ func bash_door(start_position, direction, door):
 	movement_target = start_position
 	rotation_target = direction
 	target_door = door
-	print(direction)
