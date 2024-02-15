@@ -29,7 +29,6 @@ var has_line_of_sight: bool = false
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func change_state(new_state: int) -> void:
-	print("STATE:" + str(new_state))
 	if state is State:
 		state.exit()
 		state.queue_free()
@@ -48,8 +47,8 @@ func _ready() -> void:
 	var mesh = mesh_instance_3d.mesh as QuadMesh
 	material = mesh.material as StandardMaterial3D
 	
-	state_factory = StateFactory.new([EnemyIdleState, EnemyWalkState, EnemyAttackState])
-	change_state(1)
+	state_factory = StateFactory.new([EnemyIdleState, EnemyWalkState, EnemyAttackState, EnemyInactiveState])
+	change_state(3)
 
 func _process(_delta) -> void:
 	# Apply animation
