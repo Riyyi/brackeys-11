@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://cn6cqf74752r3"]
 
 [ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_3vuo7"]
+[ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="2_lwbnr"]
 [ext_resource type="PackedScene" uid="uid://nj6cf1a0y54n" path="res://assets/guncam_rail_gun.tscn" id="3_okkpt"]
-[ext_resource type="PackedScene" uid="uid://bawtvga2do1hk" path="res://projectiles/bullet.tscn" id="3_pfmjx"]
 [ext_resource type="AudioStream" uid="uid://dll4af4uklhi0" path="res://assets/Machinegun.wav" id="4_xww7a"]
 
 [node name="Gun" instance=ExtResource("1_3vuo7")]
-bullet = ExtResource("3_pfmjx")
+bullet = ExtResource("2_lwbnr")
 firerate = 25.0
 
 [node name="BulletEmitter" parent="." index="0"]

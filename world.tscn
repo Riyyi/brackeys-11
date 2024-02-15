@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://t5b15guq8wxq"]
+[gd_scene load_steps=13 format=3 uid="uid://t5b15guq8wxq"]
 
 [ext_resource type="PackedScene" uid="uid://b5s0up8snewpy" path="res://player/player.tscn" id="1_6utk5"]
 [ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
 [ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="3_1vwaw"]
+[ext_resource type="PackedScene" uid="uid://bnvlwvd103xcx" path="res://enemy/melee_enemy/melee_enemy.tscn" id="3_wq2x5"]
 [ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="4_gfcf4"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
@@ -31,6 +32,9 @@ size = Vector3(3.02246, 3.14615, 0.994629)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("3_1vwaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51641, 1.29753, -5.57248)
+
+[node name="MeleeEnemy" parent="." instance=ExtResource("3_wq2x5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00542, 1.21067, -6.20059)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.668625, 0.7436, 0, -0.7436, -0.668625, -2.10196, 2.47844, -0.810181)

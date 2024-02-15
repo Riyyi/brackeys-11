@@ -1,6 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://qv2gltmr1lox"]
+[gd_scene load_steps=13 format=3 uid="uid://qv2gltmr1lox"]
 
 [ext_resource type="PackedScene" uid="uid://bawtvga2do1hk" path="res://projectiles/bullet.tscn" id="1_odc5r"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="2_4hp0n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_byu5u"]
+radius = 0.05
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v22bh"]
 direction = Vector3(0, 0, 1)
@@ -52,7 +56,14 @@ billboard_mode = 1
 material = SubResource("StandardMaterial3D_wfec5")
 size = Vector2(0.2, 0.2)
 
-[node name="Bullet" instance=ExtResource("1_odc5r")]
+[node name="PukeProjectile" instance=ExtResource("1_odc5r")]
+
+[node name="HitboxComponent" type="Area3D" parent="." index="0"]
+unique_name_in_owner = true
+script = ExtResource("2_4hp0n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" index="0"]
+shape = SubResource("SphereShape3D_byu5u")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="1"]
 amount = 16
@@ -65,12 +76,12 @@ lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_e1n4r")
 draw_pass_1 = SubResource("QuadMesh_ooqrg")
 
-[node name="GPUParticles3D4" type="GPUParticles3D" parent="." index="3"]
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="." index="3"]
 amount = 16
 lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_dmbsw")
 draw_pass_1 = SubResource("QuadMesh_dyf5s")
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="." index="4"]
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="4"]
 layers = 786433
 light_color = Color(0, 1, 0, 1)

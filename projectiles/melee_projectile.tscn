@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnd8g84vw7kuo"]
+
+[ext_resource type="PackedScene" uid="uid://bawtvga2do1hk" path="res://projectiles/bullet.tscn" id="1_o5vld"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="2_eewpr"]
+[ext_resource type="Script" path="res://projectiles/melee_projectile.gd" id="2_pfsc3"]
+
+[node name="MeleeProjectile" instance=ExtResource("1_o5vld")]
+top_level = false
+script = ExtResource("2_pfsc3")
+
+[node name="HitboxComponent" type="Area3D" parent="." index="0"]
+unique_name_in_owner = true
+script = ExtResource("2_eewpr")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="HitboxComponent" index="0"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+depth = 0.3
+polygon = PackedVector2Array(-0.39685, -0.690833, -0.697648, -0.632234, -0.974908, -0.522453, -1.16593, -0.392193, -1.28558, -0.0124484, -1.21999, 0.338082, -1.01158, 0.53658, -0.778714, 0.655534, -0.459054, 0.694824, -0.445871, 0.485402, -0.556259, 0.431843, -0.684254, 0.337064, -0.769127, 0.157542, -0.775972, -0.00148895, -0.763968, -0.160784, -0.701762, -0.347079, -0.563715, -0.447313, -0.398433, -0.507091)

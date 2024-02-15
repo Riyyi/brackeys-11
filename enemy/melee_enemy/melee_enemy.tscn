@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://wh260336btua"]
+[gd_scene load_steps=9 format=3 uid="uid://bnvlwvd103xcx"]
 
-[ext_resource type="PackedScene" uid="uid://yrupjfwf30aw" path="res://enemy/enemy.tscn" id="1_eoh5f"]
-[ext_resource type="Script" path="res://enemy/basic_enemy/basic_enemy.gd" id="2_awa63"]
-[ext_resource type="Texture2D" uid="uid://fw7ma6alyrt7" path="res://assets/impsprites.png" id="3_n5ngm"]
+[ext_resource type="PackedScene" uid="uid://yrupjfwf30aw" path="res://enemy/enemy.tscn" id="1_dh15q"]
+[ext_resource type="PackedScene" uid="uid://bnd8g84vw7kuo" path="res://projectiles/melee_projectile.tscn" id="2_82tn5"]
+[ext_resource type="Material" uid="uid://qed48jodq5pr" path="res://enemy/enemy_material.tres" id="3_k3ktl"]
 
 [sub_resource type="Animation" id="Animation_w7ohx"]
 resource_name = "Idle"
@@ -62,23 +62,13 @@ _data = {
 "Walk": SubResource("Animation_3bgbe")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcuet"]
-transparency = 4
-shading_mode = 0
-albedo_texture = ExtResource("3_n5ngm")
-uv1_scale = Vector3(0.25, 0.2, 1)
-texture_filter = 0
-billboard_mode = 2
-
-[sub_resource type="QuadMesh" id="QuadMesh_22mm6"]
-material = SubResource("StandardMaterial3D_bcuet")
+[sub_resource type="QuadMesh" id="QuadMesh_iihke"]
+material = ExtResource("3_k3ktl")
 size = Vector2(2.5, 2.5)
 
-[node name="BasicEnemy" instance=ExtResource("1_eoh5f")]
-script = ExtResource("2_awa63")
+[node name="MeleeEnemy" instance=ExtResource("1_dh15q")]
+distance_to_begin_walk = 1.75
 animation_index = 1
-h_frames = 4
-v_frames = 5
 
 [node name="Animation" type="AnimationPlayer" parent="." index="0"]
 unique_name_in_owner = true
@@ -89,5 +79,8 @@ libraries = {
 [node name="StatsComponent" parent="." index="1"]
 health = 25
 
+[node name="EnemyGun" parent="GunPointer" index="0"]
+bullet = ExtResource("2_82tn5")
+
 [node name="MeshInstance3D" parent="." index="7"]
-mesh = SubResource("QuadMesh_22mm6")
+mesh = SubResource("QuadMesh_iihke")

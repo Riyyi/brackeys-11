@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://58g0k3skrppq"]
 
 [ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_jstas"]
-[ext_resource type="PackedScene" path="res://projectiles/puke_projectile.tscn" id="2_dm2y1"]
+[ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="2_dm2y1"]
 [ext_resource type="Script" path="res://items/gun/enemy_gun.gd" id="2_yc2wg"]
 [ext_resource type="AudioStream" uid="uid://bqwxgy56gj6r4" path="res://assets/spit_attack.wav" id="4_2hm45"]
 
