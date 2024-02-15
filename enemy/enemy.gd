@@ -1,7 +1,7 @@
 class_name Enemy extends CharacterBody3D
 
 @export var speed: float = 0.75
-@export var distance_to_begin_walk: float = 3.0
+@export var distance_to_begin_walk: float = 8.0
 
 # Amount of frames in this tilesheet
 @export var animation_index: int = 0
