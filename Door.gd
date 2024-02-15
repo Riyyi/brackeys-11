@@ -23,6 +23,7 @@ func _process(delta):
 		if current_angle > 2.5:
 			current_angle = 2.5
 			opening = false
-			world.bake_navmesh() # enemies can follow you into the hallway
+			if world is World:
+				world.bake_navmesh() # enemies can follow you into the hallway
 		left_door.rotation = Vector3(0.0, (-door_direction) * current_angle, 0.0)
 		right_door.rotation = Vector3(0.0, door_direction * current_angle, 0.0)
