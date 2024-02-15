@@ -3,10 +3,10 @@ class_name WorldGenerator extends Node
 var rng = RandomNumberGenerator.new()
 
 var starting_room_length = 50
-var room_width = 100
-var room_length = 100
-var hallway_width = 300
-var hallway_length = 30
+var room_width = 50
+var room_length = 50
+var hallway_width = 150
+var hallway_length = 20
 var collumns = 3
 var rows = 8
 
