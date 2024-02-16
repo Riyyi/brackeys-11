@@ -63,3 +63,43 @@ size_flags_horizontal = 3
 text = "0"
 label_settings = ExtResource("1_c7kto")
 horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -253.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = 71.0
+alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="HighScoreLabel" type="Label" parent="VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "High Score:"
+label_settings = ExtResource("1_c7kto")
+
+[node name="HighScoreValue" type="Label" parent="VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+label_settings = ExtResource("1_c7kto")
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+text = "Score:"
+label_settings = ExtResource("1_c7kto")
+
+[node name="ScoreValue" type="Label" parent="VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+label_settings = ExtResource("1_c7kto")
+horizontal_alignment = 2

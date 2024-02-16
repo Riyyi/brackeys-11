@@ -28,6 +28,9 @@ func _process(delta):
 		progressparticles1.amount_ratio = (1.0 / time_reached) * timer
 		progressparticles2.amount_ratio = (1.0 / time_reached) * timer
 		if timer > time_reached:
+			ResourceStash.game.score = ResourceStash.game.levelselect
+			if ResourceStash.game.score > ResourceStash.game.highscore:
+				ResourceStash.game.highscore = ResourceStash.game.score
 			ResourceStash.game.levelselect += 1
 			get_tree().change_scene_to_file("res://ui/loading_screen.tscn")
 

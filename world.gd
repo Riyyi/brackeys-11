@@ -36,6 +36,9 @@ func _ready() -> void:
 	player.stats_component.health_changed.connect(ui_update_health)
 	player.ammo_changed.connect(ui_update_ammo)
 	
+	Utils.find_node_by_name(hud, "ScoreValue").text = str(ResourceStash.game.levelselect - 1)
+	Utils.find_node_by_name(hud, "HighScoreValue").text = str(ResourceStash.game.highscore)
+	
 	health_label = Utils.find_node_by_name(hud, "HealthValue") # via unique name
 	machinegun_ammo_label = Utils.find_node_by_name(hud, "MachinegunAmmoValue")
 	shotgun_ammo_label = Utils.find_node_by_name(hud, "ShotgunAmmoValue")
