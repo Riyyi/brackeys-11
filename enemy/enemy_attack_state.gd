@@ -12,7 +12,7 @@ func exit() -> void:
 # -----------------------------------------
 
 func _ready() -> void:
-	animation.play("Idle")
+	animation.play("Attack")
 	
 	enemy = get_parent()
 	gun_pointer = $"../GunPointer"

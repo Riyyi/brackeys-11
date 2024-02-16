@@ -2,8 +2,8 @@ class_name Player extends CharacterBody3D
 
 signal ammo_changed(gun: int, ammo: int)
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 7.0
+const JUMP_VELOCITY = 7.0
 
 @onready var camera_controller: CameraController = $CameraController
 @onready var stats_component: StatsComponent = $StatsComponent
@@ -42,7 +42,7 @@ func _process(delta):
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		velocity.y -= gravity * 2 * delta
 
 	# Handle jump.
 	if forced_movement == false:

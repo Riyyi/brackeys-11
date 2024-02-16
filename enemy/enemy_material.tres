@@ -1,15 +1,15 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://qed48jodq5pr"]
 
-[ext_resource type="Texture2D" uid="uid://cnecamk6ek1pv" path="res://enemy/FlipBooks/Monster2_Anim_Run.png" id="1_jih2f"]
-[ext_resource type="Texture2D" uid="uid://uvmwutwhgtj6" path="res://enemy/FlipBooks/Monster2_Anim_Run_Normal.png" id="2_y73kh"]
+[ext_resource type="Texture2D" uid="uid://cy3pdfxsrktku" path="res://assets/monster_2.png" id="1_rjfkk"]
+[ext_resource type="Texture2D" uid="uid://batcgyyb3yehh" path="res://assets/monster_2_normal.png" id="2_p8t5w"]
 
 [resource]
 transparency = 4
 shading_mode = 0
-albedo_texture = ExtResource("1_jih2f")
+albedo_texture = ExtResource("1_rjfkk")
 detail_enabled = true
-detail_albedo = ExtResource("1_jih2f")
-detail_normal = ExtResource("2_y73kh")
-uv1_scale = Vector3(0.33, 1, 1)
+detail_albedo = ExtResource("1_rjfkk")
+detail_normal = ExtResource("2_p8t5w")
+uv1_scale = Vector3(0.25, 0.33, 1)
 texture_filter = 0
 billboard_mode = 2
