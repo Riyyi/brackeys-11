@@ -27,7 +27,6 @@ func _process(delta):
 		rotor.position.y = timer * (3.0 / time_reached)
 		progressparticles1.amount_ratio = (1.0 / time_reached) * timer
 		progressparticles2.amount_ratio = (1.0 / time_reached) * timer
-		print(timer, progressparticles1.amount_ratio)
 		if timer > time_reached:
 			print("next level")
 
