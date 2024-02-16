@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnvlwvd103xcx"]
+[gd_scene load_steps=13 format=3 uid="uid://bnvlwvd103xcx"]
 
 [ext_resource type="PackedScene" uid="uid://yrupjfwf30aw" path="res://enemy/enemy.tscn" id="1_dh15q"]
 [ext_resource type="PackedScene" uid="uid://bnd8g84vw7kuo" path="res://projectiles/melee_projectile.tscn" id="2_82tn5"]
+[ext_resource type="Script" path="res://enemy/melee_enemy/melee_enemy.gd" id="2_mhdce"]
 [ext_resource type="Material" uid="uid://qed48jodq5pr" path="res://enemy/enemy_material.tres" id="3_k3ktl"]
 [ext_resource type="AudioStream" uid="uid://uflu0114udct" path="res://assets/grawl_attack.wav" id="3_r3ic3"]
 
@@ -90,11 +91,8 @@ material = ExtResource("3_k3ktl")
 size = Vector2(5, 5)
 
 [node name="MeleeEnemy" instance=ExtResource("1_dh15q")]
-speed = 3.0
-distance_to_begin_walk = 4.5
+script = ExtResource("2_mhdce")
 animation_index = 1
-h_frames = 4
-v_frames = 3
 
 [node name="Animation" type="AnimationPlayer" parent="." index="0"]
 unique_name_in_owner = true
