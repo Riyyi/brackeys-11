@@ -23,10 +23,16 @@ func bake_navmesh():
 	#await get_tree().process_frame # wait 1 frame, for NavigationServer map synchronization
 	nav_region.bake_navigation_mesh(false)
 
+func game_over():
+	var game_over_ui: GameOver = load("res://ui/game_over.tscn").instantiate()
+	add_child(game_over_ui)
+	get_tree().paused = true # pause game
+
 # -----------------------------------------
 
 func _ready() -> void:
 	player = ResourceStash.game.spawn_player(self)
+	player.stats_component.no_health.connect(game_over)
 	player.stats_component.health_changed.connect(ui_update_health)
 	player.ammo_changed.connect(ui_update_ammo)
 	

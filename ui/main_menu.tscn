@@ -8,10 +8,14 @@
 [sub_resource type="LabelSettings" id="LabelSettings_arylp"]
 font = ExtResource("3_553ji")
 font_size = 72
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ws17"]
 font = ExtResource("3_553ji")
 font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7mdy"]
 
