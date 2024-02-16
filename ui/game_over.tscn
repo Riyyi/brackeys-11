@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cm0y7i5nj2a6b"]
+
+[ext_resource type="Script" path="res://ui/game_over.gd" id="1_j87fv"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_kvdhr"]
+[ext_resource type="FontFile" uid="uid://m8g50tl1kuml" path="res://assets/kenney_mini_square.ttf" id="3_yq41h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fw58x"]
+shader = ExtResource("2_kvdhr")
+shader_parameter/amount = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3je2a"]
+font = ExtResource("3_yq41h")
+font_size = 72
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ee3ge"]
+font = ExtResource("3_yq41h")
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gffi"]
+
+[node name="GameOver" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j87fv")
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fw58x")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -115.5
+offset_right = 207.0
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Game over!"
+label_settings = SubResource("LabelSettings_3je2a")
+
+[node name="StartLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Press <SPC> to return
+to the main menu"
+label_settings = SubResource("LabelSettings_ee3ge")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3gffi")

@@ -5,9 +5,10 @@ signal ammo_changed(gun: int, ammo: int)
 const SPEED = 7.0
 const JUMP_VELOCITY = 7.0
 
+@onready var animation = $Animation
 @onready var camera_controller: CameraController = $CameraController
-@onready var stats_component: StatsComponent = $StatsComponent
 @onready var gun_node: Node3D = $GunViewport/GunCam/GunNode # Node holder for the current gun
+@onready var stats_component: StatsComponent = $StatsComponent
 
 # Gun stuff
 var machinegun_ammo: int = 50
@@ -31,8 +32,12 @@ var direction: Vector3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func death() -> void:
+	animation.play("Death")
+	
 func _ready():
 	tree_exiting.connect(signal_tree_exiting)
+	stats_component.no_health.connect(death)
 
 func _process(delta):
 	var guncam = $GunViewport/GunCam

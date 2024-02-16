@@ -2,15 +2,18 @@ class_name Game extends Resource
 
 signal score_changed(new_score: int)
 
-@export var player_health: int = 10
-@export var machinegun_ammo: int = 0
-@export var shotgun_ammo: int = 0
+@export var initial_player_health: int = 3
+@export var initial_machinegun_ammo: int = 0
+@export var initial_shotgun_ammo: int = 0
 
 @export var score: int = 0: set = set_score
 @export var highscore: int = 0
 
 var player = preload("res://player/player.tscn")
 var player_instance: Player
+var player_health: int
+var machinegun_ammo: int
+var shotgun_ammo: int
 var gun1: PackedScene
 var gun2: PackedScene
 
@@ -18,9 +21,18 @@ func set_score(value: int):
 	score = value
 	score_changed.emit(score)
 
-func spawn_player(append: Node3D) -> Player:
-	if player_instance is Player:
+func reset() -> void:
+	if player_instance != null:
 		player_instance.queue_free()
+
+	player_health = initial_player_health
+	machinegun_ammo = initial_machinegun_ammo
+	shotgun_ammo = initial_shotgun_ammo
+	gun1 = null
+	gun2 = null
+
+func spawn_player(append: Node3D) -> Player:
+	reset()
 	
 	player_instance = player.instantiate()
 	append.add_child(player_instance)

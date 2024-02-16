@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_nvk6a")
-player_health = 10
-machinegun_ammo = 0
-shotgun_ammo = 0
+initial_player_health = 3
+initial_machinegun_ammo = 0
+initial_shotgun_ammo = 0
 score = 0
-highscore = 5
+highscore = 0

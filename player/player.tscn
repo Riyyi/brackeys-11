@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5s0up8snewpy"]
+[gd_scene load_steps=13 format=3 uid="uid://b5s0up8snewpy"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_j8r0k"]
 [ext_resource type="Shader" path="res://shaders/postprocess.gdshader" id="3_8lvfy"]
@@ -37,6 +37,39 @@ size = Vector2(2, 2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wpief"]
 height = 1.7
+
+[sub_resource type="Animation" id="Animation_38is6"]
+resource_name = "Death"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CameraController/WorldCam:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.6, 0), Vector3(0, -1.4, 0), Vector3(0, -1.6, 0), Vector3(0, -1.5, 0), Vector3(0, -1.6, 0), Vector3(0, -1.57, 0), Vector3(0, -1.6, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../CameraController/WorldCam:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.0872665), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f28q7"]
+_data = {
+"Death": SubResource("Animation_38is6")
+}
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_j8r0k")
@@ -82,3 +115,10 @@ shape = SubResource("CapsuleShape3D_wpief")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("CapsuleShape3D_wpief")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+process_mode = 3
+root_node = NodePath("../GunViewport/GunCam")
+libraries = {
+"": SubResource("AnimationLibrary_f28q7")
+}
