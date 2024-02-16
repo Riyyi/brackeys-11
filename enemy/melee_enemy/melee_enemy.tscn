@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnvlwvd103xcx"]
+[gd_scene load_steps=17 format=3 uid="uid://bnvlwvd103xcx"]
 
 [ext_resource type="PackedScene" uid="uid://yrupjfwf30aw" path="res://enemy/enemy.tscn" id="1_dh15q"]
 [ext_resource type="PackedScene" uid="uid://bnd8g84vw7kuo" path="res://projectiles/melee_projectile.tscn" id="2_82tn5"]
 [ext_resource type="Script" path="res://enemy/melee_enemy/melee_enemy.gd" id="2_mhdce"]
-[ext_resource type="Material" uid="uid://qed48jodq5pr" path="res://enemy/enemy_material.tres" id="3_k3ktl"]
 [ext_resource type="AudioStream" uid="uid://uflu0114udct" path="res://assets/grawl_attack.wav" id="3_r3ic3"]
 
 [sub_resource type="Animation" id="Animation_qjive"]
@@ -86,13 +85,43 @@ _data = {
 radius = 1.75
 height = 4.75
 
-[sub_resource type="QuadMesh" id="QuadMesh_iihke"]
-material = ExtResource("3_k3ktl")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ej12"]
+load_path = "res://.godot/imported/monster_2.png-a98a37aefb36bf8ad3ed5c2315ce22a1.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p57ru"]
+load_path = "res://.godot/imported/monster_2.png-a98a37aefb36bf8ad3ed5c2315ce22a1.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_spcpj"]
+load_path = "res://.godot/imported/monster_2_normal.png-ea30e974f1876657f2a209da61cf1396.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ueiq7"]
+load_path = "res://.godot/imported/monster_2_normal.png-ea30e974f1876657f2a209da61cf1396.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ofd7"]
+resource_local_to_scene = true
+transparency = 4
+albedo_texture = SubResource("CompressedTexture2D_0ej12")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_ueiq7")
+detail_enabled = true
+detail_albedo = SubResource("CompressedTexture2D_p57ru")
+detail_normal = SubResource("CompressedTexture2D_spcpj")
+uv1_scale = Vector3(0.25, 0.33, 1)
+texture_filter = 0
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_lirip"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_5ofd7")
 size = Vector2(5, 5)
 
 [node name="MeleeEnemy" instance=ExtResource("1_dh15q")]
 script = ExtResource("2_mhdce")
+speed = 3.0
+distance_to_begin_walk = 4.5
 animation_index = 1
+h_frames = 4
+v_frames = 3
 
 [node name="Animation" type="AnimationPlayer" parent="." index="0"]
 unique_name_in_owner = true
@@ -112,7 +141,7 @@ sound = ExtResource("3_r3ic3")
 shape = SubResource("CapsuleShape3D_ykt20")
 
 [node name="MeshInstance3D" parent="." index="7"]
-mesh = SubResource("QuadMesh_iihke")
+mesh = SubResource("QuadMesh_lirip")
 
 [node name="NavAgent" parent="." index="8"]
 path_desired_distance = 2.0

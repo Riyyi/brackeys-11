@@ -71,12 +71,15 @@ texture_filter = 0
 billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_22mm6"]
+resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_bcuet")
 size = Vector2(2.5, 2.5)
 
 [node name="BasicEnemy" instance=ExtResource("1_eoh5f")]
 script = ExtResource("2_awa63")
 animation_index = 1
+h_frames = 4
+v_frames = 5
 
 [node name="Animation" type="AnimationPlayer" parent="." index="0"]
 unique_name_in_owner = true
