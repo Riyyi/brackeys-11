@@ -17,6 +17,8 @@ class_name Enemy extends CharacterBody3D
 @onready var stats_component: StatsComponent = $StatsComponent
 @onready var player: Player = get_node("/root/World/Player")
 
+static var rng = RandomNumberGenerator.new()
+
 var material: StandardMaterial3D
 var state: State # current state
 var state_factory: StateFactory
@@ -49,7 +51,7 @@ func _ready() -> void:
 	
 	state_factory = StateFactory.new([EnemyIdleState, EnemyWalkState, EnemyAttackState, EnemyInactiveState])
 	change_state(3)
-
+	
 func _process(_delta) -> void:
 	# Apply animation
 	var x_index = animation_index % h_frames

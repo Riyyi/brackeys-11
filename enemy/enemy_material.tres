@@ -5,8 +5,9 @@
 
 [resource]
 transparency = 4
-shading_mode = 0
 albedo_texture = ExtResource("1_rjfkk")
+normal_enabled = true
+normal_texture = ExtResource("2_p8t5w")
 detail_enabled = true
 detail_albedo = ExtResource("1_rjfkk")
 detail_normal = ExtResource("2_p8t5w")
