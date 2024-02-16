@@ -6,8 +6,8 @@ signal score_changed(new_score: int)
 @export var initial_machinegun_ammo: int = 0
 @export var initial_shotgun_ammo: int = 0
 
-@export var score: int = 0: set = set_score
-@export var highscore: int = 0
+var score: int = 0: set = set_score
+var highscore: int = 0
 
 var player = preload("res://player/player.tscn")
 var player_instance: Player
@@ -16,6 +16,9 @@ var machinegun_ammo: int
 var shotgun_ammo: int
 var gun1: PackedScene
 var gun2: PackedScene
+
+var levelselect : int = 1
+var reset_player = true
 
 func set_score(value: int):
 	score = value
@@ -30,9 +33,12 @@ func reset() -> void:
 	shotgun_ammo = initial_shotgun_ammo
 	gun1 = null
 	gun2 = null
+	
+	reset_player = false
 
 func spawn_player(append: Node3D) -> Player:
-	reset()
+	if reset_player == true:
+		reset()
 	
 	player_instance = player.instantiate()
 	append.add_child(player_instance)

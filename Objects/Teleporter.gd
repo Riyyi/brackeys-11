@@ -28,7 +28,8 @@ func _process(delta):
 		progressparticles1.amount_ratio = (1.0 / time_reached) * timer
 		progressparticles2.amount_ratio = (1.0 / time_reached) * timer
 		if timer > time_reached:
-			print("next level")
+			ResourceStash.game.levelselect += 1
+			get_tree().change_scene_to_file("res://ui/loading_screen.tscn")
 
 func _on_body_entered(body):
 	if "Player" in body.name:

@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 _fullscreen="*res://components/fullscreen.gd"
 _bg_music="*res://stash/bg_music.gd"
 _resource_stash="*res://stash/resource_stash.gd"
+Teleporter="*res://Objects/Teleporter.tscn"
+bullet="*res://projectiles/bullet.tscn"
+PukeProjectile="*res://projectiles/puke_projectile.tscn"
+game="*res://stash/game.tres"
 
 [display]
 

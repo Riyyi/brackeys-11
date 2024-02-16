@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c42wg74se7ddu"]
+[gd_scene load_steps=8 format=3 uid="uid://c42wg74se7ddu"]
 
-[ext_resource type="Script" path="res://ui/loading_screen.gd" id="1_sovdo"]
 [ext_resource type="Texture2D" uid="uid://culxp8dym21jb" path="res://assets/main_menu_background.png" id="2_gea4a"]
 [ext_resource type="FontFile" uid="uid://m8g50tl1kuml" path="res://assets/kenney_mini_square.ttf" id="2_i4oyu"]
+[ext_resource type="PackedScene" uid="uid://cx86o2b4e3428" path="res://Objects/Teleporter.tscn" id="4_dbp6u"]
+[ext_resource type="Script" path="res://ui/loading_screen.gd" id="4_va5ge"]
+[ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="5_v2pk2"]
+[ext_resource type="PackedScene" uid="uid://bawtvga2do1hk" path="res://projectiles/bullet.tscn" id="6_urfpu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6lb6d"]
 font = ExtResource("2_i4oyu")
@@ -17,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sovdo")
+script = ExtResource("4_va5ge")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -52,3 +55,16 @@ PLEASE WAIT"
 label_settings = SubResource("LabelSettings_6lb6d")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.877665, 0.479274, 0, -0.479274, 0.877665, 0, 3.49229, 3.62896)
+
+[node name="ResourceLoad" type="Node3D" parent="."]
+
+[node name="Teleporter" parent="ResourceLoad" instance=ExtResource("4_dbp6u")]
+
+[node name="PukeProjectile" parent="ResourceLoad" instance=ExtResource("5_v2pk2")]
+script = null
+
+[node name="Bullet" parent="ResourceLoad" instance=ExtResource("6_urfpu")]
+script = null

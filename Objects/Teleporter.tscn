@@ -95,6 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00415516, 0, 0.000481129)
 shape = SubResource("ConcavePolygonShape3D_j7gqj")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+cast_shadow = 0
 amount = 1024
 lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_qqrul")
@@ -102,6 +103,7 @@ draw_pass_1 = SubResource("QuadMesh_6r1rj")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
 transform = Transform3D(-0.56221, -0.00604468, -0.826972, -0.010751, 0.999942, 0, 0.826924, 0.00889078, -0.562243, 0, 0, 0)
+cast_shadow = 0
 amount = 1024
 lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_avn8s")
@@ -118,6 +120,7 @@ shape = SubResource("CylinderShape3D_q7bq7")
 
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="Rotor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+cast_shadow = 0
 amount = 1024
 amount_ratio = 0.0
 process_material = SubResource("ParticleProcessMaterial_nly0r")
@@ -125,6 +128,7 @@ draw_pass_1 = SubResource("QuadMesh_e6lok")
 
 [node name="GPUParticles3D4" type="GPUParticles3D" parent="Rotor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+cast_shadow = 0
 amount = 1024
 amount_ratio = 0.0
 process_material = SubResource("ParticleProcessMaterial_nly0r")

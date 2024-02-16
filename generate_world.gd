@@ -81,6 +81,8 @@ func generate_rooms():
 	
 	var special_count = 2
 	
+	var rows = ResourceStash.game.levelselect * 2
+	
 	var row_index = 0
 	for row in rows:
 		var row_rooms: Array[Node3D]

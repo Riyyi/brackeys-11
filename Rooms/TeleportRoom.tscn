@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5hiwwmehh4ek"]
+[gd_scene load_steps=14 format=3 uid="uid://b5hiwwmehh4ek"]
 
 [ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://Door.tscn" id="1_4ougs"]
+[ext_resource type="PackedScene" uid="uid://cx86o2b4e3428" path="res://Objects/Teleporter.tscn" id="2_drt6t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jftp7"]
 size = Vector3(1, 4, 50)
@@ -114,3 +115,6 @@ mesh = SubResource("BoxMesh_m6g2e")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1594, 7.37723)
 mesh = SubResource("BoxMesh_m6g2e")
+
+[node name="Teleporter" parent="." instance=ExtResource("2_drt6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7204, 0.5, 4.5921)
