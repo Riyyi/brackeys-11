@@ -5,6 +5,56 @@
 [ext_resource type="Texture2D" uid="uid://d1axof7sd8sqw" path="res://assets/monster_1.png" id="3_syatp"]
 [ext_resource type="Texture2D" uid="uid://c3wt6akdpt16d" path="res://assets/monster_1_normal.png" id="4_shmba"]
 
+[sub_resource type="Animation" id="Animation_yforn"]
+resource_name = "Attack"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_d4pt6"]
+resource_name = "Death"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_757nv"]
+resource_name = "Dying"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
 [sub_resource type="Animation" id="Animation_w7ohx"]
 resource_name = "Idle"
 length = 0.6
@@ -41,61 +91,12 @@ tracks/0/keys = {
 "values": [8, 9, 10]
 }
 
-[sub_resource type="Animation" id="Animation_yforn"]
-resource_name = "Attack"
-length = 0.8
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation_index")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_ctvpi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation_index")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_757nv"]
-resource_name = "Death"
-length = 0.8
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation_index")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d8jam"]
 _data = {
 "Attack": SubResource("Animation_yforn"),
-"Death": SubResource("Animation_757nv"),
+"Death": SubResource("Animation_d4pt6"),
+"Dying": SubResource("Animation_757nv"),
 "Idle": SubResource("Animation_w7ohx"),
-"RESET": SubResource("Animation_ctvpi"),
 "Walk": SubResource("Animation_3bgbe")
 }
 
@@ -116,7 +117,6 @@ size = Vector2(2.5, 2.5)
 [node name="BasicEnemy" instance=ExtResource("1_eoh5f")]
 script = ExtResource("2_awa63")
 distance_to_begin_walk = 16.0
-animation_index = 1
 h_frames = 4
 v_frames = 4
 

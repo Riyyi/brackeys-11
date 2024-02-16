@@ -16,4 +16,5 @@ func _process(delta) -> void:
 		if holding_trigger:
 			shoot()
 			firerate_timer = 0.0
+			holding_trigger = false
 	firerate_timer += delta

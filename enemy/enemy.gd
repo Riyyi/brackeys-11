@@ -19,6 +19,8 @@ class_name Enemy extends CharacterBody3D
 
 static var rng = RandomNumberGenerator.new()
 
+var dead: bool = false
+
 var material: StandardMaterial3D
 var state: State # current state
 var state_factory: StateFactory
@@ -32,7 +34,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func change_state(new_state: int) -> void:
 	if state is State:
-		state.exit()
+		state.call_deferred("exit") # make order: _process -> _physics_process -> exit (idle time) -> destruction
 		state.queue_free()
 		
 	# Create State Node
@@ -49,7 +51,7 @@ func _ready() -> void:
 	var mesh = mesh_instance_3d.mesh as QuadMesh
 	material = mesh.material as StandardMaterial3D
 	
-	state_factory = StateFactory.new([EnemyIdleState, EnemyWalkState, EnemyAttackState, EnemyInactiveState])
+	state_factory = StateFactory.new([EnemyIdleState, EnemyWalkState, EnemyAttackState, EnemyInactiveState, EnemyDeathState])
 	change_state(3)
 	
 func _process(_delta) -> void:
@@ -58,13 +60,15 @@ func _process(_delta) -> void:
 	var y_index: int = floor(animation_index / h_frames)
 	material.uv1_offset = Vector3(1.0 / h_frames * x_index, 1.0 / v_frames * y_index, 1.0)
 	
+	if dead: return # navigation isnt needed after death
+
 	nav_agent.target_position = player.global_position
 	has_line_of_sight = __has_line_of_sight()
 
 func _physics_process(delta):
 	# Add the gravity.
-	#if not is_on_floor():
-		#velocity.y -= gravity * delta
+	if not is_on_floor() and dead: # fall to the ground when dead
+		velocity.y -= gravity * delta
 		
 	move_and_slide()
 	
