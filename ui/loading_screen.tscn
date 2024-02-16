@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://c42wg74se7ddu"]
+
+[ext_resource type="Script" path="res://ui/loading_screen.gd" id="1_sovdo"]
+[ext_resource type="Texture2D" uid="uid://culxp8dym21jb" path="res://assets/main_menu_background.png" id="2_gea4a"]
+[ext_resource type="FontFile" uid="uid://m8g50tl1kuml" path="res://assets/kenney_mini_square.ttf" id="2_i4oyu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6lb6d"]
+font = ExtResource("2_i4oyu")
+font_size = 72
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sovdo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gea4a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -81.5
+offset_right = 192.0
+offset_bottom = 81.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "LOADING...
+PLEASE WAIT"
+label_settings = SubResource("LabelSettings_6lb6d")
+horizontal_alignment = 1
+vertical_alignment = 1
