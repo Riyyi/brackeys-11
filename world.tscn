@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://t5b15guq8wxq"]
+[gd_scene load_steps=5 format=3 uid="uid://t5b15guq8wxq"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
+[ext_resource type="PackedScene" uid="uid://dj6j0f4cs8hj4" path="res://env.tscn" id="3_v7ha8"]
 [ext_resource type="PackedScene" uid="uid://ci345aqxtwmce" path="res://ui/hud.tscn" id="6_h0a50"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
@@ -14,8 +15,7 @@ script = ExtResource("1_p3xts")
 
 [node name="HUD" parent="." instance=ExtResource("6_h0a50")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.668625, 0.7436, 0, -0.7436, -0.668625, -2.10196, 2.47844, -0.810181)
-
 [node name="NavRegion" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_yitvy")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("3_v7ha8")]

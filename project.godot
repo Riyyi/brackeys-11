@@ -39,6 +39,12 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
 
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0
+}
+
 [input]
 
 WalkUp={

@@ -21,6 +21,8 @@ shader_parameter/ItemCam = SubResource("ViewportTexture_d3bjr")
 size = Vector2(2, 2)
 
 [sub_resource type="Environment" id="Environment_jngn5"]
+ambient_light_source = 2
+ambient_light_color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="Pickup" type="Area3D"]
 script = ExtResource("1_1tu4r")
@@ -30,7 +32,7 @@ item = ExtResource("2_t0ag4")
 shape = SubResource("SphereShape3D_r5keq")
 
 [node name="ItemBillboard" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0786672, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.246553, 0)
 material_override = SubResource("ShaderMaterial_rkmaj")
 mesh = SubResource("QuadMesh_e6hfi")
 
@@ -48,7 +50,7 @@ projection = 1
 script = ExtResource("4_5gkws")
 
 [node name="Sketchfab_Scene" parent="ItemViewport/ItemCamera" instance=ExtResource("3_iweol")]
-transform = Transform3D(7.34506, 0, -1.51663, 0, 7.5, 0, 1.51663, 0, 7.34506, 0.0325611, -0.0573122, -1.53937)
+transform = Transform3D(2.56515, 0, 7.0477, 0, 7.5, 0, -7.0477, 0, 2.56515, 0.0325611, -0.0573122, -1.53937)
 
 [node name="Sketchfab_model" parent="ItemViewport/ItemCamera/Sketchfab_Scene" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.0383846)
