@@ -39,7 +39,7 @@ func reset() -> void:
 func spawn_player(append: Node3D) -> Player:
 	if reset_player == true:
 		reset()
-	
+		
 	player_instance = player.instantiate()
 	append.add_child(player_instance)
 	player_instance.stats_component.health = player_health
@@ -47,6 +47,10 @@ func spawn_player(append: Node3D) -> Player:
 	player_instance.shotgun_ammo = shotgun_ammo
 	player_instance.gun1 = gun1
 	player_instance.gun2 = gun2
+	if gun1 != null:
+		player_instance.switch_gun(0)
+	elif gun2 != null:
+		player_instance.switch_gun(1)
 	return player_instance
 	
 func store_player(player_health_: int, machinegun_ammo_: int, shotgun_ammo_: int, gun1_: PackedScene, gun2_: PackedScene) -> void:

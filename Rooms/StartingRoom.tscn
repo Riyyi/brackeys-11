@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv6tgav3nineg"]
+[gd_scene load_steps=14 format=3 uid="uid://bv6tgav3nineg"]
 
 [ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://Door.tscn" id="1_mywpt"]
+[ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="2_5jor5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j5tl"]
 
@@ -101,3 +102,6 @@ mesh = SubResource("BoxMesh_kgcrs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_j7xie")
+
+[node name="Pickup" parent="." instance=ExtResource("2_5jor5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.283791, 1.89159, -11.5312)
