@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ci345aqxtwmce" path="res://ui/hud.tscn" id="6_h0a50"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
+geometry_parsed_geometry_type = 1
+geometry_collision_mask = 1
 agent_height = 4.75
 agent_radius = 1.75
 

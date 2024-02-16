@@ -7,6 +7,7 @@
 
 [node name="EnemyGun" instance=ExtResource("1_jstas")]
 script = ExtResource("2_yc2wg")
+spawn_delay = 0.0
 bullet = ExtResource("2_dm2y1")
 firerate = 0.2
 sound = ExtResource("4_2hm45")

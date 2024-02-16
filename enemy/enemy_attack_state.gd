@@ -9,14 +9,18 @@ var gun_pointer: Node3D
 func exit() -> void:
 	enemy_gun.holding_trigger = false
 
+func play_attack(name: String) -> void:
+	animation.play("Attack")
+
 # -----------------------------------------
 
 func _ready() -> void:
-	animation.play("Attack")
+	animation.play("Idle")
 	
 	enemy = get_parent()
 	gun_pointer = $"../GunPointer"
 	enemy_gun = $"../GunPointer/EnemyGun"
+	enemy_gun.did_shoot.connect(play_attack)
 
 func _physics_process(delta) -> void:
 	# Stop moving
@@ -24,6 +28,8 @@ func _physics_process(delta) -> void:
 	enemy.velocity.z = move_toward(enemy.velocity.z, 0.0, 1.0)
 	
 	enemy_gun.holding_trigger = false
+	if not animation.is_playing():
+		animation.play("Idle")
 	
 	# If player is behind wall
 	if not enemy.has_line_of_sight:

@@ -5,6 +5,23 @@
 [ext_resource type="Material" uid="uid://qed48jodq5pr" path="res://enemy/enemy_material.tres" id="3_k3ktl"]
 [ext_resource type="AudioStream" uid="uid://uflu0114udct" path="res://assets/grawl_attack.wav" id="3_r3ic3"]
 
+[sub_resource type="Animation" id="Animation_qjive"]
+resource_name = "Attack"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="Animation" id="Animation_w7ohx"]
 resource_name = "Idle"
 length = 0.8
@@ -56,24 +73,6 @@ tracks/0/keys = {
 "values": [8, 9, 10]
 }
 
-[sub_resource type="Animation" id="Animation_qjive"]
-resource_name = "Attack"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation_index")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d8jam"]
 _data = {
 "Attack": SubResource("Animation_qjive"),
@@ -92,7 +91,7 @@ size = Vector2(5, 5)
 
 [node name="MeleeEnemy" instance=ExtResource("1_dh15q")]
 speed = 3.0
-distance_to_begin_walk = 5.0
+distance_to_begin_walk = 4.5
 animation_index = 1
 h_frames = 4
 v_frames = 3
@@ -107,6 +106,7 @@ libraries = {
 health = 25
 
 [node name="EnemyGun" parent="GunPointer" index="0"]
+spawn_delay = 0.6
 bullet = ExtResource("2_82tn5")
 sound = ExtResource("3_r3ic3")
 
