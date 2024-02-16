@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnvlwvd103xcx"]
+[gd_scene load_steps=10 format=3 uid="uid://bnvlwvd103xcx"]
 
 [ext_resource type="PackedScene" uid="uid://yrupjfwf30aw" path="res://enemy/enemy.tscn" id="1_dh15q"]
 [ext_resource type="PackedScene" uid="uid://bnd8g84vw7kuo" path="res://projectiles/melee_projectile.tscn" id="2_82tn5"]
 [ext_resource type="Material" uid="uid://qed48jodq5pr" path="res://enemy/enemy_material.tres" id="3_k3ktl"]
+[ext_resource type="AudioStream" uid="uid://uflu0114udct" path="res://assets/grawl_attack.wav" id="3_r3ic3"]
 
 [sub_resource type="Animation" id="Animation_w7ohx"]
 resource_name = "Idle"
@@ -82,6 +83,7 @@ health = 25
 
 [node name="EnemyGun" parent="GunPointer" index="0"]
 bullet = ExtResource("2_82tn5")
+sound = ExtResource("3_r3ic3")
 
 [node name="MeshInstance3D" parent="." index="7"]
 mesh = SubResource("QuadMesh_iihke")

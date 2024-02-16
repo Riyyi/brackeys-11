@@ -4,6 +4,7 @@ signal did_shoot(name: String)
 
 @export var bullet: PackedScene
 @export var firerate: float = 10.0
+@export var sound: AudioStream
 
 @onready var bangbang = $Bangbang
 @onready var bullet_emitter = $BulletEmitter
@@ -15,6 +16,9 @@ func shoot() -> void:
 	bullet_emitter.add_child(bullet.instantiate())
 	bangbang.play()
 	did_shoot.emit(name)
+
+func _ready() -> void:
+	bangbang.stream = sound
 
 func _process(delta) -> void:
 	if firerate_timer > (1.0 / firerate):
