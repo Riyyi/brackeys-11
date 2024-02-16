@@ -9,6 +9,7 @@
 height = 2.2
 
 [node name="Enemy" type="CharacterBody3D"]
+collision_mask = 0
 script = ExtResource("1_lw8il")
 
 [node name="StatsComponent" type="Node" parent="."]
@@ -36,4 +37,6 @@ shape = SubResource("CapsuleShape3D_wbv8k")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
 [node name="NavAgent" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
 avoidance_enabled = true
+radius = 2.0

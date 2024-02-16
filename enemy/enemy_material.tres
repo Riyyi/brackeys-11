@@ -4,13 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://batcgyyb3yehh" path="res://assets/monster_2_normal.png" id="2_p8t5w"]
 
 [resource]
+resource_local_to_scene = true
 transparency = 4
 albedo_texture = ExtResource("1_rjfkk")
 normal_enabled = true
 normal_texture = ExtResource("2_p8t5w")
-detail_enabled = true
-detail_albedo = ExtResource("1_rjfkk")
-detail_normal = ExtResource("2_p8t5w")
 uv1_scale = Vector3(0.25, 0.33, 1)
 texture_filter = 0
 billboard_mode = 2

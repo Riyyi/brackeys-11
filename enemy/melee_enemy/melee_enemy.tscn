@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnvlwvd103xcx"]
+[gd_scene load_steps=15 format=3 uid="uid://bnvlwvd103xcx"]
 
 [ext_resource type="PackedScene" uid="uid://yrupjfwf30aw" path="res://enemy/enemy.tscn" id="1_dh15q"]
 [ext_resource type="PackedScene" uid="uid://bnd8g84vw7kuo" path="res://projectiles/melee_projectile.tscn" id="2_82tn5"]
@@ -83,16 +83,10 @@ _data = {
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykt20"]
 radius = 1.75
-height = 4.75
+height = 4.25
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ej12"]
 load_path = "res://.godot/imported/monster_2.png-a98a37aefb36bf8ad3ed5c2315ce22a1.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p57ru"]
-load_path = "res://.godot/imported/monster_2.png-a98a37aefb36bf8ad3ed5c2315ce22a1.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_spcpj"]
-load_path = "res://.godot/imported/monster_2_normal.png-ea30e974f1876657f2a209da61cf1396.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ueiq7"]
 load_path = "res://.godot/imported/monster_2_normal.png-ea30e974f1876657f2a209da61cf1396.s3tc.ctex"
@@ -103,9 +97,6 @@ transparency = 4
 albedo_texture = SubResource("CompressedTexture2D_0ej12")
 normal_enabled = true
 normal_texture = SubResource("CompressedTexture2D_ueiq7")
-detail_enabled = true
-detail_albedo = SubResource("CompressedTexture2D_p57ru")
-detail_normal = SubResource("CompressedTexture2D_spcpj")
 uv1_scale = Vector3(0.25, 0.33, 1)
 texture_filter = 0
 billboard_mode = 2
@@ -144,7 +135,7 @@ shape = SubResource("CapsuleShape3D_ykt20")
 mesh = SubResource("QuadMesh_lirip")
 
 [node name="NavAgent" parent="." index="8"]
-path_desired_distance = 2.0
-target_desired_distance = 2.0
+path_desired_distance = 1.0
+path_height_offset = -2.0
 height = 4.75
-radius = 1.75
+time_horizon_agents = 0.1
