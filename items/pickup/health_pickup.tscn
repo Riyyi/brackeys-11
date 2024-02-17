@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsmkjrggvm6df"]
+[gd_scene load_steps=7 format=3 uid="uid://bsmkjrggvm6df"]
 
 [ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="1_nyxu1"]
+[ext_resource type="Script" path="res://items/pickup/health_pickup.gd" id="2_dn5i5"]
 [ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="2_olqxy"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1wmtd"]
@@ -16,16 +17,18 @@ shader_parameter/ItemCam = SubResource("ViewportTexture_1wmtd")
 size = Vector3(0.1, 0.4, 0.1)
 
 [node name="HealthPickup" instance=ExtResource("1_nyxu1")]
+script = ExtResource("2_dn5i5")
+amount = 5
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.249987, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23194, 0)
 
 [node name="ItemBillboard" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.249987, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23194, 0)
 material_override = SubResource("ShaderMaterial_ryt5p")
 
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
-transform = Transform3D(0.8707, 0, 7.44928, 0, 7.5, 0, -7.44928, 0, 0.8707, 0, 0, -1)
+transform = Transform3D(-6.14361, 0, 4.30186, 0, 7.5, 0, -4.30186, 0, -6.14361, 0, 0, -1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
 transform = Transform3D(-0.133108, 0, 0.00775174, 0, 0.133333, 0, -0.00775174, 0, -0.133108, 0, 0, 0)
