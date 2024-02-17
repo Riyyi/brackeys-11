@@ -28,7 +28,6 @@ func _physics_process(_delta) -> void:
 	
 func nav_agent_velocity_computed(velocity) -> void:
 	enemy.velocity = enemy.velocity.move_toward(velocity, 0.25)
-	enemy.move_and_slide()
 	
 func nav_agent_become_idle() -> void:
 	enemy.change_state(0)

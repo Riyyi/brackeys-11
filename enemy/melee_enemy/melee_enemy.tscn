@@ -140,7 +140,7 @@ size = Vector2(5, 5)
 
 [node name="MeleeEnemy" instance=ExtResource("1_dh15q")]
 script = ExtResource("2_mhdce")
-speed = 3.0
+speed = 6.0
 distance_to_begin_walk = 4.5
 animation_index = 1
 h_frames = 4

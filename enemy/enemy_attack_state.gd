@@ -24,8 +24,7 @@ func _ready() -> void:
 
 func _physics_process(delta) -> void:
 	# Stop moving
-	enemy.velocity.x = move_toward(enemy.velocity.x, 0.0, 1.0)
-	enemy.velocity.z = move_toward(enemy.velocity.z, 0.0, 1.0)
+	for i in range(3): enemy.velocity[i] = move_toward(enemy.velocity[i], 0.0, 1.0)
 	
 	enemy_gun.holding_trigger = false
 	if not animation.is_playing():
