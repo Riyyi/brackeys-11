@@ -14,7 +14,7 @@ func _ready() -> void:
 		enemy.queue_free()
 	
 	if has_dying:
-		enemy.dead = true
+		enemy.dying = true
 		enemy.set_collision_mask_value(1, true) # enable collision with the environment
 		await get_tree().create_timer(0.1).timeout
 		animation.play("Dying")
@@ -34,6 +34,8 @@ func become_death(name: String) -> void:
 
 func death() -> void:
 	if has_death:
+		enemy.dead = true
+		enemy.collision_shape_3d.queue_free()
 		animation.play("Death")
 	else:
 		enemy.queue_free()

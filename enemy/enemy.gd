@@ -10,6 +10,7 @@ class_name Enemy extends CharacterBody3D
 
 @onready var animation: AnimationPlayer = %Animation # acces in the child via unique name
 @onready var enemy_gun: EnemyGun = $GunPointer/EnemyGun
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var eye_left: RayCast3D = $EyeLeft
 @onready var eye_right: RayCast3D = $EyeRight
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
@@ -19,6 +20,7 @@ class_name Enemy extends CharacterBody3D
 
 static var rng = RandomNumberGenerator.new()
 
+var dying: bool = false
 var dead: bool = false
 
 var material: StandardMaterial3D
@@ -67,7 +69,7 @@ func _process(_delta) -> void:
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor() and dead: # fall to the ground when dead
+	if not is_on_floor() and dying and not dead: # fall to the ground when dead
 		velocity.y -= gravity * delta
 		
 	move_and_slide()
