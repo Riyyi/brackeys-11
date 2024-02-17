@@ -17,6 +17,8 @@ var shotgun_ammo: int
 var gun1: PackedScene
 var gun2: PackedScene
 
+var in_world = false
+
 var levelselect : int = 1
 var reset_player = true
 

@@ -24,6 +24,7 @@ func bake_navmesh():
 	nav_region.bake_navigation_mesh(false)
 
 func game_over():
+	ResourceStash.game.in_world = false
 	var game_over_ui: GameOver = load("res://ui/game_over.tscn").instantiate()
 	add_child(game_over_ui)
 	get_tree().paused = true # pause game
@@ -31,6 +32,7 @@ func game_over():
 # -----------------------------------------
 
 func _ready() -> void:
+	ResourceStash.game.in_world = true
 	player = ResourceStash.game.spawn_player(self)
 	player.global_position.y = 10
 	player.stats_component.no_health.connect(game_over)
