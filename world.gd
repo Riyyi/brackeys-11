@@ -5,6 +5,7 @@ class_name World extends Node3D
 
 var player: Player
 var health_label: Label
+var health_bar: ProgressBar
 var machinegun_ammo_label: Label
 var shotgun_ammo_label: Label
 
@@ -12,12 +13,13 @@ var world_generator: WorldGenerator
 
 func ui_update_health():
 	health_label.text = str(player.stats_component.health)
+	health_bar.value = player.stats_component.health
 
 func ui_update_ammo(gun: int, amount: int):
 	if gun == 0:
-		machinegun_ammo_label.text = str(amount)
+		machinegun_ammo_label.text = str(amount) + " "
 	else:
-		shotgun_ammo_label.text = str(amount)
+		shotgun_ammo_label.text = str(amount) + " "
 
 func bake_navmesh():
 	#await get_tree().process_frame # wait 1 frame, for NavigationServer map synchronization
@@ -45,6 +47,7 @@ func _ready() -> void:
 	Utils.find_node_by_name(hud, "HighScoreValue").text = str(ResourceStash.game.highscore)
 	
 	health_label = Utils.find_node_by_name(hud, "HealthValue") # via unique name
+	health_bar = Utils.find_node_by_name(hud, "HealthBar") # via unique name
 	machinegun_ammo_label = Utils.find_node_by_name(hud, "MachinegunAmmoValue")
 	shotgun_ammo_label = Utils.find_node_by_name(hud, "ShotgunAmmoValue")
 	ui_update_health()

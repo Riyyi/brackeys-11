@@ -61,6 +61,7 @@ size = Vector2(0.2, 0.2)
 [node name="HitboxComponent" type="Area3D" parent="." index="0"]
 unique_name_in_owner = true
 script = ExtResource("2_4hp0n")
+damage = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" index="0"]
 shape = SubResource("SphereShape3D_byu5u")

@@ -9,7 +9,7 @@ class_name StatsComponent extends Node
 		health_changed.emit()
 		
 		# Death
-		if health < 0:
+		if health <= 0:
 			health = 0
 			no_health.emit()
 
