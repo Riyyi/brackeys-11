@@ -23,6 +23,11 @@ func _ready() -> void:
 		
 	death()
 
+func _process(delta) -> void:
+	# Stop moving
+	enemy.velocity.x = move_toward(enemy.velocity.x, 0.0, 1.0)
+	enemy.velocity.z = move_toward(enemy.velocity.z, 0.0, 1.0)
+
 func become_death(name: String) -> void:
 	animation.animation_finished.disconnect(become_death)
 	death()
