@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://beylger00t4a"]
+
+[ext_resource type="Texture2D" uid="uid://dqh5jybi6jpyy" path="res://assets/Floor_Tex_Albedo.png" id="1_ijf8d"]
+[ext_resource type="Texture2D" uid="uid://cya7hk0x5m0jr" path="res://assets/Floor_Tex_Normal.png" id="2_2ksaj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uipyf"]
+albedo_texture = ExtResource("1_ijf8d")
+normal_enabled = true
+normal_texture = ExtResource("2_2ksaj")
+uv1_scale = Vector3(135, 18, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tncpl"]
+material = SubResource("StandardMaterial3D_uipyf")
+size = Vector3(150, 1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p42bx"]
+size = Vector3(150, 1, 30)
+
+[node name="FloorHall" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_tncpl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_p42bx")

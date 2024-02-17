@@ -1,10 +1,10 @@
 [gd_scene load_steps=25 format=3 uid="uid://b7ccv7qdwt76n"]
 
 [ext_resource type="Script" path="res://Door.gd" id="1_paq1i"]
-[ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://Door.tscn" id="2_0crqh"]
+[ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/Door.tscn" id="2_0crqh"]
 [ext_resource type="PackedScene" uid="uid://bpppoytydevv8" path="res://assets/Environment/Models/Wall_Door_50x50.glb" id="2_t6syk"]
 [ext_resource type="PackedScene" uid="uid://ckcqiv8dla08i" path="res://assets/Environment/Models/Wall_50x50.glb" id="3_fjgsa"]
-[ext_resource type="PackedScene" uid="uid://mnt0ri42amj4" path="res://assets/Environment/Models/Platform_Room1.glb" id="4_m3ped"]
+[ext_resource type="PackedScene" uid="uid://dijp6ghulp5is" path="res://assets/Environment/Models/Platform_Room1.glb" id="4_m3ped"]
 [ext_resource type="PackedScene" uid="uid://c47pwjmgxho5m" path="res://assets/Environment/Models/Ceiling_50x50.glb" id="5_ecn0k"]
 [ext_resource type="PackedScene" uid="uid://dq5as0mo6nukq" path="res://assets/floor.glb" id="6_jvar1"]
 [ext_resource type="PackedScene" uid="uid://djefl1f220roi" path="res://assets/Environment/Models/Pillar.glb" id="7_eeqr2"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="3_g8xtm"]
 [ext_resource type="PackedScene" uid="uid://bq4uvtb1tnyc6" path="res://assets/GDAssets/Models/wall_door_50x_50.tscn" id="4_ruo7u"]
 [ext_resource type="PackedScene" uid="uid://ckvufrfnmcnng" path="res://assets/GDAssets/Models/wall_50x_50.tscn" id="5_yexjk"]
-[ext_resource type="Shader" uid="uid://d1w0ulh4wnikw" path="res://Rooms/alien_goo.tres" id="7_i7tna"]
+[ext_resource type="Shader" uid="uid://d1w0ulh4wnikw" path="res://shaders/alien_goo.tres" id="7_i7tna"]
 [ext_resource type="PackedScene" uid="uid://carub3ybe3c7d" path="res://assets/GDAssets/Models/wall_modular.tscn" id="8_13dbl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vvh2y"]
