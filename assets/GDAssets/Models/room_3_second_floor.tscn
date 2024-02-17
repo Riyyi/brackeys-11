@@ -35,5 +35,5 @@ transform = Transform3D(0.864275, 0.50302, 0, -0.50302, 0.864275, 0, 0, 0, 1, -1
 shape = SubResource("BoxShape3D_ivbhj")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
-transform = Transform3D(-0.864275, -0.50302, -8.74228e-08, -0.50302, 0.864275, 0, 7.55573e-08, 4.39754e-08, -1, 13.1, 2.632, -21.3)
+transform = Transform3D(-3.77787e-08, -2.19877e-08, 1, -0.50302, 0.864275, 0, -0.864275, -0.50302, -4.37114e-08, 15.08, 2.632, -8.29528)
 shape = SubResource("BoxShape3D_ivbhj")

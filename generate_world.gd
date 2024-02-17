@@ -6,7 +6,7 @@ var starting_room_length = 50
 var room_width = 50
 var room_length = 50
 var hallway_width = 150
-var hallway_length = 20 # TODO: put 30
+var hallway_length = 30
 var collumns = 3
 var rows = 8
 
