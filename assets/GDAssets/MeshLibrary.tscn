@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5pjn7mjojaw0" path="res://assets/GDAssets/Models/ceiling_50x_50.tscn" id="1_k7jtb"]
 [ext_resource type="PackedScene" uid="uid://bn1o61pu7l6uu" path="res://assets/GDAssets/Models/ceiling_hall.tscn" id="2_46cqp"]
-[ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/Door.tscn" id="3_dfyg4"]
+[ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/door.tscn" id="3_dfyg4"]
 [ext_resource type="PackedScene" uid="uid://c8b75mrpnb6su" path="res://assets/GDAssets/Models/floor.tscn" id="4_tge2s"]
 [ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="5_17t4l"]
 [ext_resource type="PackedScene" uid="uid://cwcfd6m0jxois" path="res://assets/GDAssets/Models/platform_room_1.tscn" id="6_4o3kx"]

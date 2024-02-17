@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://duc2dbga40l37"]
+[gd_scene load_steps=8 format=3 uid="uid://duc2dbga40l37"]
 
 [ext_resource type="PackedScene" uid="uid://bq4uvtb1tnyc6" path="res://assets/GDAssets/Models/wall_door_50x_50.tscn" id="1_m8m6t"]
 [ext_resource type="PackedScene" uid="uid://ta8h4c4qk27j" path="res://assets/GDAssets/Models/wall_hall_150m.tscn" id="2_3c72h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvufrfnmcnng" path="res://assets/GDAssets/Models/wall_50x_50.tscn" id="4_rys2l"]
 [ext_resource type="PackedScene" uid="uid://glrjrpkkxrkg" path="res://assets/GDAssets/Models/wall_hall_30m.tscn" id="5_ic435"]
 [ext_resource type="PackedScene" uid="uid://bn1o61pu7l6uu" path="res://assets/GDAssets/Models/ceiling_hall.tscn" id="6_uhmea"]
+[ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="7_bhxxs"]
 
 [node name="StartingHallway" type="Node3D"]
 
@@ -50,4 +51,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -75, 0
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 75, 0.5, 0)
 
 [node name="Ceiling_Hall" parent="." instance=ExtResource("6_uhmea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="Pillar" parent="." instance=ExtResource("7_bhxxs")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -25, 0.5, 0)
+
+[node name="Pillar2" parent="." instance=ExtResource("7_bhxxs")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 25, 0.5, 0)
