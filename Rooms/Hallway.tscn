@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dokmsbkdy0h41"]
+[gd_scene load_steps=8 format=3 uid="uid://dokmsbkdy0h41"]
 
 [ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="1_8abwg"]
 
@@ -10,9 +10,6 @@ size = Vector3(150, 1, 20)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_puuvm"]
 data = PackedVector3Array(-75, 0.5, 10, 75, 0.5, 10, -75, -0.5, 10, 75, 0.5, 10, 75, -0.5, 10, -75, -0.5, 10, 75, 0.5, -10, -75, 0.5, -10, 75, -0.5, -10, -75, 0.5, -10, -75, -0.5, -10, 75, -0.5, -10, 75, 0.5, 10, 75, 0.5, -10, 75, -0.5, 10, 75, 0.5, -10, 75, -0.5, -10, 75, -0.5, 10, -75, 0.5, -10, -75, 0.5, 10, -75, -0.5, -10, -75, 0.5, 10, -75, -0.5, 10, -75, -0.5, -10, 75, 0.5, 10, -75, 0.5, 10, 75, 0.5, -10, -75, 0.5, 10, -75, 0.5, -10, 75, 0.5, -10, -75, -0.5, 10, 75, -0.5, 10, -75, -0.5, -10, 75, -0.5, 10, 75, -0.5, -10, -75, -0.5, -10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_jaoem"]
-size = Vector3(15, 3, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mqduv"]
 size = Vector3(1, 4, 20)
@@ -32,10 +29,6 @@ mesh = SubResource("BoxMesh_mk40t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_puuvm")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.00465, 0)
-mesh = SubResource("BoxMesh_jaoem")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 2, 0)
@@ -63,3 +56,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5677, 2.22469, -4.20652)
 
 [node name="BasicEnemy3" parent="." instance=ExtResource("1_8abwg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9646, 2.22469, -1.11813)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 5, 0)
+light_color = Color(0, 1, 1, 1)
+omni_range = 10.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 5, 0)
+light_color = Color(0, 1, 1, 1)
+omni_range = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 5, 0)
+light_color = Color(0, 1, 1, 1)
+omni_range = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 0)
+light_color = Color(0, 1, 1, 1)
+omni_range = 10.0

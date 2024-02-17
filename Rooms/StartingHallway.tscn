@@ -1,4 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://duc2dbga40l37"]
+[gd_scene load_steps=13 format=3 uid="uid://duc2dbga40l37"]
+
+[ext_resource type="PackedScene" uid="uid://bnvlwvd103xcx" path="res://enemy/melee_enemy/melee_enemy.tscn" id="1_61jds"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsper"]
 
@@ -105,3 +107,9 @@ omni_range = 10.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 0)
 light_color = Color(0, 1, 1, 1)
 omni_range = 10.0
+
+[node name="MeleeEnemy" parent="." instance=ExtResource("1_61jds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8403, 3.85857, -1.43763)
+
+[node name="MeleeEnemy2" parent="." instance=ExtResource("1_61jds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.521, 3.85857, -1.16066)
