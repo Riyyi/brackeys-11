@@ -9,6 +9,7 @@ const JUMP_VELOCITY = 7.0
 @onready var camera_controller: CameraController = $CameraController
 @onready var gun_node: Node3D = $GunViewport/GunCam/GunNode # Node holder for the current gun
 @onready var stats_component: StatsComponent = $StatsComponent
+@onready var weapon_swap_speed: float = 1.5
 
 # Gun stuff
 var machinegun_ammo: int = 50
@@ -17,6 +18,8 @@ var gun1: PackedScene # machinegun
 var gun2: PackedScene # shotgun
 var current_gun: int = 0
 var gun_instance: Gun # Scene instantiated
+var swap_gun: bool = false
+var swap_to: int = 0
 
 # Door stuff
 var door_bash_timer = 0.0
@@ -25,6 +28,9 @@ var bash_door_action = false
 var target_door: Node3D
 var movement_target: Vector3
 var rotation_target: float
+
+var lower = false
+var raise = false
 
 # Movement
 var boost: float = 1.0
@@ -48,6 +54,26 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * 2 * delta
+
+	if lower == true:
+		if gun_instance != null:
+			gun_instance.can_shoot = false
+		gun_node.rotation.x -= delta * weapon_swap_speed
+		if gun_node.rotation.x < -(PI / 4):
+			gun_node.rotation.x = -(PI / 4)
+			if swap_gun == true:
+				switch_gun_instance(swap_to)
+				swap_gun = false
+				raise = true
+			lower = false
+			
+	elif raise == true:
+		gun_instance.can_shoot = false
+		gun_node.rotation.x += delta * weapon_swap_speed
+		if gun_node.rotation.x > 0:
+			gun_node.rotation.x = 0
+			gun_instance.can_shoot = true
+			raise = false
 
 	# Handle jump.
 	if forced_movement == false:
@@ -81,6 +107,7 @@ func _physics_process(delta):
 					bash_door_action = false
 					boost = 1.0
 					door_bash_timer = 0
+					raise = true
 				else:
 					movement_target = position + Vector3(movement_target.direction_to(Vector3(target_door.global_position.x, global_position.y, target_door.global_position.z))) * 7.5
 					bash_door_action = true
@@ -114,13 +141,18 @@ func _input(event) -> void:
 		elif current_gun == 1 and gun1 != null:
 			switch_gun(0)
 	elif event.is_action_pressed("Weapon1"):
-		if gun1 != null:
+		if gun1 != null and current_gun != 0:
 			switch_gun(0)
 	elif event.is_action_pressed("Weapon2"):
-		if gun2 != null:
+		if gun2 != null and current_gun != 1:
 			switch_gun(1)
 
 func switch_gun(gunid):
+	swap_gun = true
+	swap_to = gunid
+	lower = true
+
+func switch_gun_instance(gunid):	
 	# Cleanup old gun
 	if(gun_node.get_child_count() != 0):
 		gun_node.remove_child(gun_instance)
@@ -155,6 +187,7 @@ func weapon_pickup(weapon: PackedScene):
 		switch_gun(1)
 
 func bash_door(start_position, direction, door):
+	lower = true
 	forced_movement = true
 	camera_controller.forced_rotation = true
 	movement_target = start_position

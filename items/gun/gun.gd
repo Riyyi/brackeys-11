@@ -15,6 +15,7 @@ signal did_shoot(name: String)
 
 var firerate_timer: float = 0.0
 var has_ammo: bool = true
+var can_shoot: bool = false
 
 var current_recoil = 0.0
 
@@ -29,15 +30,17 @@ func recoil_recover():
 	current_recoil -= recoil_recovery
 
 func shoot() -> void:
-	recoil()
-	for node in bullet_emitters.get_children():
-		var bullet_instance = bullet.instantiate()
-		bullet_instance.global_transform = node.global_transform
-		get_tree().root.add_child(bullet_instance)
-	bangbang.play()
-	did_shoot.emit(name)
+	if can_shoot == true:
+		recoil()
+		for node in bullet_emitters.get_children():
+			var bullet_instance = bullet.instantiate()
+			bullet_instance.global_transform = node.global_transform
+			get_tree().root.add_child(bullet_instance)
+		bangbang.play()
+		did_shoot.emit(name)
 
 func _ready() -> void:
+	firerate_timer = 1.0 / firerate
 	bangbang.stream = sound
 
 func _process(delta) -> void:
