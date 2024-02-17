@@ -25,5 +25,5 @@ func _process(delta):
 			opening = false
 			if world is World:
 				world.bake_navmesh() # enemies can follow you into the hallway
-		left_door.rotation = Vector3(0.0, (-door_direction) * current_angle, 0.0)
-		right_door.rotation = Vector3(0.0, door_direction * current_angle, 0.0)
+		left_door.rotation = Vector3(0.0, door_direction * current_angle + PI, 0.0)
+		right_door.rotation = Vector3(0.0, (-door_direction) * current_angle, 0.0)

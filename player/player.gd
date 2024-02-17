@@ -68,11 +68,13 @@ func _physics_process(delta):
 			lower = false
 			
 	elif raise == true:
-		gun_instance.can_shoot = false
+		if gun_instance != null:
+			gun_instance.can_shoot = false
 		gun_node.rotation.x += delta * weapon_swap_speed
 		if gun_node.rotation.x > 0:
 			gun_node.rotation.x = 0
-			gun_instance.can_shoot = true
+			if gun_instance != null:
+				gun_instance.can_shoot = true
 			raise = false
 
 	# Handle jump.

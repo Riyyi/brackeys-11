@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c47pwjmgxho5m" path="res://assets/Environment/Models/Ceiling_50x50.glb" id="6_im62y"]
 [ext_resource type="PackedScene" uid="uid://dq5as0mo6nukq" path="res://assets/floor.glb" id="7_t05uf"]
 [ext_resource type="PackedScene" uid="uid://djefl1f220roi" path="res://assets/Environment/Models/Pillar.glb" id="8_dfqwk"]
-[ext_resource type="PackedScene" uid="uid://cun625cjnvx7b" path="res://items/pickup/machinegun.tscn" id="8_e061m"]
-[ext_resource type="PackedScene" uid="uid://bq6efasau36ln" path="res://items/pickup/shotgun_pickup.tscn" id="9_woiny"]
-[ext_resource type="PackedScene" uid="uid://bh0rlyq4of3y1" path="res://items/pickup/pistol_pickup.tscn" id="10_v123s"]
+[ext_resource type="PackedScene" uid="uid://cun625cjnvx7b" path="res://items/pickup/machinegun_pickup.tscn" id="8_e061m"]
+[ext_resource type="PackedScene" uid="uid://c42e57xrge15k" path="res://items/pickup/shotgun_pickup.tscn" id="9_woiny"]
+[ext_resource type="PackedScene" uid="uid://cpbdrjvcstdt4" path="res://items/pickup/pistol_pickup.tscn" id="10_v123s"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s26vd"]
 points = PackedVector3Array(25.2488, 5.23641, 0.754716, 2.95183, 4.89858, -0.596617, 2.95183, 5.57425, -0.596617, 25.2488, 4.89858, -0.596617, 2.95183, 5.57425, 0.754716, 25.2488, 5.57425, -0.596617, 2.95183, 5.23641, 0.754716, 25.2488, 5.57425, 0.754716, 2.95183, 4.89858, -0.258783, 25.2488, 4.89858, -0.258783)
@@ -57,6 +57,15 @@ points = PackedVector3Array(-25.1777, -0.174825, -0.239706, 25.1719, 5.06993, -0
 points = PackedVector3Array(25.1719, 5.76916, 0.809176, -25.1777, 5.06993, -0.589425, -25.1777, 5.76916, -0.589425, 25.1719, 5.06993, -0.589425, -25.1777, 5.76916, 0.809176, 25.1719, 5.76916, -0.589425)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nibnk"]
+points = PackedVector3Array(-25.1777, -0.174825, -0.239706, 25.1719, 5.06993, -0.239706, 25.1719, 4.02057, 0.109704, 25.1719, -0.174825, -0.589425, 25.1719, 0.175304, 0.459526, -25.1777, 5.06993, -0.239706, -25.1777, 2.62159, 0.459526, -25.1777, 3.67095, -0.589425, -20.2788, -0.174825, 0.459526, -20.2788, -0.174825, -0.589425, 24.1172, 2.62159, 0.459526, -25.1777, 0.525434, 0.459526, -25.1777, 4.02057, 0.109704)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wbnd4"]
+points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vl1xk"]
+points = PackedVector3Array(25.1719, 5.76916, 0.809176, -25.1777, 5.06993, -0.589425, -25.1777, 5.76916, -0.589425, 25.1719, 5.06993, -0.589425, -25.1777, 5.76916, 0.809176, 25.1719, 5.76916, -0.589425)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5y2bf"]
 points = PackedVector3Array(-25.1777, -0.174825, -0.239706, 25.1719, 5.06993, -0.239706, 25.1719, 4.02057, 0.109704, 25.1719, -0.174825, -0.589425, 25.1719, 0.175304, 0.459526, -25.1777, 5.06993, -0.239706, -25.1777, 2.62159, 0.459526, -25.1777, 3.67095, -0.589425, -20.2788, -0.174825, 0.459526, -20.2788, -0.174825, -0.589425, 24.1172, 2.62159, 0.459526, -25.1777, 0.525434, 0.459526, -25.1777, 4.02057, 0.109704)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iqe6i"]
@@ -127,9 +136,6 @@ points = PackedVector3Array(-25.3968, -0.395537, -23.0159, -21.4286, 3.57233, -9
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d426n"]
 points = PackedVector3Array(-25.3968, -0.395925, -25.3968, -21.4286, 2.77868, -23.0161, -21.4286, 2.77868, -23.8098, -21.4286, -0.395925, -24.6029, -25.3968, -0.395925, -23.0161, -25.3968, 1.98503, -25.3968, -21.4286, 1.98503, -25.3968, -25.3968, 1.98503, -23.0161, -21.4286, 1.19138, -23.0161, -21.4286, -0.395925, -25.3968, -23.8093, 2.77868, -23.0161, -24.6025, -0.395925, -23.0161, -23.8093, 2.77868, -23.8098)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wbnd4"]
-points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r4sit"]
 points = PackedVector3Array(-0.583418, 3.47451, 0.50719, -0.344544, 3.77317, 0.686402, -0.523792, 3.77317, 0.805878, -0.643167, 3.77317, 0.0893306, -0.404334, 3.47451, 0.0893306, -0.344544, 3.77317, 0.0893306, -0.344544, 3.47451, 0.626665, -0.762625, 3.65366, 0.805878, -0.583418, 3.47451, 0.0893306, -0.762625, 3.77317, 0.805878, -0.643167, 3.65366, 0.865691, -0.643167, 3.59402, 0.0893306, -0.762625, 3.65366, 0.686402, -0.523792, 3.59402, 0.805878, -0.464042, 3.47451, 0.626665, -0.344544, 3.47451, 0.44768, -0.702876, 3.77317, 0.865691, -0.344544, 3.59402, 0.686402, -0.762625, 3.77317, 0.686402, -0.344544, 3.71341, 0.0893306, -0.702876, 3.65366, 0.865691)
@@ -515,16 +521,22 @@ points = PackedVector3Array(-0.464007, 0.965774, -0.448407, -0.702882, 0.786579,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nwkuw"]
 points = PackedVector3Array(0.731546, 1.84948, -0.460651, -0.702911, 1.74225, -0.747066, -0.46389, 1.56309, -0.508191, 0.849904, 1.74225, -0.747066, -0.762666, 1.86172, -0.567888, 0.611047, 1.56309, -0.448407, 0.849904, 1.86172, -0.747066, -0.643156, 1.74225, -0.448407, -0.702911, 1.86172, -0.747066, -0.608354, 1.85447, -0.455658, 0.790313, 1.74225, -0.448407, -0.46389, 1.56309, -0.448407, 0.611047, 1.56309, -0.508191, 0.909823, 1.86172, -0.627585, -0.762666, 1.74225, -0.567888, 0.909823, 1.74225, -0.627585, -0.762666, 1.74225, -0.687281, 0.909823, 1.74225, -0.687281, 0.849904, 1.74225, -0.508191)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vl1xk"]
-points = PackedVector3Array(25.1719, 5.76916, 0.809176, -25.1777, 5.06993, -0.589425, -25.1777, 5.76916, -0.589425, 25.1719, 5.06993, -0.589425, -25.1777, 5.76916, 0.809176, 25.1719, 5.76916, -0.589425)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5y2bf"]
-points = PackedVector3Array(-25.1777, -0.174825, -0.239706, 25.1719, 5.06993, -0.239706, 25.1719, 4.02057, 0.109704, 25.1719, -0.174825, -0.589425, 25.1719, 0.175304, 0.459526, -25.1777, 5.06993, -0.239706, -25.1777, 2.62159, 0.459526, -25.1777, 3.67095, -0.589425, -20.2788, -0.174825, 0.459526, -20.2788, -0.174825, -0.589425, 24.1172, 2.62159, 0.459526, -25.1777, 0.525434, 0.459526, -25.1777, 4.02057, 0.109704)
-
 [node name="StartingRoom" type="Node3D"]
 
+[node name="Room_Pillar4_Cube_006#StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Room_Pillar3_Cube_006#StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Room_Pillar2_Cube_006#StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Room_Pillar_Cube_006#StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Room_Ceiling_50x50_Roof#StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Room_Platform_Room1_Cube_013#StaticBody3D" type="StaticBody3D" parent="."]
+
 [node name="Door2" parent="." instance=ExtResource("1_mywpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -25)
 
 [node name="Room" type="Node3D" parent="."]
 
@@ -614,81 +626,8 @@ shape = SubResource("ConvexPolygonShape3D_nibnk")
 [node name="Platform_Room1" parent="Room" instance=ExtResource("5_4oam5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Platform_Room1/Cube_013" index="0"]
-
-[node name="@CollisionShape3D@21992" type="CollisionShape3D" parent="Room/Platform_Room1/Cube_013/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_iqe6i")
-
-[node name="@CollisionShape3D@21991" type="CollisionShape3D" parent="Room/Platform_Room1/Cube_013/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ndn6x")
-
-[node name="@CollisionShape3D@21990" type="CollisionShape3D" parent="Room/Platform_Room1/Cube_013/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_booce")
-
-[node name="@CollisionShape3D@21989" type="CollisionShape3D" parent="Room/Platform_Room1/Cube_013/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_caghy")
-
-[node name="@CollisionShape3D@21988" type="CollisionShape3D" parent="Room/Platform_Room1/Cube_013/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_a03qb")
-
-[node name="@CollisionShape3D@21987" type="CollisionShape3D" parent="Room/Platform_Room1/Cube_013/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_06mdc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Platform_Room1/Cube_013/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_n66jo")
-
 [node name="Ceiling_50x50" parent="Room" instance=ExtResource("6_im62y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Ceiling_50x50/Roof" index="0"]
-
-[node name="@CollisionShape3D@37901" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ornpv")
-
-[node name="@CollisionShape3D@37900" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cy7oe")
-
-[node name="@CollisionShape3D@37899" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_yyi8r")
-
-[node name="@CollisionShape3D@37898" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_x2n3c")
-
-[node name="@CollisionShape3D@37897" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_jgja5")
-
-[node name="@CollisionShape3D@37896" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qvmua")
-
-[node name="@CollisionShape3D@37895" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_lp3tw")
-
-[node name="@CollisionShape3D@37894" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_v3mcp")
-
-[node name="@CollisionShape3D@37893" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_4ukll")
-
-[node name="@CollisionShape3D@37892" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_vrntj")
-
-[node name="@CollisionShape3D@37891" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_irlj2")
-
-[node name="@CollisionShape3D@37890" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_rxwyj")
-
-[node name="@CollisionShape3D@37889" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_7sl3j")
-
-[node name="@CollisionShape3D@37888" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_gwevs")
-
-[node name="@CollisionShape3D@37887" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dhgiv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ceiling_50x50/Roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_d426n")
 
 [node name="floor" parent="Room" instance=ExtResource("7_t05uf")]
 
@@ -700,406 +639,14 @@ shape = SubResource("ConvexPolygonShape3D_wbnd4")
 [node name="Pillar" parent="Room" instance=ExtResource("8_dfqwk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 2.5, -5)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Pillar/Cube_006" index="0"]
-
-[node name="@CollisionShape3D@38557" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_r4sit")
-
-[node name="@CollisionShape3D@38556" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_xom18")
-
-[node name="@CollisionShape3D@38555" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_3ioxo")
-
-[node name="@CollisionShape3D@38554" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_lrajn")
-
-[node name="@CollisionShape3D@38553" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_fx7sr")
-
-[node name="@CollisionShape3D@38552" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_lvfix")
-
-[node name="@CollisionShape3D@38551" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_b4dh1")
-
-[node name="@CollisionShape3D@38550" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_2ywrx")
-
-[node name="@CollisionShape3D@38549" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_imfvn")
-
-[node name="@CollisionShape3D@38548" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_s0mtg")
-
-[node name="@CollisionShape3D@38547" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_t5hji")
-
-[node name="@CollisionShape3D@38546" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ynrfq")
-
-[node name="@CollisionShape3D@38545" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_xh4iy")
-
-[node name="@CollisionShape3D@38544" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cljbr")
-
-[node name="@CollisionShape3D@38543" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_p5q8i")
-
-[node name="@CollisionShape3D@38542" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_o4wuy")
-
-[node name="@CollisionShape3D@38541" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_1xiiw")
-
-[node name="@CollisionShape3D@38540" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_lxj84")
-
-[node name="@CollisionShape3D@38539" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_j0q6c")
-
-[node name="@CollisionShape3D@38538" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_e4k0g")
-
-[node name="@CollisionShape3D@38537" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_u4m83")
-
-[node name="@CollisionShape3D@38536" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_n3sr3")
-
-[node name="@CollisionShape3D@38535" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_pdh5t")
-
-[node name="@CollisionShape3D@38534" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_7xr6k")
-
-[node name="@CollisionShape3D@38533" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_7pplb")
-
-[node name="@CollisionShape3D@38532" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_u1h0a")
-
-[node name="@CollisionShape3D@38531" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_wsq2t")
-
-[node name="@CollisionShape3D@38530" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_spc1d")
-
-[node name="@CollisionShape3D@38529" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_hrvlo")
-
-[node name="@CollisionShape3D@38528" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_s52im")
-
-[node name="@CollisionShape3D@38527" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_hu7k7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Pillar/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_k2kaq")
-
 [node name="Pillar2" parent="Room" instance=ExtResource("8_dfqwk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 2.5, 5)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Pillar2/Cube_006" index="0"]
-
-[node name="@CollisionShape3D@38899" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ubgio")
-
-[node name="@CollisionShape3D@38898" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_36kvi")
-
-[node name="@CollisionShape3D@38897" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_58pld")
-
-[node name="@CollisionShape3D@38896" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_72fpr")
-
-[node name="@CollisionShape3D@38895" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_fo7ba")
-
-[node name="@CollisionShape3D@38894" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_a44xt")
-
-[node name="@CollisionShape3D@38893" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_jh3ya")
-
-[node name="@CollisionShape3D@38892" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_mc7je")
-
-[node name="@CollisionShape3D@38891" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qp2ke")
-
-[node name="@CollisionShape3D@38890" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_s4bhn")
-
-[node name="@CollisionShape3D@38889" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_v2uu5")
-
-[node name="@CollisionShape3D@38888" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_c5lij")
-
-[node name="@CollisionShape3D@38887" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_b7knf")
-
-[node name="@CollisionShape3D@38886" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_vkoko")
-
-[node name="@CollisionShape3D@38885" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_8vur8")
-
-[node name="@CollisionShape3D@38884" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_bj46y")
-
-[node name="@CollisionShape3D@38883" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_4o7mq")
-
-[node name="@CollisionShape3D@38882" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ff8wu")
-
-[node name="@CollisionShape3D@38881" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_4gd1a")
-
-[node name="@CollisionShape3D@38880" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_7hkb7")
-
-[node name="@CollisionShape3D@38879" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_mlqsl")
-
-[node name="@CollisionShape3D@38878" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_jtxt2")
-
-[node name="@CollisionShape3D@38877" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_l217i")
-
-[node name="@CollisionShape3D@38876" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cae27")
-
-[node name="@CollisionShape3D@38875" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_fs7li")
-
-[node name="@CollisionShape3D@38874" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_gum8h")
-
-[node name="@CollisionShape3D@38873" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_7upn7")
-
-[node name="@CollisionShape3D@38872" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_80mi3")
-
-[node name="@CollisionShape3D@38871" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_oqiqn")
-
-[node name="@CollisionShape3D@38870" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_x2s3s")
-
-[node name="@CollisionShape3D@38869" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_3e171")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Pillar2/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_vycw1")
 
 [node name="Pillar3" parent="Room" instance=ExtResource("8_dfqwk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5, 2.5, -5)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Pillar3/Cube_006" index="0"]
-
-[node name="@CollisionShape3D@39241" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_nwer8")
-
-[node name="@CollisionShape3D@39240" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_vhg30")
-
-[node name="@CollisionShape3D@39239" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_pjuco")
-
-[node name="@CollisionShape3D@39238" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_eleqf")
-
-[node name="@CollisionShape3D@39237" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_sr6y1")
-
-[node name="@CollisionShape3D@39236" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_wpsxl")
-
-[node name="@CollisionShape3D@39235" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_xmpmo")
-
-[node name="@CollisionShape3D@39234" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_acuww")
-
-[node name="@CollisionShape3D@39233" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ae25l")
-
-[node name="@CollisionShape3D@39232" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_re6na")
-
-[node name="@CollisionShape3D@39231" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_06bdg")
-
-[node name="@CollisionShape3D@39230" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_bs4xv")
-
-[node name="@CollisionShape3D@39229" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_23gp6")
-
-[node name="@CollisionShape3D@39228" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_d2qdw")
-
-[node name="@CollisionShape3D@39227" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_i5kct")
-
-[node name="@CollisionShape3D@39226" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_s5ufd")
-
-[node name="@CollisionShape3D@39225" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_5iufx")
-
-[node name="@CollisionShape3D@39224" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_1cc6o")
-
-[node name="@CollisionShape3D@39223" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_hgjhv")
-
-[node name="@CollisionShape3D@39222" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ohi41")
-
-[node name="@CollisionShape3D@39221" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_vqi1h")
-
-[node name="@CollisionShape3D@39220" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_8gv6o")
-
-[node name="@CollisionShape3D@39219" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_7xw4u")
-
-[node name="@CollisionShape3D@39218" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_667ck")
-
-[node name="@CollisionShape3D@39217" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cwfsx")
-
-[node name="@CollisionShape3D@39216" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_d0omb")
-
-[node name="@CollisionShape3D@39215" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_88len")
-
-[node name="@CollisionShape3D@39214" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_plecy")
-
-[node name="@CollisionShape3D@39213" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_y8erq")
-
-[node name="@CollisionShape3D@39212" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_yisdl")
-
-[node name="@CollisionShape3D@39211" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_uvxh2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Pillar3/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_aktrs")
-
 [node name="Pillar4" parent="Room" instance=ExtResource("8_dfqwk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5, 2.5, 5)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Pillar4/Cube_006" index="0"]
-
-[node name="@CollisionShape3D@39583" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_jci7o")
-
-[node name="@CollisionShape3D@39582" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_i4sbd")
-
-[node name="@CollisionShape3D@39581" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_l31ad")
-
-[node name="@CollisionShape3D@39580" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_wwlwt")
-
-[node name="@CollisionShape3D@39579" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ydoy2")
-
-[node name="@CollisionShape3D@39578" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_nvyws")
-
-[node name="@CollisionShape3D@39577" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ewa60")
-
-[node name="@CollisionShape3D@39576" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_s7mbd")
-
-[node name="@CollisionShape3D@39575" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_q6iwu")
-
-[node name="@CollisionShape3D@39574" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cnevb")
-
-[node name="@CollisionShape3D@39573" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_b6qlv")
-
-[node name="@CollisionShape3D@39572" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_l2qn6")
-
-[node name="@CollisionShape3D@39571" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_5qcy1")
-
-[node name="@CollisionShape3D@39570" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_s4rny")
-
-[node name="@CollisionShape3D@39569" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_td76i")
-
-[node name="@CollisionShape3D@39568" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_uhwjc")
-
-[node name="@CollisionShape3D@39567" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_wksr8")
-
-[node name="@CollisionShape3D@39566" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qlmes")
-
-[node name="@CollisionShape3D@39565" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_hdcpu")
-
-[node name="@CollisionShape3D@39564" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_44m07")
-
-[node name="@CollisionShape3D@39563" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_s2yaf")
-
-[node name="@CollisionShape3D@39562" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_3t7q4")
-
-[node name="@CollisionShape3D@39561" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_adovy")
-
-[node name="@CollisionShape3D@39560" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_bl1l0")
-
-[node name="@CollisionShape3D@39559" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_06k7t")
-
-[node name="@CollisionShape3D@39558" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_llygm")
-
-[node name="@CollisionShape3D@39557" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_njbkv")
-
-[node name="@CollisionShape3D@39556" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_chcik")
-
-[node name="@CollisionShape3D@39555" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_lmnuv")
-
-[node name="@CollisionShape3D@39554" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ktdsq")
-
-[node name="@CollisionShape3D@39553" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_m603m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Pillar4/Cube_006/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_nwkuw")
 
 [node name="Wall_50x56" parent="Room" instance=ExtResource("4_sjf4f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 25)
@@ -1111,6 +658,459 @@ shape = SubResource("ConvexPolygonShape3D_vl1xk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Wall_50x56/Wall_002/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_5y2bf")
+
+[node name="Room_Platform_Room1_Cube_013_StaticBody3D#_CollisionShape3D_21992" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_iqe6i")
+
+[node name="Room_Platform_Room1_Cube_013_StaticBody3D#_CollisionShape3D_21991" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ndn6x")
+
+[node name="Room_Platform_Room1_Cube_013_StaticBody3D#_CollisionShape3D_21990" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_booce")
+
+[node name="Room_Platform_Room1_Cube_013_StaticBody3D#_CollisionShape3D_21989" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_caghy")
+
+[node name="Room_Platform_Room1_Cube_013_StaticBody3D#_CollisionShape3D_21988" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_a03qb")
+
+[node name="Room_Platform_Room1_Cube_013_StaticBody3D#_CollisionShape3D_21987" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_06mdc")
+
+[node name="Room_Platform_Room1_Cube_013_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_n66jo")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37901" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ornpv")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37900" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_cy7oe")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37899" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_yyi8r")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37898" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_x2n3c")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37897" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_jgja5")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37896" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_qvmua")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37895" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_lp3tw")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37894" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_v3mcp")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37893" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_4ukll")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37892" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_vrntj")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37891" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_irlj2")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37890" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_rxwyj")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37889" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_7sl3j")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37888" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_gwevs")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#_CollisionShape3D_37887" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_dhgiv")
+
+[node name="Room_Ceiling_50x50_Roof_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_d426n")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38557" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_r4sit")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38556" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_xom18")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38555" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_3ioxo")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38554" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_lrajn")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38553" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_fx7sr")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38552" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_lvfix")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38551" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_b4dh1")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38550" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_2ywrx")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38549" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_imfvn")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38548" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_s0mtg")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38547" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_t5hji")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38546" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ynrfq")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38545" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_xh4iy")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38544" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_cljbr")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38543" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_p5q8i")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38542" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_o4wuy")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38541" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_1xiiw")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38540" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_lxj84")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38539" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_j0q6c")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38538" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_e4k0g")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38537" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_u4m83")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38536" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_n3sr3")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38535" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_pdh5t")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38534" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_7xr6k")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38533" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_7pplb")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38532" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_u1h0a")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38531" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_wsq2t")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38530" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_spc1d")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38529" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_hrvlo")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38528" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_s52im")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#_CollisionShape3D_38527" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_hu7k7")
+
+[node name="Room_Pillar_Cube_006_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_k2kaq")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38899" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ubgio")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38898" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_36kvi")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38897" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_58pld")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38896" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_72fpr")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38895" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_fo7ba")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38894" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_a44xt")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38893" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_jh3ya")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38892" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_mc7je")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38891" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_qp2ke")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38890" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_s4bhn")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38889" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_v2uu5")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38888" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_c5lij")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38887" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_b7knf")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38886" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_vkoko")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38885" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_8vur8")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38884" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_bj46y")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38883" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_4o7mq")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38882" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ff8wu")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38881" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_4gd1a")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38880" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_7hkb7")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38879" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_mlqsl")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38878" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_jtxt2")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38877" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_l217i")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38876" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_cae27")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38875" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_fs7li")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38874" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_gum8h")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38873" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_7upn7")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38872" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_80mi3")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38871" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_oqiqn")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38870" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_x2s3s")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#_CollisionShape3D_38869" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_3e171")
+
+[node name="Room_Pillar2_Cube_006_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_vycw1")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39241" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_nwer8")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39240" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_vhg30")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39239" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_pjuco")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39238" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_eleqf")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39237" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_sr6y1")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39236" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_wpsxl")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39235" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_xmpmo")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39234" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_acuww")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39233" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ae25l")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39232" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_re6na")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39231" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_06bdg")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39230" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_bs4xv")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39229" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_23gp6")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39228" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_d2qdw")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39227" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_i5kct")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39226" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_s5ufd")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39225" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_5iufx")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39224" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_1cc6o")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39223" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_hgjhv")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39222" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ohi41")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39221" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_vqi1h")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39220" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_8gv6o")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39219" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_7xw4u")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39218" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_667ck")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39217" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_cwfsx")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39216" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_d0omb")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39215" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_88len")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39214" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_plecy")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39213" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_y8erq")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39212" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_yisdl")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#_CollisionShape3D_39211" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_uvxh2")
+
+[node name="Room_Pillar3_Cube_006_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_aktrs")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39583" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_jci7o")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39582" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_i4sbd")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39581" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_l31ad")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39580" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_wwlwt")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39579" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ydoy2")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39578" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_nvyws")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39577" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ewa60")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39576" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_s7mbd")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39575" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_q6iwu")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39574" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_cnevb")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39573" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_b6qlv")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39572" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_l2qn6")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39571" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_5qcy1")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39570" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_s4rny")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39569" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_td76i")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39568" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_uhwjc")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39567" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_wksr8")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39566" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_qlmes")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39565" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_hdcpu")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39564" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_44m07")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39563" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_s2yaf")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39562" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_3t7q4")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39561" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_adovy")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39560" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_bl1l0")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39559" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_06k7t")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39558" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_llygm")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39557" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_njbkv")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39556" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_chcik")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39555" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_lmnuv")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39554" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ktdsq")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#_CollisionShape3D_39553" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_m603m")
+
+[node name="Room_Pillar4_Cube_006_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_nwkuw")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -24)
