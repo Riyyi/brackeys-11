@@ -7,7 +7,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_0bi5m"]
 size = Vector3(0.1, 0.2, 0.8)
 
-[node name="Gun" instance=ExtResource("1_vtf48")]
+[node name="Shotgun" instance=ExtResource("1_vtf48")]
 bullet = ExtResource("2_12tyl")
 firerate = 1.0
 sound = ExtResource("3_4po7x")

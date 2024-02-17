@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn6cqf74752r3"]
+
+[ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_fhi08"]
+[ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="2_ar50d"]
+[ext_resource type="AudioStream" uid="uid://dll4af4uklhi0" path="res://assets/Machinegun.wav" id="3_rk3cu"]
+[ext_resource type="PackedScene" uid="uid://nj6cf1a0y54n" path="res://assets/guncam_rail_gun.tscn" id="4_hegvr"]
+
+[node name="Machinegun" instance=ExtResource("1_fhi08")]
+bullet = ExtResource("2_ar50d")
+firerate = 15.0
+sound = ExtResource("3_rk3cu")
+RecoilForce = 0.04
+MaxRecoil = 0.5
+RecoilRecoverSpeed = 2.0
+
+[node name="BulletEmitter" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.782683)
+
+[node name="Sketchfab_Scene" parent="." index="1" instance=ExtResource("4_hegvr")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, -0.791048)
