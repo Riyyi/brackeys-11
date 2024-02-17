@@ -8,7 +8,10 @@ var holding_trigger: bool = false
 func shoot() -> void:
 	did_shoot.emit(name)
 	await get_tree().create_timer(spawn_delay).timeout
-	bullet_emitter.add_child(bullet.instantiate())
+	for node in bullet_emitters.get_children():
+		var bullet_instance = bullet.instantiate()
+		bullet_instance.global_transform = node.global_transform
+		get_tree().root.add_child(bullet_instance)
 	bangbang.play()
 
 func _process(delta) -> void:

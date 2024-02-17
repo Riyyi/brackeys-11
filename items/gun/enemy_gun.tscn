@@ -11,3 +11,5 @@ spawn_delay = 0.0
 bullet = ExtResource("2_dm2y1")
 firerate = 0.2
 sound = ExtResource("4_2hm45")
+
+[node name="Node3D" type="Node3D" parent="BulletEmitters" index="0"]

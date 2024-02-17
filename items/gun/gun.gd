@@ -11,7 +11,7 @@ signal did_shoot(name: String)
 @export var RecoilRecoverSpeed: float = 1.0
 
 @onready var bangbang = $Bangbang
-@onready var bullet_emitter = $BulletEmitter
+@onready var bullet_emitters = $BulletEmitters
 
 var firerate_timer: float = 0.0
 var has_ammo: bool = true
@@ -30,10 +30,10 @@ func recoil_recover():
 
 func shoot() -> void:
 	recoil()
-	bullet_emitter.add_child(bullet.instantiate())
-	var bullet_instance = bullet.instantiate()
-	bullet_instance.global_transform = bullet_emitter.global_transform
-	get_tree().root.add_child(bullet_instance)
+	for node in bullet_emitters.get_children():
+		var bullet_instance = bullet.instantiate()
+		bullet_instance.global_transform = node.global_transform
+		get_tree().root.add_child(bullet_instance)
 	bangbang.play()
 	did_shoot.emit(name)
 
