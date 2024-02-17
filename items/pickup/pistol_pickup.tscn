@@ -31,7 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14219, 0)
 material_override = SubResource("ShaderMaterial_khgmn")
 
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
-transform = Transform3D(-2.97058, 0, -6.88663, 0, 7.5, 0, 6.88663, 0, -2.97058, 0, 0, -1)
+transform = Transform3D(3.93669, 0, -6.38377, 0, 7.5, 0, 6.38377, 0, 3.93669, 0, 0, -1)
 
 [node name="Gun" type="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
 transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0)

@@ -32,6 +32,8 @@ func game_over():
 # -----------------------------------------
 
 func _ready() -> void:
+	var did_reset_player: bool = ResourceStash.game.reset_player
+	
 	ResourceStash.game.in_world = true
 	player = ResourceStash.game.spawn_player(self)
 	player.global_position.y = 10
@@ -49,6 +51,6 @@ func _ready() -> void:
 	ui_update_ammo(0, player.machinegun_ammo)
 	ui_update_ammo(1, player.shotgun_ammo)
 	
-	world_generator = WorldGenerator.new(3, 1)
+	world_generator = WorldGenerator.new(3, 1, did_reset_player)
 	nav_region.add_child(world_generator)
 	bake_navmesh()

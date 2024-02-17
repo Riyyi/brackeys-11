@@ -2,7 +2,6 @@ class_name AmmoPickup extends Pickup
 
 @export var amount: int = 5
 @export var type: AmmoType
-
 enum AmmoType { Machinegun = 0, Shotgun = 1 }
 
 func give_player_item(player: Player):

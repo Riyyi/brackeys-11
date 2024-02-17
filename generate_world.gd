@@ -6,7 +6,7 @@ var starting_room_length = 50
 var room_width = 50
 var room_length = 50
 var hallway_width = 150
-var hallway_length = 20
+var hallway_length = 20 # TODO: put 30
 var collumns = 3
 var rows = 8
 
@@ -29,10 +29,20 @@ var big_enemy_room_instance: Node3D
 var room_instances: Array[Node3D]
 var hallway_instances: Array[Node3D]
 
-func _init(columns_: int, rows_: int):
+var did_reset_player: bool = false
+
+# RNG between 0-x, below y is skipped
+var ammo_spawn_chance: Vector2 = Vector2(100, 50)
+var ammo_type_spawn_chance: Vector2 = Vector2(100, 50)
+var health_spawn_chance: Vector2 = Vector2(100, 50)
+static var item_spawns: Array[ItemSpawn]
+
+func _init(columns_: int, rows_: int, did_reset_player_: bool):
 	name = "Generate"
 	collumns = columns_
 	rows = rows_
+	did_reset_player = did_reset_player_
+	item_spawns.clear()
 
 func _ready():
 	var dir = DirAccess.open("res://Rooms")
@@ -63,10 +73,7 @@ func _ready():
 	starting_hallway_instance.global_position.z = -(starting_room_length / 2 + hallway_length / 2)
 	
 	generate_rooms()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	generate_loot()
 
 func generate_rooms():
 	var big_enemy_room_spawned = false
@@ -128,3 +135,72 @@ func generate_rooms():
 			hallway_instance.global_position.z = -(starting_room_length / 2 + hallway_length * (row_index + 1) + room_length * (row_index + 1) + hallway_length / 2)
 		
 		row_index += 1
+
+static func add_spawn(marker: ItemSpawn) -> void:
+	item_spawns.append(marker)
+
+func generate_loot():
+	var gun_spawns: Array[GunSpawn] = []
+	var ammo_spawns: Array[AmmoSpawn] = []
+	var health_spawns: Array[HealthSpawn] = []
+	for i in range(item_spawns.size()):
+		var spawn = item_spawns[i]
+		if (spawn.type == ItemSpawn.SpawnType.Ammo): ammo_spawns.append(spawn)
+		if (spawn.type == ItemSpawn.SpawnType.Gun): gun_spawns.append(spawn)
+		if (spawn.type == ItemSpawn.SpawnType.Health): health_spawns.append(spawn)
+	
+	if did_reset_player:
+		spawn_pistol(gun_spawns[0])
+	
+	# Spawn a gun in the loot room, pick one at random
+	spawn_random_gun(gun_spawns)
+	
+	# Spawn Ammo/health
+	spawn_ammo_and_health(ammo_spawns, health_spawns)
+	
+	pass
+
+func spawn_pistol(gun_spawn: GunSpawn) -> void:
+	var pistol: PistolPickup = load("res://items/pickup/pistol_pickup.tscn").instantiate()
+	starting_room_instance.add_child(pistol)
+	pistol.global_position = gun_spawn.global_position
+	
+func spawn_random_gun(gun_spawns: Array[GunSpawn]) -> void:
+	var guns: Array[PackedScene] = [
+		load("res://items/pickup/machinegun_pickup.tscn"),
+		load("res://items/pickup/pistol_pickup.tscn"),
+		load("res://items/pickup/shotgun_pickup.tscn")
+	]
+	for i in range(1, gun_spawns.size()): # Skip first gun, as that is the starting pistol
+		var spawn: GunSpawn = gun_spawns[i]
+		var gun: int = rng.randi_range(0, guns.size() - 1)
+		var gun_pickup: WeaponPickup = guns[gun].instantiate()
+		spawn.add_sibling(gun_pickup)
+		gun_pickup.global_position = spawn.global_position
+	pass
+
+func spawn_ammo_and_health(ammo_spawns: Array[AmmoSpawn], health_spawns: Array[HealthSpawn]) -> void:
+	var ammo: PackedScene = load("res://items/pickup/ammo_pickup.tscn")
+	for i in range(ammo_spawns.size()):
+		var spawn_chance = rng.randf_range(0, health_spawn_chance[0])
+		if spawn_chance < ammo_spawn_chance[1]:
+			continue
+		
+		var spawn: AmmoSpawn = ammo_spawns[i]
+		var ammo_type: float = rng.randf_range(0, ammo_type_spawn_chance[0])
+		var ammo_pickup: AmmoPickup = ammo.instantiate()
+		spawn.add_sibling(ammo_pickup)
+		ammo_pickup.global_position = spawn.global_position
+		ammo_pickup.type = AmmoPickup.AmmoType.Machinegun if ammo_type < ammo_type_spawn_chance[1] else \
+						   AmmoPickup.AmmoType.Shotgun
+	
+	var health: PackedScene = load("res://items/pickup/health_pickup.tscn")
+	for i in range(health_spawns.size()):
+		var spawn_chance: float = rng.randf_range(0, health_spawn_chance[0])
+		if spawn_chance < health_spawn_chance[1]:
+			continue
+		
+		var spawn: HealthSpawn = health_spawns[i]
+		var health_pickup: HealthPickup = health.instantiate()
+		spawn.add_sibling(health_pickup)
+		health_pickup.global_position = spawn.global_position		

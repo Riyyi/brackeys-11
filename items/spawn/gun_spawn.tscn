@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://xnyewwcclqlm"]
+[gd_scene load_steps=5 format=3 uid="uid://xnyewwcclqlm"]
 
-[ext_resource type="PackedScene" uid="uid://uh8c6if75bba" path="res://items/spawn/item_spawn.tscn" id="1_0vj7g"]
 [ext_resource type="Script" path="res://items/spawn/gun_spawn.gd" id="2_fyche"]
 [ext_resource type="Texture2D" uid="uid://i766yx5hbsyh" path="res://assets/spawn_gun.png" id="2_ymeal"]
 
@@ -13,8 +12,9 @@ billboard_mode = 2
 [sub_resource type="QuadMesh" id="QuadMesh_qh5lx"]
 material = SubResource("StandardMaterial3D_nqrey")
 
-[node name="GunSpawn" instance=ExtResource("1_0vj7g")]
+[node name="GunSpawn" type="Marker3D"]
 script = ExtResource("2_fyche")
+type = 1
 
-[node name="Icon" parent="." index="0"]
+[node name="Icon" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_qh5lx")

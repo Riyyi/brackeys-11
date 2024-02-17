@@ -13,8 +13,8 @@ height = 0.5
 bullet = ExtResource("2_5ek36")
 firerate = 3.0
 sound = ExtResource("3_5sagp")
-RecoilForce = 0.05
-MaxRecoil = 0.3
+RecoilForce = 0.2
+MaxRecoil = 0.5
 RecoilRecoverSpeed = 2.0
 
 [node name="BulletEmitters" parent="." index="0"]

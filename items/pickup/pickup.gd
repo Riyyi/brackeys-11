@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	hover += delta
 	$ItemBillboard.position.y = sin(hover * 1.5) / 4
 	$CollisionShape3D.position.y = sin(hover * 1.5) / 4
+	$OmniLight3D.position.y = sin(hover * 1.5) / 4
 
 func on_body_entered(body: Node3D):
 	if "Player" in body.name:
