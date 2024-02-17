@@ -11,12 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://carub3ybe3c7d" path="res://assets/GDAssets/Models/wall_modular.tscn" id="8_13dbl"]
 [ext_resource type="PackedScene" uid="uid://c5pjn7mjojaw0" path="res://assets/GDAssets/Models/ceiling_50x_50.tscn" id="9_l1hpq"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vvh2y"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5h8ge"]
 render_priority = 0
 shader = ExtResource("7_i7tna")
 
 [sub_resource type="BoxMesh" id="BoxMesh_yp686"]
-material = SubResource("ShaderMaterial_vvh2y")
+material = SubResource("ShaderMaterial_5h8ge")
 size = Vector3(75, 1, 75)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2vk0m"]

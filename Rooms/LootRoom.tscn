@@ -1,33 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2qgktmyckssd"]
+[gd_scene load_steps=10 format=3 uid="uid://b2qgktmyckssd"]
 
 [ext_resource type="PackedScene" uid="uid://c8b75mrpnb6su" path="res://assets/GDAssets/Models/floor.tscn" id="1_yhp4h"]
 [ext_resource type="PackedScene" uid="uid://bq4uvtb1tnyc6" path="res://assets/GDAssets/Models/wall_door_50x_50.tscn" id="2_qikrk"]
 [ext_resource type="PackedScene" uid="uid://ckvufrfnmcnng" path="res://assets/GDAssets/Models/wall_50x_50.tscn" id="3_7b605"]
 [ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/door.tscn" id="4_1xauu"]
+[ext_resource type="PackedScene" uid="uid://bkt366adbd75o" path="res://assets/GDAssets/Models/altar.tscn" id="6_t0rrh"]
+[ext_resource type="PackedScene" uid="uid://cwcfd6m0jxois" path="res://assets/GDAssets/Models/platform_room_1.tscn" id="7_4o0t5"]
+[ext_resource type="PackedScene" uid="uid://dj6j0f4cs8hj4" path="res://env.tscn" id="8_7yawq"]
 [ext_resource type="PackedScene" uid="uid://c5pjn7mjojaw0" path="res://assets/GDAssets/Models/ceiling_50x_50.tscn" id="8_rlfov"]
+[ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="9_x7ue8"]
 
 [node name="LootRoom" type="Node3D"]
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -24)
 layers = 786433
 light_color = Color(0, 1, 1, 1)
 omni_range = 10.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -24)
 layers = 786433
 light_color = Color(0, 1, 1, 1)
 omni_range = 10.0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 24)
 layers = 786433
 light_color = Color(0, 1, 1, 1)
 omni_range = 10.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, 24)
 layers = 786433
 light_color = Color(0, 1, 1, 1)
 omni_range = 10.0
@@ -40,23 +44,11 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5
 [node name="Wall_Door_50x51" parent="." instance=ExtResource("2_qikrk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 25)
 
-[node name="Wall_50x50" parent="." instance=ExtResource("3_7b605")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 25)
-
-[node name="Wall_50x51" parent="." instance=ExtResource("3_7b605")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 6, -25)
-
 [node name="Wall_50x52" parent="." instance=ExtResource("3_7b605")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25, 0.5, 0)
 
-[node name="Wall_50x53" parent="." instance=ExtResource("3_7b605")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25, 6, 0)
-
 [node name="Wall_50x54" parent="." instance=ExtResource("3_7b605")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0.5, 0)
-
-[node name="Wall_50x55" parent="." instance=ExtResource("3_7b605")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 6, 0)
 
 [node name="Door" parent="." instance=ExtResource("4_1xauu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 25)
@@ -65,4 +57,62 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 25)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -25)
 
 [node name="Ceiling_50x50" parent="." instance=ExtResource("8_rlfov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="Altar" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+
+[node name="Altar2" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 5, 2.5, -1.5)
+
+[node name="Altar3" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 5, 2.5, 1.5)
+
+[node name="Altar4" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 5, 2.5, 4.5)
+
+[node name="Altar5" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 5, 2.5, -4.5)
+
+[node name="Platform_Room1" parent="." instance=ExtResource("7_4o0t5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Altar6" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -5, 2.5, -1.5)
+
+[node name="Altar7" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -5, 2.5, 1.5)
+
+[node name="Altar8" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -5, 2.5, 4.5)
+
+[node name="Altar9" parent="." instance=ExtResource("6_t0rrh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -5, 2.5, -4.5)
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("8_7yawq")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.05, 0)
+layers = 786433
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+spot_range = 15.0
+spot_angle = 30.0
+
+[node name="Pillar" parent="." instance=ExtResource("9_x7ue8")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.5, 2.5, 0)
+
+[node name="Pillar2" parent="." instance=ExtResource("9_x7ue8")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.5, 2.5, 0)
+
+[node name="Pillar3" parent="." instance=ExtResource("9_x7ue8")]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -15, 0.5, -15)
+
+[node name="Pillar4" parent="." instance=ExtResource("9_x7ue8")]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 15, 0.5, -15)
+
+[node name="Pillar5" parent="." instance=ExtResource("9_x7ue8")]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -15, 0.5, 15)
+
+[node name="Pillar6" parent="." instance=ExtResource("9_x7ue8")]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 15, 0.5, 15)
