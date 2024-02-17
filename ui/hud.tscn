@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci345aqxtwmce"]
+[gd_scene load_steps=3 format=3 uid="uid://ci345aqxtwmce"]
 
 [ext_resource type="LabelSettings" uid="uid://dd13tbq3y10yu" path="res://ui/default_font_settings.tres" id="1_c7kto"]
+[ext_resource type="Theme" uid="uid://cpx80t25kxpbk" path="res://ui/health_bar.tres" id="2_ua703"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -13,23 +14,28 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 11.0
-offset_top = 5.0
-offset_right = 126.0
-offset_bottom = 69.0
+offset_top = 11.0
+offset_right = 286.0
+offset_bottom = 104.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(275, 25)
 layout_mode = 2
+theme = ExtResource("2_ua703")
+step = 1.0
+value = 100.0
+show_percentage = false
 
-[node name="HealthLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Health: "
-label_settings = ExtResource("1_c7kto")
-
-[node name="HealthValue" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="HealthValue" type="Label" parent="VBoxContainer/HealthBar"]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 269.0
+offset_bottom = 26.0
 size_flags_horizontal = 3
-text = "0"
+text = "100"
 label_settings = ExtResource("1_c7kto")
 horizontal_alignment = 2
 
@@ -45,7 +51,7 @@ label_settings = ExtResource("1_c7kto")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "0"
+text = "0 "
 label_settings = ExtResource("1_c7kto")
 horizontal_alignment = 2
 
@@ -60,7 +66,7 @@ label_settings = ExtResource("1_c7kto")
 [node name="ShotgunAmmoValue" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "0"
+text = "0 "
 label_settings = ExtResource("1_c7kto")
 horizontal_alignment = 2
 
@@ -77,29 +83,29 @@ alignment = 2
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
 
-[node name="HighScoreLabel" type="Label" parent="VBoxContainer2/HBoxContainer2"]
-layout_mode = 2
-text = "High Score:"
-label_settings = ExtResource("1_c7kto")
-
 [node name="HighScoreValue" type="Label" parent="VBoxContainer2/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 label_settings = ExtResource("1_c7kto")
-horizontal_alignment = 2
+
+[node name="HighScoreLabel" type="Label" parent="VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "High Score"
+label_settings = ExtResource("1_c7kto")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
 
-[node name="ScoreLabel" type="Label" parent="VBoxContainer2/HBoxContainer3"]
-layout_mode = 2
-text = "Score:"
-label_settings = ExtResource("1_c7kto")
-
 [node name="ScoreValue" type="Label" parent="VBoxContainer2/HBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 label_settings = ExtResource("1_c7kto")
-horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+text = "Score"
+label_settings = ExtResource("1_c7kto")
