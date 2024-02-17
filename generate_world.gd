@@ -32,9 +32,8 @@ var hallway_instances: Array[Node3D]
 var did_reset_player: bool = false
 
 # RNG between 0-x, below y is skipped
-var ammo_spawn_chance: Vector2 = Vector2(100, 50)
-var ammo_type_spawn_chance: Vector2 = Vector2(100, 50)
-var health_spawn_chance: Vector2 = Vector2(100, 50)
+var loot_spawn_chance: Vector2 = Vector2(100, 50) # Spawn or not
+var loot_type_spawn_chance: Vector3 = Vector3(100, 33.3, 66.6) # Health, Machinegun, Shotgun
 static var item_spawns: Array[ItemSpawn]
 
 func _init(columns_: int, rows_: int, did_reset_player_: bool):
@@ -141,13 +140,11 @@ static func add_spawn(marker: ItemSpawn) -> void:
 
 func generate_loot():
 	var gun_spawns: Array[GunSpawn] = []
-	var ammo_spawns: Array[AmmoSpawn] = []
-	var health_spawns: Array[HealthSpawn] = []
+	var loot_spawns: Array[ItemSpawn] = []
 	for i in range(item_spawns.size()):
 		var spawn = item_spawns[i]
-		if (spawn.type == ItemSpawn.SpawnType.Ammo): ammo_spawns.append(spawn)
 		if (spawn.type == ItemSpawn.SpawnType.Gun): gun_spawns.append(spawn)
-		if (spawn.type == ItemSpawn.SpawnType.Health): health_spawns.append(spawn)
+		if (spawn.type == ItemSpawn.SpawnType.Loot): loot_spawns.append(spawn)
 	
 	if did_reset_player:
 		spawn_pistol(gun_spawns[0])
@@ -156,9 +153,7 @@ func generate_loot():
 	spawn_random_gun(gun_spawns)
 	
 	# Spawn Ammo/health
-	spawn_ammo_and_health(ammo_spawns, health_spawns)
-	
-	pass
+	spawn_ammo_and_health(loot_spawns)
 
 func spawn_pistol(gun_spawn: GunSpawn) -> void:
 	var pistol: PistolPickup = load("res://items/pickup/pistol_pickup.tscn").instantiate()
@@ -179,28 +174,24 @@ func spawn_random_gun(gun_spawns: Array[GunSpawn]) -> void:
 		gun_pickup.global_position = spawn.global_position
 	pass
 
-func spawn_ammo_and_health(ammo_spawns: Array[AmmoSpawn], health_spawns: Array[HealthSpawn]) -> void:
+func spawn_ammo_and_health(loot_spawns: Array[ItemSpawn]) -> void:
 	var ammo: PackedScene = load("res://items/pickup/ammo_pickup.tscn")
-	for i in range(ammo_spawns.size()):
-		var spawn_chance = rng.randf_range(0, health_spawn_chance[0])
-		if spawn_chance < ammo_spawn_chance[1]:
+	var health: PackedScene = load("res://items/pickup/health_pickup.tscn")	
+	for i in range(loot_spawns.size()):
+		var spawn_chance = rng.randf_range(0, loot_spawn_chance[0])
+		if spawn_chance < loot_spawn_chance[1]:
 			continue
 		
-		var spawn: AmmoSpawn = ammo_spawns[i]
-		var ammo_type: float = rng.randf_range(0, ammo_type_spawn_chance[0])
-		var ammo_pickup: AmmoPickup = ammo.instantiate()
-		spawn.add_sibling(ammo_pickup)
-		ammo_pickup.global_position = spawn.global_position
-		ammo_pickup.type = AmmoPickup.AmmoType.Machinegun if ammo_type < ammo_type_spawn_chance[1] else \
-						   AmmoPickup.AmmoType.Shotgun
-	
-	var health: PackedScene = load("res://items/pickup/health_pickup.tscn")
-	for i in range(health_spawns.size()):
-		var spawn_chance: float = rng.randf_range(0, health_spawn_chance[0])
-		if spawn_chance < health_spawn_chance[1]:
-			continue
-		
-		var spawn: HealthSpawn = health_spawns[i]
-		var health_pickup: HealthPickup = health.instantiate()
-		spawn.add_sibling(health_pickup)
-		health_pickup.global_position = spawn.global_position		
+		var spawn: ItemSpawn = loot_spawns[i]
+		var spawn_type_chance = rng.randf_range(0, loot_type_spawn_chance[0])
+		print(str(spawn_type_chance))
+		if spawn_type_chance < loot_type_spawn_chance[1]:
+			var health_pickup: HealthPickup = health.instantiate()
+			spawn.add_sibling(health_pickup)
+			health_pickup.global_position = spawn.global_position
+		else:
+			var ammo_pickup: AmmoPickup = ammo.instantiate()
+			spawn.add_sibling(ammo_pickup)
+			ammo_pickup.global_position = spawn.global_position
+			ammo_pickup.type = AmmoPickup.AmmoType.Machinegun if spawn_type_chance < loot_type_spawn_chance[2] else \
+							   AmmoPickup.AmmoType.Shotgun
