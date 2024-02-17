@@ -87,6 +87,13 @@ script = ExtResource("3_crn3w")
 [node name="WorldCam" type="Camera3D" parent="CameraController"]
 cull_mask = 262143
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CameraController/WorldCam"]
+light_color = Color(0.839216, 0.996078, 0.988235, 1)
+light_energy = 0.3
+light_indirect_energy = 0.3
+light_volumetric_fog_energy = 0.0
+omni_range = 10.0
+
 [node name="GunViewport" type="SubViewport" parent="."]
 transparent_bg = true
 handle_input_locally = false
