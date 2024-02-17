@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://t5b15guq8wxq"]
+[gd_scene load_steps=6 format=3 uid="uid://t5b15guq8wxq"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_p3xts"]
 [ext_resource type="PackedScene" uid="uid://dj6j0f4cs8hj4" path="res://env.tscn" id="3_v7ha8"]
+[ext_resource type="PackedScene" uid="uid://blubkt3lolki2" path="res://ui/pause.tscn" id="4_jdwgi"]
 [ext_resource type="PackedScene" uid="uid://ci345aqxtwmce" path="res://ui/hud.tscn" id="6_h0a50"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yitvy"]
@@ -14,6 +15,9 @@ agent_radius = 2.0
 script = ExtResource("1_p3xts")
 
 [node name="HUD" parent="." instance=ExtResource("6_h0a50")]
+
+[node name="Pause" parent="." instance=ExtResource("4_jdwgi")]
+visible = false
 
 [node name="NavRegion" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_yitvy")
