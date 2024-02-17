@@ -11,6 +11,8 @@ size = Vector3(0.1, 0.2, 0.8)
 bullet = ExtResource("2_12tyl")
 firerate = 1.0
 sound = ExtResource("3_4po7x")
+RecoilForce = 0.3
+MaxRecoil = 0.3
 
 [node name="BulletEmitter" parent="." index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.792088)

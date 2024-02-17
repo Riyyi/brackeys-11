@@ -109,9 +109,6 @@ func did_shoot(gun: String):
 
 func _input(event) -> void:
 	if event.is_action_pressed("NextWeapon") or event.is_action_pressed("PreviousWeapon"):
-		print(current_gun)
-		print(gun1)
-		print(gun2)
 		if current_gun == 0 and gun2 != null:
 			switch_gun(1)
 		elif current_gun == 1 and gun1 != null:

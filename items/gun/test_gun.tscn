@@ -5,10 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://nj6cf1a0y54n" path="res://assets/guncam_rail_gun.tscn" id="3_okkpt"]
 [ext_resource type="AudioStream" uid="uid://dll4af4uklhi0" path="res://assets/Machinegun.wav" id="4_xww7a"]
 
-[node name="MachineGun" instance=ExtResource("1_3vuo7")]
+[node name="Shotgun" instance=ExtResource("1_3vuo7")]
 bullet = ExtResource("2_lwbnr")
 firerate = 15.0
 sound = ExtResource("4_xww7a")
+RecoilForce = 0.04
+MaxRecoil = 0.5
+RecoilRecoverSpeed = 2.0
 
 [node name="BulletEmitter" parent="." index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.782683)
