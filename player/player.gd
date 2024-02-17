@@ -107,6 +107,22 @@ func did_shoot(gun: String):
 		if shotgun_ammo == 0:
 			gun_instance.has_ammo = false
 
+func _input(event) -> void:
+	if event.is_action_pressed("NextWeapon") or event.is_action_pressed("PreviousWeapon"):
+		print(current_gun)
+		print(gun1)
+		print(gun2)
+		if current_gun == 0 and gun2 != null:
+			switch_gun(1)
+		elif current_gun == 1 and gun1 != null:
+			switch_gun(0)
+	elif event.is_action_pressed("Weapon1"):
+		if gun1 != null:
+			switch_gun(0)
+	elif event.is_action_pressed("Weapon2"):
+		if gun2 != null:
+			switch_gun(1)
+
 func switch_gun(gunid):
 	# Cleanup old gun
 	if(gun_node.get_child_count() != 0):
@@ -114,10 +130,12 @@ func switch_gun(gunid):
 	
 	# Set new gun
 	if gunid == 0:
+		current_gun = 0
 		gun_instance = gun1.instantiate() # machinegun
 		gun_instance.has_ammo = machinegun_ammo > 0
 	else:
 		gun_instance = gun2.instantiate() # shotgun
+		current_gun = 1
 		gun_instance.has_ammo = shotgun_ammo > 0
 	gun_instance.did_shoot.connect(did_shoot)
 	gun_node.add_child(gun_instance)

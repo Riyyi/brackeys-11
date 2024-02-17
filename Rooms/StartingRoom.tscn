@@ -1,13 +1,14 @@
-[gd_scene load_steps=179 format=3 uid="uid://bv6tgav3nineg"]
+[gd_scene load_steps=180 format=3 uid="uid://bv6tgav3nineg"]
 
 [ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://Door.tscn" id="1_mywpt"]
-[ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="2_5jor5"]
 [ext_resource type="PackedScene" uid="uid://bpppoytydevv8" path="res://assets/Environment/Models/Wall_Door_50x50.glb" id="3_bhcfj"]
 [ext_resource type="PackedScene" uid="uid://ckcqiv8dla08i" path="res://assets/Environment/Models/Wall_50x50.glb" id="4_sjf4f"]
 [ext_resource type="PackedScene" uid="uid://mnt0ri42amj4" path="res://assets/Environment/Models/Platform_Room1.glb" id="5_4oam5"]
 [ext_resource type="PackedScene" uid="uid://c47pwjmgxho5m" path="res://assets/Environment/Models/Ceiling_50x50.glb" id="6_im62y"]
 [ext_resource type="PackedScene" uid="uid://dq5as0mo6nukq" path="res://assets/floor.glb" id="7_t05uf"]
 [ext_resource type="PackedScene" uid="uid://djefl1f220roi" path="res://assets/Environment/Models/Pillar.glb" id="8_dfqwk"]
+[ext_resource type="PackedScene" uid="uid://hvnvjf8b3n87" path="res://items/pickup/machinegun.tscn" id="8_e061m"]
+[ext_resource type="PackedScene" uid="uid://bq6efasau36ln" path="res://items/pickup/shotgun_pickup.tscn" id="9_woiny"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s26vd"]
 points = PackedVector3Array(25.2488, 5.23641, 0.754716, 2.95183, 4.89858, -0.596617, 2.95183, 5.57425, -0.596617, 25.2488, 4.89858, -0.596617, 2.95183, 5.57425, 0.754716, 25.2488, 5.57425, -0.596617, 2.95183, 5.23641, 0.754716, 25.2488, 5.57425, 0.754716, 2.95183, 4.89858, -0.258783, 25.2488, 4.89858, -0.258783)
@@ -520,9 +521,6 @@ points = PackedVector3Array(25.1719, 5.76916, 0.809176, -25.1777, 5.06993, -0.58
 points = PackedVector3Array(-25.1777, -0.174825, -0.239706, 25.1719, 5.06993, -0.239706, 25.1719, 4.02057, 0.109704, 25.1719, -0.174825, -0.589425, 25.1719, 0.175304, 0.459526, -25.1777, 5.06993, -0.239706, -25.1777, 2.62159, 0.459526, -25.1777, 3.67095, -0.589425, -20.2788, -0.174825, 0.459526, -20.2788, -0.174825, -0.589425, 24.1172, 2.62159, 0.459526, -25.1777, 0.525434, 0.459526, -25.1777, 4.02057, 0.109704)
 
 [node name="StartingRoom" type="Node3D"]
-
-[node name="Pickup" parent="." instance=ExtResource("2_5jor5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.283791, 4.11298, -5.93022)
 
 [node name="Door2" parent="." instance=ExtResource("1_mywpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -25)
@@ -1136,6 +1134,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 8, 24)
 layers = 786433
 light_color = Color(0, 1, 1, 1)
 omni_range = 10.0
+
+[node name="Pickup" parent="." instance=ExtResource("8_e061m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41927, 3.76848, -5.12478)
+
+[node name="Pickup2" parent="." instance=ExtResource("9_woiny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51235, 3.56652, -1.5597)
+
+[node name="Pickup3" parent="." instance=ExtResource("8_e061m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.52952, 3.65259, -1.87252)
 
 [editable path="Room/Wall_Door_50x51"]
 [editable path="Room/Wall_50x50"]

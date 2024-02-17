@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq6efasau36ln"]
+
+[ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="1_irgr7"]
+[ext_resource type="PackedScene" uid="uid://d3un0frciaadd" path="res://items/gun/shotgun.tscn" id="2_yq2y1"]
+[ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="3_mksnr"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qlys1"]
+viewport_path = NodePath("ItemViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vua8h"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_mksnr")
+shader_parameter/ItemCam = SubResource("ViewportTexture_qlys1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_3f1o4"]
+size = Vector3(0.015, 0.03, 0.1)
+
+[node name="Pickup" instance=ExtResource("1_irgr7")]
+item = ExtResource("2_yq2y1")
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206727, 0)
+
+[node name="ItemBillboard" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206727, 0)
+material_override = SubResource("ShaderMaterial_vua8h")
+
+[node name="Item" parent="ItemViewport/ItemCamera" index="0"]
+transform = Transform3D(-6.14364, 0, 4.30182, 0, 7.5, 0, -4.30182, 0, -6.14364, 0, 0, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
+layers = 262144
+mesh = SubResource("BoxMesh_3f1o4")

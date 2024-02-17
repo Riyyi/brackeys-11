@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3un0frciaadd"]
+
+[ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_vtf48"]
+[ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="2_12tyl"]
+[ext_resource type="AudioStream" uid="uid://2pw0twgy4mhy" path="res://assets/Shotgun.wav" id="3_4po7x"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0bi5m"]
+size = Vector3(0.1, 0.2, 0.8)
+
+[node name="Gun" instance=ExtResource("1_vtf48")]
+bullet = ExtResource("2_12tyl")
+firerate = 1.0
+sound = ExtResource("3_4po7x")
+
+[node name="BulletEmitter" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.792088)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.388364)
+mesh = SubResource("BoxMesh_0bi5m")
