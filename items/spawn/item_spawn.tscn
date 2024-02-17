@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://uh8c6if75bba"]
+
+[ext_resource type="Script" path="res://items/spawn/item_spawn.gd" id="1_kd3ur"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esmf0"]
+transparency = 4
+shading_mode = 0
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_utcro"]
+material = SubResource("StandardMaterial3D_esmf0")
+
+[node name="ItemSpawn" type="Marker3D"]
+script = ExtResource("1_kd3ur")
+
+[node name="Icon" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_utcro")

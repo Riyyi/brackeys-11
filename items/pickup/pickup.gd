@@ -1,11 +1,9 @@
 @tool class_name Pickup extends Area3D
 
-@export var item: PackedScene
-
 var hover: float = 0.0
 
 func _ready() -> void:
-	body_entered.connect(body_collide)
+	body_entered.connect(on_body_entered)
 
 func _process(delta: float) -> void:
 	var item_cam = $ItemViewport/ItemCamera
@@ -15,7 +13,11 @@ func _process(delta: float) -> void:
 	$ItemBillboard.position.y = sin(hover * 1.5) / 4
 	$CollisionShape3D.position.y = sin(hover * 1.5) / 4
 
-func body_collide(body: Node3D) -> void:
+func on_body_entered(body: Node3D):
 	if "Player" in body.name:
-		body.weapon_pickup(item)
+		give_player_item(body as Player)
 		queue_free()
+
+# Override this function in the inherited scene
+func give_player_item(player: Player):
+	pass

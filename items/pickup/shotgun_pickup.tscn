@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq6efasau36ln"]
+[gd_scene load_steps=8 format=3 uid="uid://c42e57xrge15k"]
 
+[ext_resource type="Script" path="res://items/pickup/shotgun_pickup.gd" id="1_gb6ax"]
 [ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="1_irgr7"]
 [ext_resource type="PackedScene" uid="uid://d3un0frciaadd" path="res://items/gun/shotgun.tscn" id="2_yq2y1"]
 [ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="3_mksnr"]
@@ -16,19 +17,20 @@ shader_parameter/ItemCam = SubResource("ViewportTexture_qlys1")
 [sub_resource type="BoxMesh" id="BoxMesh_3f1o4"]
 size = Vector3(0.015, 0.03, 0.1)
 
-[node name="Pickup" instance=ExtResource("1_irgr7")]
+[node name="ShotgunPickup" instance=ExtResource("1_irgr7")]
+script = ExtResource("1_gb6ax")
 item = ExtResource("2_yq2y1")
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206727, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140244, 0)
 
 [node name="ItemBillboard" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206727, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140244, 0)
 material_override = SubResource("ShaderMaterial_vua8h")
 
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
-transform = Transform3D(-6.14364, 0, 4.30182, 0, 7.5, 0, -4.30182, 0, -6.14364, 0, 0, -1)
+transform = Transform3D(6.60151, 0, -3.5595, 0, 7.5, 0, 3.5595, 0, 6.60151, 0, 0, -1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
+[node name="Gun" type="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
 layers = 262144
 mesh = SubResource("BoxMesh_3f1o4")
