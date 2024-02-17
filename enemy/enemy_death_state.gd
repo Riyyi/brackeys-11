@@ -24,6 +24,7 @@ func _ready() -> void:
 	death()
 
 func become_death(name: String) -> void:
+	animation.animation_finished.disconnect(become_death)
 	death()
 
 func death() -> void:
