@@ -14,6 +14,9 @@ var has_ammo: bool = true
 
 func shoot() -> void:
 	bullet_emitter.add_child(bullet.instantiate())
+	var bullet_instance = bullet.instantiate()
+	bullet_instance.global_transform = bullet_emitter.global_transform
+	get_tree().root.add_child(bullet_instance)
 	bangbang.play()
 	did_shoot.emit(name)
 

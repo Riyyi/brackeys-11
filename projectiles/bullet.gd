@@ -6,7 +6,7 @@ class_name Bullet extends Node3D
 @onready var ray: RayCast3D = $RayCast3D
 
 var counter = 0.0
-@export var lifetime : int = 10 
+@export var lifetime : float = 10.0 
 
 func _ready() -> void:
 	hitbox_component.hit.connect(queue_free.unbind(1)) # Drop arguments from 1 to 0
