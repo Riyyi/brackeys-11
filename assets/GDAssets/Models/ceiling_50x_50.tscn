@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5pjn7mjojaw0"]
+
+[ext_resource type="PackedScene" uid="uid://c47pwjmgxho5m" path="res://assets/Environment/Models/Ceiling_50x50.glb" id="1_6titu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilt26"]
+size = Vector3(50, 2, 50)
+
+[node name="Ceiling_50x50" instance=ExtResource("1_6titu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_ilt26")

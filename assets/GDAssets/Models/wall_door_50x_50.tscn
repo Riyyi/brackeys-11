@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq4uvtb1tnyc6"]
+
+[ext_resource type="PackedScene" uid="uid://bpppoytydevv8" path="res://assets/Environment/Models/Wall_Door_50x50.glb" id="1_v8f3b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnwdq"]
+size = Vector3(22, 5.5, 1)
+
+[node name="Wall_Door_50x50" instance=ExtResource("1_v8f3b")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_004" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_004/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9, 2.75, 0)
+shape = SubResource("BoxShape3D_fnwdq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Wall_004/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1, 2.75, 0)
+shape = SubResource("BoxShape3D_fnwdq")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://mm0d0gjufg1o"]
+
+[ext_resource type="MeshLibrary" uid="uid://c51o0chwt3o0a" path="res://assets/GDAssets/library.meshlib" id="1_p1p6d"]
+
+[node name="RoomTemplate" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_p1p6d")
+cell_size = Vector3(1, 1, 0.5)

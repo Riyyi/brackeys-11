@@ -22,7 +22,7 @@ size = Vector3(3, 5.5, 0.5)
 script = ExtResource("1_lrxww")
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, -0.000365689, 0.000262866, 0.000365706, 1, -5.55696e-05, -0.000262843, 5.56809e-05, 1, 0, 2, 0)
 script = ExtResource("2_0vdgw")
 
 [node name="StartPositionFront" type="Node3D" parent="Area3D"]
