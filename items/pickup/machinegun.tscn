@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cun625cjnvx7b"]
+
+[ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="1_44ksn"]
+[ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="2_xcagw"]
+[ext_resource type="PackedScene" uid="uid://cgxx5yscvqmpj" path="res://assets/rail_gun.glb" id="3_k1aji"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fs3y5"]
+viewport_path = NodePath("ItemViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecd2c"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_xcagw")
+shader_parameter/ItemCam = SubResource("ViewportTexture_fs3y5")
+
+[node name="Pickup" instance=ExtResource("1_44ksn")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174256, 0)
+
+[node name="ItemBillboard" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174256, 0)
+material_override = SubResource("ShaderMaterial_ecd2c")
+
+[node name="Item" parent="ItemViewport/ItemCamera" index="0"]
+transform = Transform3D(6.70226, 0, 3.36596, 0, 7.5, 0, -3.36596, 0, 6.70226, 0, 0, -1)
+
+[node name="Gun" parent="ItemViewport/ItemCamera/Item" index="0" instance=ExtResource("3_k1aji")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.0383846)
+
+[node name="Sketchfab_model" parent="ItemViewport/ItemCamera/Item/Gun" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_0" parent="ItemViewport/ItemCamera/Item/Gun/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="0"]
+layers = 262144
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_02" parent="ItemViewport/ItemCamera/Item/Gun/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="1"]
+layers = 262144
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_03" parent="ItemViewport/ItemCamera/Item/Gun/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="2"]
+layers = 262144
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_04" parent="ItemViewport/ItemCamera/Item/Gun/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="3"]
+layers = 262144
+
+[node name="CylinderInnerLoops1_CylinderInnerLoops1_05" parent="ItemViewport/ItemCamera/Item/Gun/Sketchfab_model/cd23e2a8673b49cf98ccce272053b0fd_fbx/RootNode/CylinderInnerLoops1" index="4"]
+layers = 262144
+
+[editable path="ItemViewport/ItemCamera/Item/Gun"]
