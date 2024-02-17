@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1vgpaf2qj68j"
-path.s3tc="res://.godot/imported/Wall_50x50_Wires_Tex.png-e08016ef316e516b2538b47527e7d266.s3tc.ctex"
+uid="uid://domu5t7s0tgpy"
+path.s3tc="res://.godot/imported/Ceiling_Hall_Ceiling_Tex.png-de2d920cea3025fb9dd39974f1dff9e0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Environment/Textures/Wall_50x50_Wires_Tex.png"
-dest_files=["res://.godot/imported/Wall_50x50_Wires_Tex.png-e08016ef316e516b2538b47527e7d266.s3tc.ctex"]
+source_file="res://assets/Environment/Models/Ceiling_Hall_Ceiling_Tex.png"
+dest_files=["res://.godot/imported/Ceiling_Hall_Ceiling_Tex.png-de2d920cea3025fb9dd39974f1dff9e0.s3tc.ctex"]
 
 [params]
 

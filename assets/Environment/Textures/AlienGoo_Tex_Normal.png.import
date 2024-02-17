@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bovjr0afmp0xp"
-path="res://.godot/imported/PlatformSides_Tex_Norm.png-fccead2fbc9f2d20eac0dced77135b04.ctex"
+uid="uid://befy8nakr15bk"
+path="res://.godot/imported/AlienGoo_Tex_Normal.png-ae497a297a16c70e91c6fb211bf11072.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environment/Textures/PlatformSides_Tex_Norm.png"
-dest_files=["res://.godot/imported/PlatformSides_Tex_Norm.png-fccead2fbc9f2d20eac0dced77135b04.ctex"]
+source_file="res://assets/Environment/Textures/AlienGoo_Tex_Normal.png"
+dest_files=["res://.godot/imported/AlienGoo_Tex_Normal.png-ae497a297a16c70e91c6fb211bf11072.ctex"]
 
 [params]
 

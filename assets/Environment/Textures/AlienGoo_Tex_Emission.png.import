@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8h8cfxw8lnej"
-path="res://.godot/imported/Ceiling_Tex_Norm.png-371599ce788382c4ba103992748676d5.ctex"
+uid="uid://bu0yx2g8b78ic"
+path="res://.godot/imported/AlienGoo_Tex_Emission.png-7fea4df8421ae58ff2ecfd566b918b92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Environment/Textures/Ceiling_Tex_Norm.png"
-dest_files=["res://.godot/imported/Ceiling_Tex_Norm.png-371599ce788382c4ba103992748676d5.ctex"]
+source_file="res://assets/Environment/Textures/AlienGoo_Tex_Emission.png"
+dest_files=["res://.godot/imported/AlienGoo_Tex_Emission.png-7fea4df8421ae58ff2ecfd566b918b92.ctex"]
 
 [params]
 

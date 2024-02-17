@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dycae8wt7te0f"
-path.s3tc="res://.godot/imported/Wall_Door_50x50_Wall_Tex.png-48a207ad03d7d8be7b6ff8e4dcdcbd29.s3tc.ctex"
+uid="uid://d032p7yvsa2th"
+path.s3tc="res://.godot/imported/Platform_Room1_Ramp_Tex_Norm.png-011fde324ffd8f2d25880e85d72c12dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Environment/Textures/Wall_Door_50x50_Wall_Tex.png"
-dest_files=["res://.godot/imported/Wall_Door_50x50_Wall_Tex.png-48a207ad03d7d8be7b6ff8e4dcdcbd29.s3tc.ctex"]
+source_file="res://assets/Environment/Models/Platform_Room1_Ramp_Tex_Norm.png"
+dest_files=["res://.godot/imported/Platform_Room1_Ramp_Tex_Norm.png-011fde324ffd8f2d25880e85d72c12dc.s3tc.ctex"]
 
 [params]
 
@@ -21,12 +21,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/Environment/Models/Platform_Room1_Ramp_Tex_Norm.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

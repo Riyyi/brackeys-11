@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcxhukcu1v7n2"
-path.s3tc="res://.godot/imported/Platform_Room1_Floor_Tex_Albedo.png-e3aac675302fe6a824fe684f8f40e226.s3tc.ctex"
+uid="uid://nhu7fuwokrly"
+path.s3tc="res://.godot/imported/Wall_Hall_150m_Wires_Tex.png-3b8e5f609ee9685473c41373a1c82f10.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Environment/Textures/Platform_Room1_Floor_Tex_Albedo.png"
-dest_files=["res://.godot/imported/Platform_Room1_Floor_Tex_Albedo.png-e3aac675302fe6a824fe684f8f40e226.s3tc.ctex"]
+source_file="res://assets/Environment/Models/Wall_Hall_150m_Wires_Tex.png"
+dest_files=["res://.godot/imported/Wall_Hall_150m_Wires_Tex.png-3b8e5f609ee9685473c41373a1c82f10.s3tc.ctex"]
 
 [params]
 

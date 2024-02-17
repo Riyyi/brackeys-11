@@ -2,26 +2,28 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpv2wxloo4wg3"
-path="res://.godot/imported/Wires_Tex_Norm.png-8b37fd72f9125475f13f39406b5abadd.ctex"
+uid="uid://hb72nqirpikc"
+path.s3tc="res://.godot/imported/DoorFrame_DoorFrame.png-8d986e67ad3c3e3c3d807973470d2030.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Environment/Textures/Wires_Tex_Norm.png"
-dest_files=["res://.godot/imported/Wires_Tex_Norm.png-8b37fd72f9125475f13f39406b5abadd.ctex"]
+source_file="res://assets/Environment/Models/DoorFrame_DoorFrame.png"
+dest_files=["res://.godot/imported/DoorFrame_DoorFrame.png-8d986e67ad3c3e3c3d807973470d2030.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +33,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
