@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkuk2yolnijvd"
-path="res://.godot/imported/Ceiling_Hall.glb-610157dbe5992060eff8684cd70bf114.scn"
+uid="uid://dy1wfs0bcgdaa"
+path="res://.godot/imported/Room3_FirstFloor.glb-dc0a211957f4280f31bb7747b87fa3a9.scn"
 
 [deps]
 
-source_file="res://assets/Environment/Models/Ceiling_Hall.glb"
-dest_files=["res://.godot/imported/Ceiling_Hall.glb-610157dbe5992060eff8684cd70bf114.scn"]
+source_file="res://assets/Environment/Models/Room3_FirstFloor.glb"
+dest_files=["res://.godot/imported/Room3_FirstFloor.glb-dc0a211957f4280f31bb7747b87fa3a9.scn"]
 
 [params]
 
