@@ -184,7 +184,6 @@ func spawn_ammo_and_health(loot_spawns: Array[ItemSpawn]) -> void:
 		
 		var spawn: ItemSpawn = loot_spawns[i]
 		var spawn_type_chance = rng.randf_range(0, loot_type_spawn_chance[0])
-		print(str(spawn_type_chance))
 		if spawn_type_chance < loot_type_spawn_chance[1]:
 			var health_pickup: HealthPickup = health.instantiate()
 			spawn.add_sibling(health_pickup)
