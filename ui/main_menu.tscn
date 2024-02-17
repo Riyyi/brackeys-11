@@ -83,13 +83,36 @@ horizontal_alignment = 1
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ControlsLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "- walk: WASD
-- Jump: Space
-- Attack: Left Mouse Button
-- fullscreen: F11"
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "- Walk:
+- Jump:
+- Attack:
+- Switch weapon:
+
+- Fullscreen:
+- Pause:
+- Focus:
+- Unfocus:"
 label_settings = ExtResource("2_6ia2f")
+
+[node name="KeyLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "WASD
+Space
+Left Click
+ Mouse Wheel, 1/2
+
+Enter
+P
+Left click
+Escape
+"
+label_settings = ExtResource("2_6ia2f")
+horizontal_alignment = 1
 
 [node name="VersionLabel" type="Label" parent="."]
 layout_mode = 1
@@ -105,4 +128,19 @@ offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "v0.0.1"
+label_settings = ExtResource("2_6ia2f")
+
+[node name="AuthorLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -110.0
+offset_right = -5.0
+offset_bottom = 129.0
+grow_horizontal = 0
+text = "Made by:
+- Frank
+- Lotte
+- Rick"
 label_settings = ExtResource("2_6ia2f")
