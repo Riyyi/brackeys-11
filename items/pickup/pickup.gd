@@ -13,7 +13,9 @@ func _process(delta: float) -> void:
 	item_cam.position.z += 1
 	hover += delta
 	$ItemBillboard.position.y = sin(hover * 1.5) / 4
+	$CollisionShape3D.position.y = sin(hover * 1.5) / 4
 
 func body_collide(body: Node3D) -> void:
 	if "Player" in body.name:
 		body.weapon_pickup(item)
+		queue_free()
