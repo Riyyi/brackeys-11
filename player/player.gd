@@ -96,14 +96,14 @@ func took_damage(hitbox: HitboxComponent) -> void:
 	stats_component.health -= hitbox.damage
 
 func did_shoot(gun: String):
-	if "MachineGun" in gun:
+	if "Machinegun" in gun:
 		machinegun_ammo -= 1
 		ammo_changed.emit(0, machinegun_ammo)
 		if machinegun_ammo == 0:
 			gun_instance.has_ammo = false
-	if "ShotGun" in gun:
+	if "Shotgun" in gun:
 		shotgun_ammo -= 1
-		ammo_changed.emit(0, shotgun_ammo)
+		ammo_changed.emit(1, shotgun_ammo)
 		if shotgun_ammo == 0:
 			gun_instance.has_ammo = false
 
@@ -129,11 +129,15 @@ func switch_gun(gunid):
 	if gunid == 0:
 		current_gun = 0
 		gun_instance = gun1.instantiate() # machinegun
-		gun_instance.has_ammo = machinegun_ammo > 0
 	else:
-		gun_instance = gun2.instantiate() # shotgun
 		current_gun = 1
+		gun_instance = gun2.instantiate() # shotgun
+	
+	if "Machinegun" in gun_instance.name:
+		gun_instance.has_ammo = machinegun_ammo > 0
+	elif "Shotgun" in gun_instance.name:
 		gun_instance.has_ammo = shotgun_ammo > 0
+	
 	gun_instance.did_shoot.connect(did_shoot)
 	gun_node.add_child(gun_instance)
 	
