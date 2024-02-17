@@ -102,6 +102,7 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcuet"]
+resource_local_to_scene = true
 transparency = 4
 albedo_texture = ExtResource("3_syatp")
 normal_enabled = true

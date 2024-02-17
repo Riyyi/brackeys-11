@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var item_cam = $ItemViewport/ItemCamera
 	item_cam.global_position = global_position
-	item_cam.position.z += 1.5
+	item_cam.position.z += 1
 	hover += delta
 	$ItemBillboard.position.y = sin(hover * 1.5) / 4
 

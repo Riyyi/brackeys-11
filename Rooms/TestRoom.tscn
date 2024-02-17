@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://456fndauld8v"]
+[gd_scene load_steps=25 format=3 uid="uid://bwm1reh8entwo"]
 
 [ext_resource type="PackedScene" uid="uid://wdkr4llpdp8x" path="res://assets/StartingRoom.blend" id="1_ewl1c"]
 [ext_resource type="PackedScene" uid="uid://bnvlwvd103xcx" path="res://enemy/melee_enemy/melee_enemy.tscn" id="2_kkyhx"]

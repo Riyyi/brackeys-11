@@ -32,6 +32,7 @@ func game_over():
 
 func _ready() -> void:
 	player = ResourceStash.game.spawn_player(self)
+	player.global_position.y = 10
 	player.stats_component.no_health.connect(game_over)
 	player.stats_component.health_changed.connect(ui_update_health)
 	player.ammo_changed.connect(ui_update_ammo)

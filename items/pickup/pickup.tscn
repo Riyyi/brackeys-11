@@ -32,7 +32,7 @@ item = ExtResource("2_t0ag4")
 shape = SubResource("SphereShape3D_r5keq")
 
 [node name="ItemBillboard" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.246553, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.221234, 0)
 material_override = SubResource("ShaderMaterial_rkmaj")
 mesh = SubResource("QuadMesh_e6hfi")
 
@@ -43,14 +43,15 @@ canvas_cull_mask = 4294443006
 size = Vector2i(100, 100)
 
 [node name="ItemCamera" type="Camera3D" parent="ItemViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 cull_mask = 262144
 environment = SubResource("Environment_jngn5")
 projection = 1
+far = 2.0
 script = ExtResource("4_5gkws")
 
 [node name="Sketchfab_Scene" parent="ItemViewport/ItemCamera" instance=ExtResource("3_iweol")]
-transform = Transform3D(2.56515, 0, 7.0477, 0, 7.5, 0, -7.0477, 0, 2.56515, 0.0325611, -0.0573122, -1.53937)
+transform = Transform3D(-7.1849, 0, 2.15111, 0, 7.5, 0, -2.15111, 0, -7.1849, 0.0325611, -0.0573122, -1.53937)
 
 [node name="Sketchfab_model" parent="ItemViewport/ItemCamera/Sketchfab_Scene" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.0383846)

@@ -1,4 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgybt7y3ypkfh"]
+[gd_scene load_steps=11 format=3 uid="uid://cgybt7y3ypkfh"]
+
+[ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="1_1hnd1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05odv"]
 
@@ -78,3 +80,12 @@ mesh = SubResource("BoxMesh_swhl6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_3g6kj")
+
+[node name="BasicEnemy" parent="." instance=ExtResource("1_1hnd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.6151, 2.50819, 0.0644159)
+
+[node name="BasicEnemy2" parent="." instance=ExtResource("1_1hnd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74269, 2.50819, 5.34077)
+
+[node name="BasicEnemy3" parent="." instance=ExtResource("1_1hnd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9288, 2.50819, 2.78427)
