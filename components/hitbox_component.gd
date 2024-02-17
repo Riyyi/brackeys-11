@@ -6,8 +6,8 @@ signal hit(body: Node3D)
 
 func _ready():
 	body_entered.connect(on_body_entered)
-
-func on_body_entered(body: Node3D):
+		
+func body_hit(body: Node3D):
 	# Signal that hitbox hit something
 	hit.emit(body)
 
@@ -20,3 +20,6 @@ func on_body_entered(body: Node3D):
 		var enemy = body as Enemy
 		enemy.took_damage(self)
 		return
+
+func on_body_entered(body: Node3D):
+	body_hit(body)

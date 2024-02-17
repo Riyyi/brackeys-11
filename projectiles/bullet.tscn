@@ -5,3 +5,5 @@
 [node name="Bullet" type="Node3D"]
 top_level = true
 script = ExtResource("1_xvj6u")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
