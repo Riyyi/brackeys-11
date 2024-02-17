@@ -7,11 +7,14 @@ func _init() -> void:
 
 func _input(event) -> void:
 	if event.is_action_pressed("Pause"):
+		var pause: Control = get_node("/root/World/Pause")
 		if get_tree().paused == true:
+			pause.visible = false
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			get_tree().paused = false
 		else:
 			if ResourceStash.game.in_world == true:
+				pause.visible = true
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				get_tree().paused = true
 	
@@ -24,8 +27,6 @@ func _input(event) -> void:
 		if is_fullscreen:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			is_fullscreen = false
-			print("make windowed")
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			is_fullscreen = true
-			print("make fullscreen")
