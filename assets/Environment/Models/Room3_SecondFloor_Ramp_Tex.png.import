@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct31fbc3wws0j"
-path.s3tc="res://.godot/imported/Ceiling_50x50_Ceiling_Tex.png-71132105d7a77923954256f5178976d4.s3tc.ctex"
+uid="uid://dv7j4jt4cx6dq"
+path.s3tc="res://.godot/imported/Room3_SecondFloor_Ramp_Tex.png-7e777c94badc21c370a320467ff6b873.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Environment/Models/Ceiling_50x50_Ceiling_Tex.png"
-dest_files=["res://.godot/imported/Ceiling_50x50_Ceiling_Tex.png-71132105d7a77923954256f5178976d4.s3tc.ctex"]
+source_file="res://assets/Environment/Models/Room3_SecondFloor_Ramp_Tex.png"
+dest_files=["res://.godot/imported/Room3_SecondFloor_Ramp_Tex.png-7e777c94badc21c370a320467ff6b873.s3tc.ctex"]
 
 [params]
 

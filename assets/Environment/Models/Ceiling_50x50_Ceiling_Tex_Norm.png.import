@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct31fbc3wws0j"
-path.s3tc="res://.godot/imported/Ceiling_50x50_Ceiling_Tex.png-71132105d7a77923954256f5178976d4.s3tc.ctex"
+uid="uid://13kt0yk7gdpn"
+path.s3tc="res://.godot/imported/Ceiling_50x50_Ceiling_Tex_Norm.png-f693478f4f5e5563938cc6f86247b6d5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/Environment/Models/Ceiling_50x50_Ceiling_Tex.png"
-dest_files=["res://.godot/imported/Ceiling_50x50_Ceiling_Tex.png-71132105d7a77923954256f5178976d4.s3tc.ctex"]
+source_file="res://assets/Environment/Models/Ceiling_50x50_Ceiling_Tex_Norm.png"
+dest_files=["res://.godot/imported/Ceiling_50x50_Ceiling_Tex_Norm.png-f693478f4f5e5563938cc6f86247b6d5.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +21,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/Environment/Models/Ceiling_50x50_Ceiling_Tex_Norm.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

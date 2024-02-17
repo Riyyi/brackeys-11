@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct31fbc3wws0j"
-path.s3tc="res://.godot/imported/Ceiling_50x50_Ceiling_Tex.png-71132105d7a77923954256f5178976d4.s3tc.ctex"
+uid="uid://b6h4gjxbi3yl6"
+path.s3tc="res://.godot/imported/AlienGoo_Tex_Albedo.png-0325534a55a9feeafa431197d1b2e9ba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Environment/Models/Ceiling_50x50_Ceiling_Tex.png"
-dest_files=["res://.godot/imported/Ceiling_50x50_Ceiling_Tex.png-71132105d7a77923954256f5178976d4.s3tc.ctex"]
+source_file="res://assets/Environment/Textures/AlienGoo_Tex_Albedo.png"
+dest_files=["res://.godot/imported/AlienGoo_Tex_Albedo.png-0325534a55a9feeafa431197d1b2e9ba.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,43 @@
+[gd_scene load_steps=14 format=3 uid="uid://c4vei3r14t1gn"]
+
+[ext_resource type="PackedScene" uid="uid://c5pjn7mjojaw0" path="res://assets/GDAssets/Models/ceiling_50x_50.tscn" id="1_k7jtb"]
+[ext_resource type="PackedScene" uid="uid://bn1o61pu7l6uu" path="res://assets/GDAssets/Models/ceiling_hall.tscn" id="2_46cqp"]
+[ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/Door.tscn" id="3_dfyg4"]
+[ext_resource type="PackedScene" uid="uid://c8b75mrpnb6su" path="res://assets/GDAssets/Models/floor.tscn" id="4_tge2s"]
+[ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="5_17t4l"]
+[ext_resource type="PackedScene" uid="uid://cwcfd6m0jxois" path="res://assets/GDAssets/Models/platform_room_1.tscn" id="6_4o3kx"]
+[ext_resource type="PackedScene" uid="uid://bhtbbblky0uwy" path="res://assets/GDAssets/Models/room_3_first_floor.tscn" id="7_te1jb"]
+[ext_resource type="PackedScene" uid="uid://b1xtf4tqgqn6p" path="res://assets/GDAssets/Models/room_3_second_floor.tscn" id="8_33w8f"]
+[ext_resource type="PackedScene" uid="uid://ckvufrfnmcnng" path="res://assets/GDAssets/Models/wall_50x_50.tscn" id="9_5lh51"]
+[ext_resource type="PackedScene" uid="uid://bq4uvtb1tnyc6" path="res://assets/GDAssets/Models/wall_door_50x_50.tscn" id="10_mo3ok"]
+[ext_resource type="PackedScene" uid="uid://glrjrpkkxrkg" path="res://assets/GDAssets/Models/wall_hall_30m.tscn" id="11_vwug4"]
+[ext_resource type="PackedScene" uid="uid://ta8h4c4qk27j" path="res://assets/GDAssets/Models/wall_hall_150m.tscn" id="12_pe6ha"]
+[ext_resource type="PackedScene" uid="uid://carub3ybe3c7d" path="res://assets/GDAssets/Models/wall_modular.tscn" id="13_kl1ox"]
+
+[node name="MeshLibrary" type="Node3D"]
+
+[node name="Ceiling_50x50" parent="." instance=ExtResource("1_k7jtb")]
+
+[node name="Ceiling_Hall" parent="." instance=ExtResource("2_46cqp")]
+
+[node name="Door" parent="." instance=ExtResource("3_dfyg4")]
+
+[node name="floor" parent="." instance=ExtResource("4_tge2s")]
+
+[node name="Pillar" parent="." instance=ExtResource("5_17t4l")]
+
+[node name="Platform_Room1" parent="." instance=ExtResource("6_4o3kx")]
+
+[node name="Room3_FirstFloor" parent="." instance=ExtResource("7_te1jb")]
+
+[node name="Room3_SecondFloor" parent="." instance=ExtResource("8_33w8f")]
+
+[node name="Wall_50x50" parent="." instance=ExtResource("9_5lh51")]
+
+[node name="Wall_Door_50x50" parent="." instance=ExtResource("10_mo3ok")]
+
+[node name="Wall_Hall_30m" parent="." instance=ExtResource("11_vwug4")]
+
+[node name="Wall_Hall_150m" parent="." instance=ExtResource("12_pe6ha")]
+
+[node name="Wall_Modular" parent="." instance=ExtResource("13_kl1ox")]
