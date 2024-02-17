@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="1_irgr7"]
 [ext_resource type="PackedScene" uid="uid://d3un0frciaadd" path="res://items/gun/shotgun.tscn" id="2_yq2y1"]
 [ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="3_mksnr"]
+[ext_resource type="PackedScene" uid="uid://ddjxphwvw50un" path="res://assets/Guns/Shotgun.glb" id="5_s26c5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qlys1"]
 viewport_path = NodePath("ItemViewport")
@@ -13,9 +14,6 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_mksnr")
 shader_parameter/ItemCam = SubResource("ViewportTexture_qlys1")
-
-[sub_resource type="BoxMesh" id="BoxMesh_3f1o4"]
-size = Vector3(0.015, 0.03, 0.1)
 
 [node name="ShotgunPickup" instance=ExtResource("1_irgr7")]
 script = ExtResource("1_gb6ax")
@@ -29,8 +27,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.140244, 0)
 material_override = SubResource("ShaderMaterial_vua8h")
 
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
-transform = Transform3D(7.24444, 0, 1.94115, 0, 7.5, 0, -1.94115, 0, 7.24444, 0, 0, -1)
+transform = Transform3D(0.870767, 0, -7.44928, 0, 7.5, 0, 7.44928, 0, 0.870767, 0, 0, -1)
 
-[node name="Gun" type="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
+[node name="Shotgun2" parent="ItemViewport/ItemCamera/Item" index="0" instance=ExtResource("5_s26c5")]
+transform = Transform3D(0.133333, 0, 0, 0, 0.131308, -0.0231531, 0, 0.0231531, 0.131308, 0, 0, 0)
+
+[node name="Shotgun" parent="ItemViewport/ItemCamera/Item/Shotgun2" index="0"]
+transform = Transform3D(0.601212, 0, 0, 0, 0.601212, 0, 0, 0, 0.601212, 0, 0, -0.25)
 layers = 262144
-mesh = SubResource("BoxMesh_3f1o4")
+
+[editable path="ItemViewport/ItemCamera/Item/Shotgun2"]

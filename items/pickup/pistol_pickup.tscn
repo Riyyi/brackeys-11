@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cytcy0uo72e4e" path="res://items/pickup/pickup.tscn" id="1_ukmjo"]
 [ext_resource type="PackedScene" uid="uid://bo1vbrd1qyn33" path="res://items/gun/pistol.tscn" id="2_uo2ci"]
 [ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="3_oahk0"]
+[ext_resource type="PackedScene" uid="uid://n1x1nnpkm6bf" path="res://assets/Guns/Pistol.glb" id="5_bfgxl"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_p71c1"]
 viewport_path = NodePath("ItemViewport")
@@ -13,11 +14,6 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_oahk0")
 shader_parameter/ItemCam = SubResource("ViewportTexture_p71c1")
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_jejbu"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.5
 
 [node name="PistolPickup" instance=ExtResource("1_ukmjo")]
 script = ExtResource("1_q3pht")
@@ -31,9 +27,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14219, 0)
 material_override = SubResource("ShaderMaterial_khgmn")
 
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
-transform = Transform3D(3.93669, 0, -6.38377, 0, 7.5, 0, 6.38377, 0, 3.93669, 0, 0, -1)
+transform = Transform3D(0.436069, 0, -7.48732, 0, 7.5, 0, 7.48732, 0, 0.436069, 0, 0, -1)
 
-[node name="Gun" type="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
-transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0)
+[node name="Pistol" parent="ItemViewport/ItemCamera/Item" index="0" instance=ExtResource("5_bfgxl")]
+transform = Transform3D(0.131308, -0.00402049, 0.0228013, 0, 0.131308, 0.0231531, -0.0231531, -0.0228013, 0.129313, 0, 0, 0)
+
+[node name="Cube_023" parent="ItemViewport/ItemCamera/Item/Pistol" index="0"]
+transform = Transform3D(0.652035, 0, 0, 0, 0.652035, 0, 0, 0, 0.652035, 0, 0, -0.12)
 layers = 262144
-mesh = SubResource("CylinderMesh_jejbu")
+
+[editable path="ItemViewport/ItemCamera/Item/Pistol"]

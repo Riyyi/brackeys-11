@@ -3,11 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_sgl0r"]
 [ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="2_5ek36"]
 [ext_resource type="AudioStream" uid="uid://rgqek3wsebbp" path="res://assets/Pistol.wav" id="3_5sagp"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_4aieq"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.5
+[ext_resource type="PackedScene" uid="uid://n1x1nnpkm6bf" path="res://assets/Guns/Pistol.glb" id="4_pq7d3"]
 
 [node name="Pistol" instance=ExtResource("1_sgl0r")]
 bullet = ExtResource("2_5ek36")
@@ -18,10 +14,14 @@ MaxRecoil = 0.5
 RecoilRecoverSpeed = 2.0
 
 [node name="BulletEmitters" parent="." index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.668759)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.645477, -0.249143, -1.18717)
 
 [node name="Node3D" type="Node3D" parent="BulletEmitters" index="0"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.410885)
-mesh = SubResource("CylinderMesh_4aieq")
+[node name="Pistol" parent="." index="2" instance=ExtResource("4_pq7d3")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, -0.1, -0.375)
+
+[node name="Cube_023" parent="Pistol" index="0"]
+layers = 524288
+
+[editable path="Pistol"]

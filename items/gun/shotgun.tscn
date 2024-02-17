@@ -3,9 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_vtf48"]
 [ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="2_12tyl"]
 [ext_resource type="AudioStream" uid="uid://2pw0twgy4mhy" path="res://assets/Shotgun.wav" id="3_4po7x"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_0bi5m"]
-size = Vector3(0.1, 0.2, 0.8)
+[ext_resource type="PackedScene" uid="uid://ddjxphwvw50un" path="res://assets/Guns/Shotgun.glb" id="4_taqxm"]
 
 [node name="Shotgun" instance=ExtResource("1_vtf48")]
 bullet = ExtResource("2_12tyl")
@@ -15,7 +13,7 @@ RecoilForce = 0.3
 MaxRecoil = 0.3
 
 [node name="BulletEmitters" parent="." index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.792439)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.71413, -0.0427712, -1.45025)
 
 [node name="Node3D" type="Node3D" parent="BulletEmitters" index="0"]
 
@@ -43,6 +41,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200295, -0.0338464, 0.0049
 [node name="Node3D9" type="Node3D" parent="BulletEmitters" index="8"]
 transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, -0.0207422, -0.0451869, -0.00550008)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.388364)
-mesh = SubResource("BoxMesh_0bi5m")
+[node name="Shotgun2" parent="." index="2" instance=ExtResource("4_taqxm")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+
+[node name="Shotgun" parent="Shotgun2" index="0"]
+transform = Transform3D(0.568039, -3.10961e-09, -0.196945, -0.00674619, 0.600859, -0.0194577, 0.19683, 0.020594, 0.567706, -0.0762721, -0.137865, 0.421373)
+layers = 524288
+
+[editable path="Shotgun2"]
