@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv6tgav3nineg"]
+[gd_scene load_steps=10 format=3 uid="uid://bv6tgav3nineg"]
 
 [ext_resource type="PackedScene" uid="uid://c8b75mrpnb6su" path="res://assets/GDAssets/Models/floor.tscn" id="1_8761g"]
 [ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/door.tscn" id="1_mywpt"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bq4uvtb1tnyc6" path="res://assets/GDAssets/Models/wall_door_50x_50.tscn" id="3_gausj"]
 [ext_resource type="PackedScene" uid="uid://c5pjn7mjojaw0" path="res://assets/GDAssets/Models/ceiling_50x_50.tscn" id="5_j63wc"]
 [ext_resource type="PackedScene" uid="uid://xnyewwcclqlm" path="res://items/spawn/gun_spawn.tscn" id="6_ld0dg"]
+[ext_resource type="PackedScene" uid="uid://be5ax7tfsyynp" path="res://assets/GDAssets/Models/round_platform.tscn" id="7_fh8n8"]
+[ext_resource type="PackedScene" uid="uid://bkt366adbd75o" path="res://assets/GDAssets/Models/altar.tscn" id="8_v8s0t"]
+[ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="9_fpyu6"]
 
 [node name="StartingRoom" type="Node3D"]
 
@@ -66,4 +69,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -25)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5, 0)
 
 [node name="GunSpawn" parent="." instance=ExtResource("6_ld0dg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59374, 1.73909, -11.494)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 5)
+
+[node name="RoundPlatform" parent="." instance=ExtResource("7_fh8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 10)
+
+[node name="Altar" parent="." instance=ExtResource("8_v8s0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5)
+
+[node name="Pillar" parent="." instance=ExtResource("9_fpyu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 14)
+
+[node name="Pillar2" parent="." instance=ExtResource("9_fpyu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.5, 14)
+
+[node name="Pillar3" parent="." instance=ExtResource("9_fpyu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, 18)
+
+[node name="Pillar4" parent="." instance=ExtResource("9_fpyu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.5, 18)

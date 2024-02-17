@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3usx0exg7v2y"]
+[gd_scene load_steps=11 format=3 uid="uid://d3usx0exg7v2y"]
 
 [ext_resource type="PackedScene" uid="uid://bhtbbblky0uwy" path="res://assets/GDAssets/Models/room_3_first_floor.tscn" id="1_m7ypn"]
 [ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/door.tscn" id="1_tbkyd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bq4uvtb1tnyc6" path="res://assets/GDAssets/Models/wall_door_50x_50.tscn" id="4_ruo7u"]
 [ext_resource type="PackedScene" uid="uid://ckvufrfnmcnng" path="res://assets/GDAssets/Models/wall_50x_50.tscn" id="5_yexjk"]
 [ext_resource type="Shader" uid="uid://d1w0ulh4wnikw" path="res://Rooms/alien_goo.tres" id="7_i7tna"]
+[ext_resource type="PackedScene" uid="uid://carub3ybe3c7d" path="res://assets/GDAssets/Models/wall_modular.tscn" id="8_13dbl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vvh2y"]
 render_priority = 0
@@ -99,3 +100,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -25)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 mesh = SubResource("BoxMesh_yp686")
+
+[node name="Wall_Modular" parent="." instance=ExtResource("8_13dbl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.66934, 0.5, 13.9977)
+
+[node name="Wall_Modular2" parent="." instance=ExtResource("8_13dbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26887, 0.5, 15.973)
+
+[node name="Wall_Modular3" parent="." instance=ExtResource("8_13dbl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.1107, 0.5, 18.2243)
+
+[node name="Wall_Modular4" parent="." instance=ExtResource("8_13dbl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.0601, 0.5, 18.224)
