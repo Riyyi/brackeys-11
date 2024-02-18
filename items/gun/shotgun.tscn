@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3un0frciaadd"]
 
 [ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_vtf48"]
-[ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="2_12tyl"]
+[ext_resource type="PackedScene" uid="uid://bkm32tdmwyx1a" path="res://projectiles/pistol_bullet.tscn" id="2_o3ore"]
 [ext_resource type="AudioStream" uid="uid://2pw0twgy4mhy" path="res://assets/Shotgun.wav" id="3_4po7x"]
 [ext_resource type="PackedScene" uid="uid://ddjxphwvw50un" path="res://assets/Guns/Shotgun.glb" id="4_taqxm"]
 
@@ -20,7 +20,7 @@ initial_velocity_max = 10.0
 size = Vector2(0.05, 0.05)
 
 [node name="Shotgun" instance=ExtResource("1_vtf48")]
-bullet = ExtResource("2_12tyl")
+bullet = ExtResource("2_o3ore")
 firerate = 1.0
 sound = ExtResource("3_4po7x")
 RecoilForce = 0.5
