@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cpx80t25kxpbk"]
+
+[ext_resource type="FontFile" uid="uid://m8g50tl1kuml" path="res://assets/kenney_mini_square.ttf" id="1_8uro0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgmnq"]
+bg_color = Color(0.0980392, 0.141176, 0.156863, 0.937255)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd47n"]
+bg_color = Color(0.603922, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[resource]
+default_font = ExtResource("1_8uro0")
+default_font_size = 16
+ProgressBar/colors/font_color = Color(1, 1, 1, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 5
+ProgressBar/font_sizes/font_size = 16
+ProgressBar/fonts/font = ExtResource("1_8uro0")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_vgmnq")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_sd47n")
