@@ -130,11 +130,15 @@ func did_shoot(gun: String):
 		ammo_changed.emit(0, machinegun_ammo)
 		if machinegun_ammo == 0:
 			gun_instance.has_ammo = false
+		else:
+			gun_instance.has_ammo = true
 	if "Shotgun" in gun:
 		shotgun_ammo -= 1
 		ammo_changed.emit(1, shotgun_ammo)
 		if shotgun_ammo == 0:
 			gun_instance.has_ammo = false
+		else:
+			gun_instance.has_ammo = true
 
 func _input(event) -> void:
 	if event.is_action_pressed("NextWeapon") or event.is_action_pressed("PreviousWeapon"):

@@ -12,6 +12,7 @@ signal did_shoot(name: String)
 
 @onready var bangbang = $Bangbang
 @onready var bullet_emitters = $BulletEmitters
+@onready var muzzle_flash = $Muzzleflash
 
 var firerate_timer: float = 0.0
 var has_ammo: bool = true
@@ -31,6 +32,9 @@ func recoil_recover():
 
 func shoot() -> void:
 	if can_shoot == true:
+		muzzle_flash.light_energy = 10
+		for node in muzzle_flash.get_children():
+			node.emitting = true
 		recoil()
 		for node in bullet_emitters.get_children():
 			var bullet_instance = bullet.instantiate()
@@ -42,9 +46,14 @@ func shoot() -> void:
 func _ready() -> void:
 	firerate_timer = 1.0 / firerate
 	bangbang.stream = sound
+	muzzle_flash.transform = bullet_emitters.transform
 
 func _process(delta) -> void:
 	recoil_recover()
+	
+	muzzle_flash.light_energy -= delta * 100
+	if muzzle_flash.light_energy < 0:
+		muzzle_flash.light_energy = 0
 	
 	if firerate_timer > (1.0 / firerate):
 		if Input.is_action_pressed("LeftClick") and has_ammo:

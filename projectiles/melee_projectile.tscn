@@ -1,17 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnd8g84vw7kuo"]
+[gd_scene load_steps=2 format=3 uid="uid://bnd8g84vw7kuo"]
 
 [ext_resource type="PackedScene" uid="uid://bawtvga2do1hk" path="res://projectiles/bullet.tscn" id="1_o5vld"]
-[ext_resource type="Script" path="res://components/hitbox_component.gd" id="2_eewpr"]
 
 [node name="MeleeProjectile" instance=ExtResource("1_o5vld")]
 top_level = false
 ProjectileSpeed = 0.0
 lifetime = 0.75
-
-[node name="HitboxComponent" type="Area3D" parent="." index="0"]
-unique_name_in_owner = true
-script = ExtResource("2_eewpr")
-damage = 30
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="HitboxComponent" index="0"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)

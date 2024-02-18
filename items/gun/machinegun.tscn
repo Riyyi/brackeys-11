@@ -1,9 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn6cqf74752r3"]
+[gd_scene load_steps=8 format=3 uid="uid://cn6cqf74752r3"]
 
 [ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_fhi08"]
 [ext_resource type="PackedScene" uid="uid://qv2gltmr1lox" path="res://projectiles/puke_projectile.tscn" id="2_ar50d"]
 [ext_resource type="AudioStream" uid="uid://dll4af4uklhi0" path="res://assets/Machinegun.wav" id="3_rk3cu"]
 [ext_resource type="PackedScene" uid="uid://bffw2f5rlpnw6" path="res://assets/Guns/MachineGun.glb" id="5_e8tgp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qtlv"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+billboard_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_83nqt"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_7fdnh"]
+size = Vector2(0.05, 0.05)
 
 [node name="Machinegun" instance=ExtResource("1_fhi08")]
 bullet = ExtResource("2_ar50d")
@@ -14,15 +28,28 @@ MaxRecoil = 0.5
 RecoilRecoverSpeed = 2.0
 
 [node name="BulletEmitters" parent="." index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.216073, 0, -1.45348)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0512876, 0.0542667, -1.39008)
 
 [node name="Node3D" type="Node3D" parent="BulletEmitters" index="0"]
 
 [node name="MachineGun" parent="." index="1" instance=ExtResource("5_e8tgp")]
-transform = Transform3D(-0.996195, 0, -0.0871558, 0, 1, 0, 0.0871558, 0, -0.996195, 0.0317229, 0, -0.000879645)
+transform = Transform3D(-1.49729, 0, 0.0901877, 0, 1.5, 0, -0.0901877, 0, -1.49729, -0.0263694, -0.0526773, -0.125342)
 
 [node name="Cylinder" parent="MachineGun" index="0"]
-transform = Transform3D(0.984777, 0, -0.17382, 0, 1, 0, 0.17382, 0, 0.984777, 0.0737916, 0, 0.19343)
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 0, 0)
 layers = 524288
+
+[node name="Bangbang" parent="." index="2"]
+transform = Transform3D(0.992625, 0, -0.121228, 0, 1, 0, 0.121228, 0, 0.992625, 0, 0, 0)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Muzzleflash" index="0"]
+material_override = SubResource("StandardMaterial3D_5qtlv")
+emitting = false
+amount = 64
+lifetime = 0.03
+one_shot = true
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_83nqt")
+draw_pass_1 = SubResource("QuadMesh_7fdnh")
 
 [editable path="MachineGun"]

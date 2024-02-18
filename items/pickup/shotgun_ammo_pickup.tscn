@@ -19,9 +19,6 @@ type = 1
 [node name="ItemBillboard" parent="." index="1"]
 material_override = SubResource("ShaderMaterial_qp2nj")
 
-[node name="OmniLight3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.208952, 0.5)
-
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
 transform = Transform3D(4.12139, 0, 6.26612, 0, 7.5, 0, -6.26612, 0, 4.12139, 0, 0, -1)
 

@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bawtvga2do1hk"]
+[gd_scene load_steps=3 format=3 uid="uid://bawtvga2do1hk"]
 
 [ext_resource type="Script" path="res://projectiles/bullet.gd" id="1_xvj6u"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="2_5ym8c"]
 
 [node name="Bullet" type="Node3D"]
 top_level = true
 script = ExtResource("1_xvj6u")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="HitboxComponent" type="Area3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_5ym8c")
+damage = 5
+
+[node name="Particles" type="Node3D" parent="."]
+
+[node name="EnemyHitParticle" type="Node3D" parent="."]
+
+[node name="EnvironmentHitParticle" type="Node3D" parent="."]
