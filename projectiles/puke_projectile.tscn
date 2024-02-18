@@ -79,8 +79,5 @@ draw_pass_1 = SubResource("QuadMesh_dyf5s")
 layers = 786433
 light_color = Color(0, 1, 0, 1)
 
-[node name="HitboxComponent" parent="." index="5"]
-damage = 20
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" index="0"]
 shape = SubResource("SphereShape3D_byu5u")
