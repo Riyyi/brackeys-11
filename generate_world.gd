@@ -32,8 +32,8 @@ var hallway_instances: Array[Node3D]
 var did_reset_player: bool = false
 
 # RNG between 0-x, below y is skipped
-var loot_spawn_chance: Vector2 = Vector2(100, 50) # Spawn or not
-var loot_type_spawn_chance: Vector3 = Vector3(100, 33.3, 66.6) # Health, Machinegun, Shotgun
+var loot_spawn_chance: Vector2 = Vector2(100, 0) # Spawn or not
+var loot_type_spawn_chance: Vector3 = Vector3(100.0, 33.3, 66.6) # Health, Machinegun, Shotgun
 static var item_spawns: Array[ItemSpawn]
 
 func _init(columns_: int, rows_: int, did_reset_player_: bool):
@@ -175,22 +175,27 @@ func spawn_random_gun(gun_spawns: Array[GunSpawn]) -> void:
 	pass
 
 func spawn_ammo_and_health(loot_spawns: Array[ItemSpawn]) -> void:
-	var ammo: PackedScene = load("res://items/pickup/ammo_pickup.tscn")
+	var shotgun_ammo: PackedScene = load("res://items/pickup/shotgun_ammo_pickup.tscn")
+	var machinegun_ammo: PackedScene = load("res://items/pickup/machinegun_ammo_pickup.tscn")
 	var health: PackedScene = load("res://items/pickup/health_pickup.tscn")	
 	for i in range(loot_spawns.size()):
 		var spawn_chance = rng.randf_range(0, loot_spawn_chance[0])
+		
 		if spawn_chance < loot_spawn_chance[1]:
 			continue
 		
 		var spawn: ItemSpawn = loot_spawns[i]
 		var spawn_type_chance = rng.randf_range(0, loot_type_spawn_chance[0])
+			
 		if spawn_type_chance < loot_type_spawn_chance[1]:
 			var health_pickup: HealthPickup = health.instantiate()
 			spawn.add_sibling(health_pickup)
 			health_pickup.global_position = spawn.global_position
-		else:
-			var ammo_pickup: AmmoPickup = ammo.instantiate()
+		elif spawn_type_chance < loot_type_spawn_chance[2]:
+			var ammo_pickup: AmmoPickup = shotgun_ammo.instantiate()
 			spawn.add_sibling(ammo_pickup)
 			ammo_pickup.global_position = spawn.global_position
-			ammo_pickup.type = AmmoPickup.AmmoType.Machinegun if spawn_type_chance < loot_type_spawn_chance[2] else \
-							   AmmoPickup.AmmoType.Shotgun
+		else:
+			var ammo_pickup: AmmoPickup = machinegun_ammo.instantiate()
+			spawn.add_sibling(ammo_pickup)
+			ammo_pickup.global_position = spawn.global_position

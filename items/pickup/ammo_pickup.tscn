@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.218358, 0)
 material_override = SubResource("ShaderMaterial_ujx5u")
 
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
-transform = Transform3D(-4.65183, 0, 5.88308, 0, 7.5, 0, -5.88308, 0, -4.65183, 0, 0, -1)
+transform = Transform3D(-4.82094, 0, 5.74532, 0, 7.5, 0, -5.74532, 0, -4.82094, 0, 0, -1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
 transform = Transform3D(-0.866028, 0, -0.499996, 0, 1, 0, 0.499996, 0, -0.866028, 0, 0, 0)

@@ -27,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.177258, 0)
 material_override = SubResource("ShaderMaterial_ecd2c")
 
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
-transform = Transform3D(-3.55946, 0, 6.60153, 0, 7.5, 0, -6.60153, 0, -3.55946, 0, 0, -1)
+transform = Transform3D(7.42081, 0, -1.08698, 0, 7.5, 0, 1.08698, 0, 7.42081, 0, 0, -1)
 
 [node name="MachineGun" parent="ItemViewport/ItemCamera/Item" index="0" instance=ExtResource("5_a25rd")]
 transform = Transform3D(0.133333, 0, 0, 0, 0.131308, 0.0231531, 0, -0.0231531, 0.131308, 0, 0, 0)

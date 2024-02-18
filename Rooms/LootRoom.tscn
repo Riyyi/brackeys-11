@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2qgktmyckssd"]
+[gd_scene load_steps=12 format=3 uid="uid://b2qgktmyckssd"]
 
 [ext_resource type="PackedScene" uid="uid://c8b75mrpnb6su" path="res://assets/GDAssets/Models/floor.tscn" id="1_yhp4h"]
 [ext_resource type="PackedScene" uid="uid://bq4uvtb1tnyc6" path="res://assets/GDAssets/Models/wall_door_50x_50.tscn" id="2_qikrk"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bkt366adbd75o" path="res://assets/GDAssets/Models/altar.tscn" id="6_t0rrh"]
 [ext_resource type="PackedScene" uid="uid://cwcfd6m0jxois" path="res://assets/GDAssets/Models/platform_room_1.tscn" id="7_4o0t5"]
 [ext_resource type="PackedScene" uid="uid://c5pjn7mjojaw0" path="res://assets/GDAssets/Models/ceiling_50x_50.tscn" id="8_rlfov"]
+[ext_resource type="PackedScene" uid="uid://xnyewwcclqlm" path="res://items/spawn/gun_spawn.tscn" id="9_e2c4p"]
 [ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="9_x7ue8"]
+[ext_resource type="PackedScene" uid="uid://uh8c6if75bba" path="res://items/spawn/item_spawn.tscn" id="10_im1ym"]
+[ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="11_oseex"]
 
 [node name="LootRoom" type="Node3D"]
 
@@ -89,3 +92,66 @@ transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -15, 0.5, 15)
 
 [node name="Pillar6" parent="." instance=ExtResource("9_x7ue8")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 15, 0.5, 15)
+
+[node name="GunSpawn" parent="." instance=ExtResource("9_e2c4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0181089, 4.16198, -0.1152)
+
+[node name="ItemSpawn" parent="." instance=ExtResource("10_im1ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94075, 5.39218, -4.5418)
+
+[node name="ItemSpawn2" parent="." instance=ExtResource("10_im1ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00205, 5.39218, -1.51071)
+
+[node name="ItemSpawn3" parent="." instance=ExtResource("10_im1ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00803, 5.39218, 1.49816)
+
+[node name="ItemSpawn4" parent="." instance=ExtResource("10_im1ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0123, 5.39218, 4.49697)
+
+[node name="ItemSpawn5" parent="." instance=ExtResource("10_im1ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5.39218, 4.51072)
+
+[node name="ItemSpawn6" parent="." instance=ExtResource("10_im1ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00978, 5.39218, 1.49607)
+
+[node name="ItemSpawn7" parent="." instance=ExtResource("10_im1ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00048, 5.39218, -1.47913)
+
+[node name="ItemSpawn8" parent="." instance=ExtResource("10_im1ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99418, 5.39218, -4.468)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47958, 4.14011, 3.96029)
+
+[node name="BasicEnemy2" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00723, 4.14011, 4.4279)
+
+[node name="BasicEnemy3" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99344, 4.14011, -4.41041)
+
+[node name="BasicEnemy4" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25235, 4.14011, -4.07529)
+
+[node name="BasicEnemy5" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6629, 2.14011, -0.353813)
+
+[node name="BasicEnemy6" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4966, 2.14011, -5.97995)
+
+[node name="BasicEnemy7" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6586, 2.14011, 7.02392)
+
+[node name="BasicEnemy8" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3047, 2.14011, -0.854465)
+
+[node name="BasicEnemy9" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1105, 2.14011, -6.08195)
+
+[node name="BasicEnemy10" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0489, 2.14011, 8.64685)
+
+[node name="BasicEnemy11" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.584176, 2.14011, -13.7706)
+
+[node name="BasicEnemy12" parent="." instance=ExtResource("11_oseex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792242, 2.14011, 14.3313)

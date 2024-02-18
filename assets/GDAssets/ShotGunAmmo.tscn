@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://cuu8ulf8yy71y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ymmj"]
+albedo_color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4jk44"]
+material = SubResource("StandardMaterial3D_1ymmj")
+size = Vector3(2.5, 1, 4.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ffuah"]
+material = SubResource("StandardMaterial3D_1ymmj")
+size = Vector3(0.3, 1.5, 4.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_owiof"]
+material = SubResource("StandardMaterial3D_1ymmj")
+size = Vector3(2.5, 1.5, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ctev5"]
+material = SubResource("StandardMaterial3D_1ymmj")
+size = Vector3(0.2, 1.5, 4.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0g4l"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_20jcm"]
+material = SubResource("StandardMaterial3D_f0g4l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nr7jc"]
+albedo_color = Color(0.556863, 0.556863, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3yt5n"]
+material = SubResource("StandardMaterial3D_nr7jc")
+height = 0.3
+
+[node name="Ammo" type="Node3D"]
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+layers = 262144
+mesh = SubResource("BoxMesh_4jk44")
+
+[node name="Box" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.210622, 0)
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.084, 1, 0)
+layers = 262144
+mesh = SubResource("BoxMesh_ffuah")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09565, 1, 0)
+layers = 262144
+mesh = SubResource("BoxMesh_ffuah")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0135657, 1, -2.09222)
+layers = 262144
+mesh = SubResource("BoxMesh_owiof")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0135657, 1, 2.0815)
+layers = 262144
+mesh = SubResource("BoxMesh_owiof")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 1.50701, 2.12689, 0)
+layers = 262144
+mesh = SubResource("BoxMesh_ctev5")
+skeleton = NodePath("../..")
+
+[node name="Shells" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965519, 0.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Shells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+layers = 262144
+mesh = SubResource("CylinderMesh_20jcm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Shells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+layers = 262144
+mesh = SubResource("CylinderMesh_20jcm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Shells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+layers = 262144
+mesh = SubResource("CylinderMesh_20jcm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Shells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1)
+layers = 262144
+mesh = SubResource("CylinderMesh_20jcm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Shells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
+layers = 262144
+mesh = SubResource("CylinderMesh_20jcm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Shells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1)
+layers = 262144
+mesh = SubResource("CylinderMesh_20jcm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Shells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2)
+layers = 262144
+mesh = SubResource("CylinderMesh_20jcm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Shells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -2)
+layers = 262144
+mesh = SubResource("CylinderMesh_20jcm")
+
+[node name="Shells2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.93548, 0.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Shells2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1.81603, 0)
+layers = 262144
+mesh = SubResource("CylinderMesh_3yt5n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Shells2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1.81603, 0)
+layers = 262144
+mesh = SubResource("CylinderMesh_3yt5n")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Shells2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1.81603, 1)
+layers = 262144
+mesh = SubResource("CylinderMesh_3yt5n")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Shells2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1.81603, 1)
+layers = 262144
+mesh = SubResource("CylinderMesh_3yt5n")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Shells2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1.81603, -1)
+layers = 262144
+mesh = SubResource("CylinderMesh_3yt5n")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Shells2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1.81603, -1)
+layers = 262144
+mesh = SubResource("CylinderMesh_3yt5n")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Shells2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1.81603, -2)
+layers = 262144
+mesh = SubResource("CylinderMesh_3yt5n")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Shells2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1.81603, -2)
+layers = 262144
+mesh = SubResource("CylinderMesh_3yt5n")

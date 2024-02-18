@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7ccv7qdwt76n"]
+[gd_scene load_steps=17 format=3 uid="uid://b7ccv7qdwt76n"]
 
 [ext_resource type="Script" path="res://Door.gd" id="1_paq1i"]
 [ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/door.tscn" id="2_0crqh"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bnvlwvd103xcx" path="res://enemy/melee_enemy/melee_enemy.tscn" id="9_brrnh"]
 [ext_resource type="Texture2D" uid="uid://befy8nakr15bk" path="res://assets/Environment/Textures/AlienGoo_Tex_Normal.png" id="9_cjgwh"]
 [ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="11_eciab"]
+[ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="12_00klr"]
 [ext_resource type="PackedScene" uid="uid://c5pjn7mjojaw0" path="res://assets/GDAssets/Models/ceiling_50x_50.tscn" id="12_82apv"]
+[ext_resource type="PackedScene" uid="uid://uh8c6if75bba" path="res://items/spawn/item_spawn.tscn" id="13_wt4jn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msh35"]
 albedo_color = Color(0, 0.160784, 1, 1)
@@ -86,3 +88,21 @@ transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 10, 0.5, 0)
 
 [node name="Ceiling_50x50" parent="." instance=ExtResource("12_82apv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("12_00klr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2828, 1.85812, 4.72908)
+
+[node name="BasicEnemy2" parent="." instance=ExtResource("12_00klr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4033, 1.85812, 4.72455)
+
+[node name="ItemSpawn" parent="." instance=ExtResource("13_wt4jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2, 0)
+
+[node name="ItemSpawn2" parent="." instance=ExtResource("13_wt4jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, 0)
+
+[node name="BasicEnemy3" parent="." instance=ExtResource("12_00klr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0478, 2.2299, -2.54712)
+
+[node name="BasicEnemy4" parent="." instance=ExtResource("12_00klr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6781, 2.2299, -2.61902)

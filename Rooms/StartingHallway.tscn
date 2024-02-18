@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://duc2dbga40l37"]
+[gd_scene load_steps=9 format=3 uid="uid://duc2dbga40l37"]
 
 [ext_resource type="PackedScene" uid="uid://bq4uvtb1tnyc6" path="res://assets/GDAssets/Models/wall_door_50x_50.tscn" id="1_m8m6t"]
 [ext_resource type="PackedScene" uid="uid://ta8h4c4qk27j" path="res://assets/GDAssets/Models/wall_hall_150m.tscn" id="2_3c72h"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://glrjrpkkxrkg" path="res://assets/GDAssets/Models/wall_hall_30m.tscn" id="5_ic435"]
 [ext_resource type="PackedScene" uid="uid://bn1o61pu7l6uu" path="res://assets/GDAssets/Models/ceiling_hall.tscn" id="6_uhmea"]
 [ext_resource type="PackedScene" uid="uid://cjonqvvcy7ife" path="res://assets/GDAssets/Models/pillar.tscn" id="7_bhxxs"]
+[ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="8_fovje"]
 
 [node name="StartingHallway" type="Node3D"]
 
@@ -38,3 +39,12 @@ transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -25, 0.5, 0)
 
 [node name="Pillar2" parent="." instance=ExtResource("7_bhxxs")]
 transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 25, 0.5, 0)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("8_fovje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6306, 2.1443, -5.61193)
+
+[node name="BasicEnemy2" parent="." instance=ExtResource("8_fovje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19205, 2.1443, -7.24161)
+
+[node name="BasicEnemy3" parent="." instance=ExtResource("8_fovje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3087, 2.1443, 8.02043)

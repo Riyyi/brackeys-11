@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dv8lwy5oxy7qx"]
+[gd_scene load_steps=16 format=3 uid="uid://dv8lwy5oxy7qx"]
 
 [ext_resource type="PackedScene" uid="uid://bhtbbblky0uwy" path="res://assets/GDAssets/Models/room_3_first_floor.tscn" id="1_m7ypn"]
 [ext_resource type="PackedScene" uid="uid://bhjvxu1fw7d3a" path="res://assets/GDAssets/Models/door.tscn" id="1_tbkyd"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="7_spc4u"]
 [ext_resource type="PackedScene" uid="uid://carub3ybe3c7d" path="res://assets/GDAssets/Models/wall_modular.tscn" id="8_13dbl"]
 [ext_resource type="PackedScene" uid="uid://c5pjn7mjojaw0" path="res://assets/GDAssets/Models/ceiling_50x_50.tscn" id="9_l1hpq"]
+[ext_resource type="PackedScene" uid="uid://uh8c6if75bba" path="res://items/spawn/item_spawn.tscn" id="11_faeca"]
+[ext_resource type="PackedScene" uid="uid://wh260336btua" path="res://enemy/basic_enemy/basic_enemy.tscn" id="12_eng4s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5h8ge"]
 render_priority = 0
@@ -189,3 +191,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1, 18.0058, 6.07, -22.2674)
 
 [node name="Ceiling_50x50" parent="." instance=ExtResource("9_l1hpq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5, 0)
+
+[node name="ItemSpawn" parent="." instance=ExtResource("11_faeca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.321, 7.5, -20)
+
+[node name="ItemSpawn2" parent="." instance=ExtResource("11_faeca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 16.5)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0769, 2.3243, 3.80103)
+
+[node name="BasicEnemy2" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6565, 2.3243, -9.82482)
+
+[node name="BasicEnemy3" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9611, 2.3243, -6.89572)
+
+[node name="BasicEnemy4" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8731, 2.3243, -18.8844)
+
+[node name="BasicEnemy5" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.97857, 2.3243, -16.0739)
+
+[node name="BasicEnemy6" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3771, 2.3243, 22.0002)
+
+[node name="BasicEnemy7" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9055, 2.3243, 21.5136)
+
+[node name="BasicEnemy8" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1313, 2.3243, 4.96759)
+
+[node name="BasicEnemy9" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.68359, 2.3243, -4.70922)
+
+[node name="BasicEnemy10" parent="." instance=ExtResource("12_eng4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20878, 7.8943, -0.200305)
