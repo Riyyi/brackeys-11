@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0hld4eules38" path="res://items/pickup/ammo_pickup.tscn" id="1_4nl0y"]
 [ext_resource type="Shader" path="res://shaders/PickUpCamera.gdshader" id="2_1kupc"]
-[ext_resource type="PackedScene" uid="uid://3mx5uc0xxdny" path="res://assets/GDAssets/MachineGunAmmo.tscn" id="3_6ll0f"]
+[ext_resource type="PackedScene" uid="uid://dsfie2mg36223" path="res://assets/PickUps/MachineGunAmmo.glb" id="3_mu4xh"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ldgfe"]
 viewport_path = NodePath("ItemViewport")
@@ -19,10 +19,16 @@ shader_parameter/ItemCam = SubResource("ViewportTexture_ldgfe")
 material_override = SubResource("ShaderMaterial_reetn")
 
 [node name="Item" parent="ItemViewport/ItemCamera" index="0"]
-transform = Transform3D(-0.653664, 0, 7.47147, 0, 7.5, 0, -7.47147, 0, -0.653664, 0, 0, -1)
+transform = Transform3D(-3.16973, 0, -6.79727, 0, 7.5, 0, 6.79727, 0, -3.16973, 0, 0, -1)
 
 [node name="MeshInstance3D" parent="ItemViewport/ItemCamera/Item" index="0"]
+transform = Transform3D(0.93969, 0, -0.342027, 0, 1, 0, 0.342027, 0, 0.93969, 0, 0, 0)
 mesh = null
 
-[node name="Ammo" parent="ItemViewport/ItemCamera/Item" index="1" instance=ExtResource("3_6ll0f")]
-transform = Transform3D(0.0193185, -0.00517638, 0, 0.00517638, 0.0193185, 0, 0, 0, 0.02, 0, -0.035, 0)
+[node name="MachineGunAmmo" parent="ItemViewport/ItemCamera/Item" index="1" instance=ExtResource("3_mu4xh")]
+transform = Transform3D(0.0538918, -0.0196151, 0.0819202, 0.0342021, 0.0939692, -6.56368e-10, -0.0769798, 0.0280184, 0.0573505, 0, -0.0133002, 0)
+
+[node name="Cube_002" parent="ItemViewport/ItemCamera/Item/MachineGunAmmo" index="0"]
+layers = 262144
+
+[editable path="ItemViewport/ItemCamera/Item/MachineGunAmmo"]
