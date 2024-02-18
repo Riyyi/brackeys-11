@@ -11,7 +11,10 @@ func shoot() -> void:
 	for node in bullet_emitters.get_children():
 		var bullet_instance = bullet.instantiate()
 		bullet_instance.global_transform = node.global_transform
-		get_tree().root.add_child(bullet_instance)
+		if "Melee" in bullet_instance.name:
+			add_child(bullet_instance)
+		else:
+			get_tree().root.add_child(bullet_instance)
 	bangbang.play()
 
 func _process(delta) -> void:

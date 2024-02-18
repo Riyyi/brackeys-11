@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://items/item_camera.gd" id="4_5gkws"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r5keq"]
+radius = 0.75
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_d3bjr"]
 viewport_path = NodePath("ItemViewport")
@@ -26,16 +27,16 @@ ambient_light_color = Color(0.239216, 0.239216, 0.239216, 1)
 script = ExtResource("1_hryif")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115944, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238438, 0)
 shape = SubResource("SphereShape3D_r5keq")
 
 [node name="ItemBillboard" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115944, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238438, 0)
 material_override = SubResource("ShaderMaterial_rkmaj")
 mesh = SubResource("QuadMesh_e6hfi")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115944, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238438, 0.5)
 layers = 262144
 light_energy = 0.2
 light_indirect_energy = 0.2
@@ -57,6 +58,6 @@ far = 2.0
 script = ExtResource("4_5gkws")
 
 [node name="Item" type="Node3D" parent="ItemViewport/ItemCamera"]
-transform = Transform3D(4.47908, 0, 6.01564, 0, 7.5, 0, -6.01564, 0, 4.47908, 0, 0, -1)
+transform = Transform3D(-3.55948, 0, 6.60153, 0, 7.5, 0, -6.60153, 0, -3.55948, 0, 0, -1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

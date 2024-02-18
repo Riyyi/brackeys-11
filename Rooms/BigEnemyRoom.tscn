@@ -34,30 +34,6 @@ data = PackedVector3Array(0, 0.25, 5, 0.4901, 0.25, 4.9759, 0, 0.15, 5.2, 0.4901
 [node name="BigEnemyRoom" type="Node3D"]
 script = ExtResource("1_paq1i")
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, 24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
 [node name="floor" parent="." instance=ExtResource("2_vcbwl")]
 
 [node name="Wall_Door_50x50" parent="." instance=ExtResource("3_gmm8c")]

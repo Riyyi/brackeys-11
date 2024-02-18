@@ -23,3 +23,9 @@ visible = false
 navigation_mesh = SubResource("NavigationMesh_yitvy")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("3_v7ha8")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+layers = 786433
+light_color = Color(0.435294, 0.435294, 0.435294, 1)
+sky_mode = 1
