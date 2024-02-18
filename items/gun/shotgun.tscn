@@ -13,7 +13,7 @@ RecoilForce = 0.3
 MaxRecoil = 0.3
 
 [node name="BulletEmitters" parent="." index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.71413, -0.0427712, -1.45025)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.723797, 0.101534, -2.22986)
 
 [node name="Node3D" type="Node3D" parent="BulletEmitters" index="0"]
 
@@ -45,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 
 [node name="Shotgun" parent="Shotgun2" index="0"]
-transform = Transform3D(0.568039, -3.10961e-09, -0.196945, -0.00674619, 0.600859, -0.0194577, 0.19683, 0.020594, 0.567706, -0.0762721, -0.137865, 0.421373)
+transform = Transform3D(1.25882, 0.00362239, -0.324586, -0.0145873, 1.29924, -0.0420733, 0.324279, 0.0443828, 1.25812, -0.0762721, -0.226312, 0.383334)
 layers = 524288
 
 [editable path="Shotgun2"]
