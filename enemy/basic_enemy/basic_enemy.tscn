@@ -118,7 +118,7 @@ size = Vector2(2.5, 2.5)
 
 [node name="BasicEnemy" instance=ExtResource("1_eoh5f")]
 script = ExtResource("2_awa63")
-speed = 1.5
+speed = 3.0
 distance_to_begin_walk = 16.0
 h_frames = 4
 v_frames = 4

@@ -12,7 +12,7 @@ func rotate_camera(relative_x: float = 0.0, relative_y: float = 0.0) -> void:
 		# Relative:
 		# x < 0 = left
 		# x > 0 = right
-		# y < 0 = upddda
+		# y < 0 = up
 		# y > 0 = down
 		var xRotation: float = clamp(rotation.x - relative_y / 1000 * sensitivity, -0.90, 0.90) # Look up/down
 		var yRotation: float = rotation.y - relative_x / 1000 * sensitivity # Look left/right

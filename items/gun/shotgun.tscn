@@ -28,33 +28,33 @@ MaxRecoil = 0.5
 RecoilRecoverSpeed = 3.0
 
 [node name="BulletEmitters" parent="." index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.121838, 0.117214, -1.93809)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0306672, 0.117214, -1.93809)
 
 [node name="Node3D" type="Node3D" parent="BulletEmitters" index="0"]
 
 [node name="Node3D2" type="Node3D" parent="BulletEmitters" index="1"]
-transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, -0.0312251, 0, 0)
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, -0.01, 0, 0)
 
 [node name="Node3D3" type="Node3D" parent="BulletEmitters" index="2"]
-transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0.0263088, 0, 0)
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0.01, 0, 0)
 
 [node name="Node3D4" type="Node3D" parent="BulletEmitters" index="3"]
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0.057327, 0)
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0.01, 0)
 
 [node name="Node3D5" type="Node3D" parent="BulletEmitters" index="4"]
-transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, -0.0631063, 0)
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, -0.01, 0)
 
 [node name="Node3D6" type="Node3D" parent="BulletEmitters" index="5"]
-transform = Transform3D(0.996195, 4.65661e-10, -0.0871557, -0.00759612, 0.996195, -0.0868241, 0.0868241, 0.0871557, 0.992404, -0.0197975, 0.0252238, 0)
+transform = Transform3D(0.996195, 4.65661e-10, -0.0871557, -0.00759612, 0.996195, -0.0868241, 0.0868241, 0.0871557, 0.992404, -0.01, 0.01, 0)
 
 [node name="Node3D7" type="Node3D" parent="BulletEmitters" index="6"]
-transform = Transform3D(0.996195, -4.65661e-10, 0.0871557, 0.00759612, 0.996195, -0.0868241, -0.0868241, 0.0871557, 0.992404, 0.0153308, 0.0270536, 0)
+transform = Transform3D(0.996195, -4.65661e-10, 0.0871557, 0.00759612, 0.996195, -0.0868241, -0.0868241, 0.0871557, 0.992404, 0.01, 0.01, 0)
 
 [node name="Node3D8" type="Node3D" parent="BulletEmitters" index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200295, -0.0338464, 0.00499636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, -0.01, 0)
 
 [node name="Node3D9" type="Node3D" parent="BulletEmitters" index="8"]
-transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, -0.0207422, -0.0451869, -0.00550008)
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, -0.01, -0.01, 0)
 
 [node name="Shotgun2" parent="." index="2" instance=ExtResource("4_taqxm")]
 transform = Transform3D(-0.998417, 0, 0.0562396, 0, 1, 0, -0.0562396, 0, -0.998417, -0.0585853, -0.0682596, 0)

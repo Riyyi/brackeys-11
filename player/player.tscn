@@ -83,6 +83,7 @@ health = 3
 [node name="CameraController" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 script = ExtResource("3_crn3w")
+sensitivity = 2.0
 
 [node name="WorldCam" type="Camera3D" parent="CameraController"]
 cull_mask = 262143

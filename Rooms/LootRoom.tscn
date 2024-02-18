@@ -41,31 +41,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 
 [node name="Altar2" parent="." instance=ExtResource("6_t0rrh")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 5, 2.5, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -1.5)
 
 [node name="Altar3" parent="." instance=ExtResource("6_t0rrh")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 5, 2.5, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 1.5)
 
 [node name="Altar4" parent="." instance=ExtResource("6_t0rrh")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 5, 2.5, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 4.5)
 
 [node name="Altar5" parent="." instance=ExtResource("6_t0rrh")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 5, 2.5, -4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -4.5)
 
 [node name="Platform_Room1" parent="." instance=ExtResource("7_4o0t5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Altar6" parent="." instance=ExtResource("6_t0rrh")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -5, 2.5, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -1.5)
 
 [node name="Altar7" parent="." instance=ExtResource("6_t0rrh")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -5, 2.5, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 1.5)
 
 [node name="Altar8" parent="." instance=ExtResource("6_t0rrh")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -5, 2.5, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 4.5)
 
 [node name="Altar9" parent="." instance=ExtResource("6_t0rrh")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -5, 2.5, -4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -4.5)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.05, 0)
@@ -97,28 +97,28 @@ transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 15, 0.5, 15)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0181089, 4.16198, -0.1152)
 
 [node name="ItemSpawn" parent="." instance=ExtResource("10_im1ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94075, 5.39218, -4.5418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94075, 4.43271, -4.5418)
 
 [node name="ItemSpawn2" parent="." instance=ExtResource("10_im1ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00205, 5.39218, -1.51071)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00205, 4.43271, -1.51071)
 
 [node name="ItemSpawn3" parent="." instance=ExtResource("10_im1ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00803, 5.39218, 1.49816)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00803, 4.43271, 1.49816)
 
 [node name="ItemSpawn4" parent="." instance=ExtResource("10_im1ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0123, 5.39218, 4.49697)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0123, 4.43271, 4.49697)
 
 [node name="ItemSpawn5" parent="." instance=ExtResource("10_im1ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5.39218, 4.51072)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.43271, 4.51072)
 
 [node name="ItemSpawn6" parent="." instance=ExtResource("10_im1ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00978, 5.39218, 1.49607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00978, 4.43271, 1.49607)
 
 [node name="ItemSpawn7" parent="." instance=ExtResource("10_im1ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00048, 5.39218, -1.47913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00048, 4.43271, -1.47913)
 
 [node name="ItemSpawn8" parent="." instance=ExtResource("10_im1ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99418, 5.39218, -4.468)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99418, 4.43271, -4.468)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("11_oseex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47958, 4.14011, 3.96029)
