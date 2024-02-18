@@ -18,7 +18,7 @@ shader = ExtResource("5_chw0p")
 
 [sub_resource type="BoxMesh" id="BoxMesh_dijfi"]
 material = SubResource("ShaderMaterial_vvh2y")
-size = Vector3(50, 1, 50)
+size = Vector3(75, 1, 75)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_35xda"]
 points = PackedVector3Array(-37.5, -0.5, -37.5, -37.5, 0.5, -37.5, 37.5, -0.5, -37.5, -37.5, -0.5, 37.5, -37.5, 0.5, 37.5, 37.5, 0.5, -37.5, 37.5, -0.5, 37.5, 37.5, 0.5, 37.5)
