@@ -7,6 +7,9 @@ top_level = false
 ProjectileSpeed = 0.0
 lifetime = 0.75
 
+[node name="HitboxComponent" parent="." index="1"]
+damage = 30
+
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="HitboxComponent" index="0"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
 depth = 0.1

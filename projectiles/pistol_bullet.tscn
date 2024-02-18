@@ -128,5 +128,8 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_4dft0")
 draw_pass_1 = SubResource("QuadMesh_vmyqg")
 
+[node name="HitboxComponent" parent="." index="6"]
+damage = 5
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" index="0"]
 shape = SubResource("SphereShape3D_8sr5h")
