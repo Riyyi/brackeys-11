@@ -118,7 +118,7 @@ size = Vector2(2.5, 2.5)
 
 [node name="BasicEnemy" instance=ExtResource("1_eoh5f")]
 script = ExtResource("2_awa63")
-speed = 1.5
+speed = 4.0
 distance_to_begin_walk = 16.0
 h_frames = 4
 v_frames = 4
@@ -138,6 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
 [node name="EnemyGun" parent="GunPointer" index="0"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0.6)
 spawn_delay = 0.6
+firerate = 0.5
 
 [node name="MeshInstance3D" parent="." index="7"]
 mesh = SubResource("QuadMesh_22mm6")
