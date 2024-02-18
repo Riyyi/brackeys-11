@@ -14,7 +14,7 @@ MaxRecoil = 0.5
 RecoilRecoverSpeed = 2.0
 
 [node name="BulletEmitters" parent="." index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.645477, -0.249143, -1.18717)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.835286, -0.249143, -1.57697)
 
 [node name="Node3D" type="Node3D" parent="BulletEmitters" index="0"]
 
