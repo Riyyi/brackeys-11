@@ -2,7 +2,7 @@ class_name Bullet extends Node3D
 
 @export var ProjectileSpeed : float = 1.0
 
-@onready var hitbox_component: HitboxComponent = %HitboxComponent # acces in the child via unique name
+@onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var ray: RayCast3D = $RayCast3D
 
 var counter = 0.0
