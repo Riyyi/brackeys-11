@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://0rn8k6v55hw3"
+path.s3tc="res://.godot/imported/MachineGunAmmo_MachineGunAmmo_Tex.png-8b47a2ab4f5fbf16b84386c2b32bb847.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://assets/PickUps/MachineGunAmmo_MachineGunAmmo_Tex.png"
+dest_files=["res://.godot/imported/MachineGunAmmo_MachineGunAmmo_Tex.png-8b47a2ab4f5fbf16b84386c2b32bb847.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
