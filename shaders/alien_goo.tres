@@ -33,7 +33,6 @@ texture = ExtResource("1_owkxb")
 texture = ExtResource("2_m8swm")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_87cpl"]
-frequency = 0.0217
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7bfyu"]
 noise = SubResource("FastNoiseLite_87cpl")
@@ -134,7 +133,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-977, 115)
+graph_offset = Vector2(-1068, 81)
 modes/specular = 2
 nodes/fragment/0/position = Vector2(1300, 140)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_x1moq")

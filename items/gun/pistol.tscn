@@ -19,7 +19,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.6454
 [node name="Node3D" type="Node3D" parent="BulletEmitters" index="0"]
 
 [node name="Pistol" parent="." index="2" instance=ExtResource("4_pq7d3")]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, -0.1, -0.375)
+transform = Transform3D(-1.48212, -0.00145246, 0.23092, -0.00745516, 1.49949, -0.0384179, -0.230804, -0.0391076, -1.48162, -0.0738933, -0.132488, -0.322399)
 
 [node name="Cube_023" parent="Pistol" index="0"]
 layers = 524288
