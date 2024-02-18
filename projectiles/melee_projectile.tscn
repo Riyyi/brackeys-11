@@ -7,7 +7,7 @@ top_level = false
 ProjectileSpeed = 0.0
 lifetime = 0.75
 
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="HitboxComponent" index="0"]
+[node name="HitboxComponent#CollisionPolygon3D" type="CollisionPolygon3D" parent="." index="0"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
 depth = 0.1
 polygon = PackedVector2Array(-2.23735, -0.936944, -2.42619, -0.711616, -2.59259, -0.372117, -3.01376, -0.204825, -3.10715, -0.00734725, -3.00233, 0.207844, -2.61268, 0.349187, -2.41677, 0.599584, -2.24549, 0.921871, -1.87531, 0.853445, -1.89399, 0.697919, -2.02209, 0.51776, -2.095, 0.227037, -2.12714, -0.0203582, -2.07594, -0.299117, -1.94865, -0.568446, -1.82722, -0.790108, -1.82753, -0.963314)

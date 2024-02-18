@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3un0frciaadd"]
 
 [ext_resource type="PackedScene" uid="uid://bdx7ag47vdvgu" path="res://items/gun/gun.tscn" id="1_vtf48"]
-[ext_resource type="PackedScene" uid="uid://bkm32tdmwyx1a" path="res://projectiles/pistol_bullet.tscn" id="2_o3ore"]
+[ext_resource type="PackedScene" uid="uid://7vrm8u6xswai" path="res://projectiles/pistol_bullet.tscn" id="2_o3ore"]
 [ext_resource type="AudioStream" uid="uid://2pw0twgy4mhy" path="res://assets/Shotgun.wav" id="3_4po7x"]
 [ext_resource type="PackedScene" uid="uid://ddjxphwvw50un" path="res://assets/Guns/Shotgun.glb" id="4_taqxm"]
 
