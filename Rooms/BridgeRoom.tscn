@@ -25,30 +25,6 @@ points = PackedVector3Array(-37.5, -0.5, -37.5, -37.5, 0.5, -37.5, 37.5, -0.5, -
 [node name="Room2" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
 [node name="Room3_FirstFloor" parent="." instance=ExtResource("1_m7ypn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 

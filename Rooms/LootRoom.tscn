@@ -11,30 +11,6 @@
 
 [node name="LootRoom" type="Node3D"]
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, 24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
 [node name="floor" parent="." instance=ExtResource("1_yhp4h")]
 
 [node name="Wall_Door_50x50" parent="." instance=ExtResource("2_qikrk")]

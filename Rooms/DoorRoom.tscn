@@ -20,30 +20,6 @@ data = PackedVector3Array(-8.9, 0.25, 2.9, 8.9, 0.25, 2.9, -8.9, -0.25, 2.9, 8.9
 
 [node name="Room" type="Node3D"]
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, -24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 24)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
 [node name="floor" parent="." instance=ExtResource("1_j1228")]
 
 [node name="Door" parent="." instance=ExtResource("1_nqhc8")]
