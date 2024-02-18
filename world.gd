@@ -38,7 +38,8 @@ func _ready() -> void:
 	
 	ResourceStash.game.in_world = true
 	player = ResourceStash.game.spawn_player(self)
-	player.global_position.y = 10
+	player.global_position.y = 2.5
+	player.global_position.z = 15.75
 	player.stats_component.no_health.connect(game_over)
 	player.stats_component.health_changed.connect(ui_update_health)
 	player.ammo_changed.connect(ui_update_ammo)

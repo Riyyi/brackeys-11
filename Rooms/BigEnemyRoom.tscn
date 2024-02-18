@@ -110,39 +110,3 @@ transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 10, 0.5, 0)
 
 [node name="Ceiling_50x50" parent="." instance=ExtResource("12_82apv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 6, -6)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D7" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 6, -6)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D8" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 6, 6)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D9" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 6, 6)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D10" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 0)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
-
-[node name="OmniLight3D11" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 6, 0)
-layers = 786433
-light_color = Color(0, 1, 1, 1)
-omni_range = 10.0
