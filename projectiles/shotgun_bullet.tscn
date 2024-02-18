@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8v3weflxw8tg"]
+
+[ext_resource type="PackedScene" uid="uid://7vrm8u6xswai" path="res://projectiles/pistol_bullet.tscn" id="1_5q3u4"]
+
+[node name="ShotgunBullet" instance=ExtResource("1_5q3u4")]
+ProjectileSpeed = 3.0
